@@ -1,0 +1,16 @@
+ul li{
+    padding: 8px 15px;
+    text-transform:uppercase;
+}
+ul.navbar-nav{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.nav-item span{
+    cursor: pointer;
+    color: #2b2b2b ;
+}
+.logo{
+    width: 180px;
+}
