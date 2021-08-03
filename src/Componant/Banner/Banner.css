@@ -1,0 +1,36 @@
+.banner {
+    height: 90vh;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    background-image: url('https://i.ibb.co/0M0qW9M/1584040477-8.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    transition: all .4s ease-in-out;
+}
+.banner:hover::before {
+    opacity: 1;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.774);
+    z-index: -1;
+}
+.hallname{
+    text-transform: uppercase;
+}

@@ -11,10 +11,11 @@ import FAQ from "./Pages/FAQ/FAQ"
 import Dashboard from "./Pages/Dashboard/Dashboard"
 import NoticeBoard from "./Pages/NoticeBoard/NoticeBoard"
 import CPanelLogin from './Pages/CPanelLogin/CPanelLogin';
+import Footer from './Componant/Footer/Footer'
 
 import './App.css';
 import { createContext, useState } from 'react';
-import { student } from './Data/fakedata';
+// import { student } from './Data/fakedata';
 
 
 export const UserContext = createContext()
@@ -26,48 +27,50 @@ function App() {
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <Router>
         <Navbar></Navbar>
+
         <Switch>
           <Route exact path="/">
             <Home></Home>
           </Route>
 
-          <Route  path="/profile">
+          <Route path="/profile">
             <Profile></Profile>
           </Route>
 
-          <Route  path="/apply">
+          <Route path="/apply">
             <Apply></Apply>
           </Route>
 
-          <Route  path="/login">
+          <Route path="/login">
             <Login></Login>
           </Route>
 
-          <Route  path="/notAvailable">
+          <Route path="/notAvailable">
             <NotAvailable></NotAvailable>
           </Route>
 
-          <Route  path="/cPanelLogin">
+          <Route path="/cPanelLogin">
             <CPanelLogin></CPanelLogin>
           </Route>
 
-          <Route  path="/dashboard">
+          <Route path="/dashboard">
             <Dashboard></Dashboard>
           </Route>
 
-          <Route  path="/faq">
+          <Route path="/faq">
             <FAQ></FAQ>
           </Route>
 
-          <Route  path="/gallery">
+          <Route path="/gallery">
             <Gallery></Gallery>
           </Route>
-          
-          <Route  path="/notice">
+
+          <Route path="/notice">
             <NoticeBoard></NoticeBoard>
           </Route>
-          
+
         </Switch>
+        <Footer></Footer>
       </Router>
     </UserContext.Provider>
   );

@@ -1,3 +1,14 @@
-Link:hover{
-  text-decoration: none;
+body{
+  scroll-behavior: smooth;
+}
+.fake-line{
+  height: 2000px;
+}
+
+.container{
+  max-width: 1300px !important;
+  margin: 0 auto;
+}
+.lead{
+  font-size: .94rem;
 }
