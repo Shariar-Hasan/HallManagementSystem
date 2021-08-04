@@ -9,16 +9,16 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      display: 'flex',
-      '& > *': {
-        margin: theme.spacing(1),
-      },
+        display: 'flex',
+        '& > *': {
+            margin: theme.spacing(1),
+        },
     },
     small: {
-      width: theme.spacing(4),
-      height: theme.spacing(4),
+        width: theme.spacing(4),
+        height: theme.spacing(4),
     }
-  }));
+}));
 
 
 const Navbar = () => {
@@ -40,36 +40,33 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="collapsibleNavId">
                         <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                            <li className="nav-item">
-                                <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/gallery">Gallery</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/notice">Noticeboard</Link>
-                            </li>
+                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/">
+                                <li className="nav-item">Home</li>
+                            </Link>
+                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/gallery">
+                                <li className="nav-item">Gallery</li>
+                            </Link>
+                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/notice">
+                                <li className="nav-item">Noticeboard</li>
+                            </Link>
                             {
-                                isStudent(loginUser) && <li className="nav-item"  title="Notifications"><NotificationsIcon></NotificationsIcon><sup></sup></li>
+                                isStudent(loginUser) && <li className="nav-item" title="Notifications"><NotificationsIcon></NotificationsIcon><sup className="badge badge-secondary">0</sup></li>
                             }
 
                             {
                                 (isEmployee(loginUser) || isStudent(loginUser))
                                     ?
                                     <li className="nav-item">
-                                        
-                                        <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/profile" title={loginUser?.personalInfo.name}><Avatar className={classes.small} alt={loginUser?.personalInfo.avatar} src={loginUser?.personalInfo.avatar} /></Link>
+
+                                        <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/profile" title={loginUser?.personalInfo.name}><Avatar className={classes.small} alt={loginUser?.personalInfo.avatar} src={loginUser?.personalInfo.avatar} >{loginUser?.personalInfo.name.charAt(0)}</Avatar></Link>
                                     </li>
                                     :
                                     <li className="nav-item dropdown">
                                         <span className="dropdown-link">Login</span>
                                         <ul className="dropdown-menu">
-                                            <li className="dropdown-item" >
-                                                <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/login?user=std">Student</Link>
-                                            </li>
-                                            <li className="dropdown-item" >
-                                                <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/login?user=emp">Employee</Link>
-                                            </li>
+                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/login?user=std"><li className="dropdown-item" >Student</li></Link>
+                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/login?user=emp"><li className="dropdown-item" >Employee</li></Link>
+                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/cPanelLogin"><li className="dropdown-item" >Admin</li></Link>
 
                                         </ul>
                                     </li>

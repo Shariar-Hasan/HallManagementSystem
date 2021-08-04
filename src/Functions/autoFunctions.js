@@ -13,6 +13,17 @@ export const isEmployee = (user) => user ? user.authentication.isEmployee : fals
 
 
 // checking logged in or not
-export const activeStatus = (data) => (Object.keys(data) === 0) ? false : true;
+export const activeStatus = (data) => (data) ? true : false;
 
+// when log in
+export const quickChangeOnLogIn = (data) =>{
+    data.activeStatus.isActive = true;
+}
+
+
+// when log out
+export const quickChangeOnLogOut = (data) =>{
+    data.activeStatus.isActive = false;
+    data.activeStatus.lastActive = new Date().toLocaleString();
+}
 

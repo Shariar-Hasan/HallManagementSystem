@@ -1,0 +1,15 @@
+ul li{
+    list-style-type: none;
+    color: white !important;
+}
+.footerLink{
+    background-color: #034278;
+    padding: 30px 20px;
+}
+.cu-logo{
+    width: 100px;
+    margin: 0 auto;
+}
+.footerLink .col-md-2{
+padding: 20px 30px;
+}
