@@ -1,4 +1,4 @@
-ul li{
+ul.footer-links li{
     list-style-type: none;
     color: white !important;
 }
