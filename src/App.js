@@ -15,63 +15,68 @@ import Footer from './Componant/Footer/Footer'
 
 import './App.css';
 import { createContext, useState } from 'react';
+import { images } from './Data/fakedata';
 // import { student } from './Data/fakedata';
 
 
 export const UserContext = createContext()
+export const DataContext = createContext()
 
 
 function App() {
   const [loginUser, setLoginUser] = useState(null)
+  const imageLoad = images;
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
-      <Router>
-        <Navbar></Navbar>
+      <DataContext.Provider value={[imageLoad]}>
 
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
+        <Router>
+          <Navbar></Navbar>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
 
-          <Route path="/profile">
-            <Profile></Profile>
-          </Route>
+            <Route path="/profile">
+              <Profile></Profile>
+            </Route>
 
-          <Route path="/apply">
-            <Apply></Apply>
-          </Route>
+            <Route path="/apply">
+              <Apply></Apply>
+            </Route>
 
-          <Route path="/login">
-            <Login></Login>
-          </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
 
-          <Route path="/notAvailable">
-            <NotAvailable></NotAvailable>
-          </Route>
+            <Route path="/cPanelLogin">
+              <CPanelLogin></CPanelLogin>
+            </Route>
 
-          <Route path="/cPanelLogin">
-            <CPanelLogin></CPanelLogin>
-          </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
 
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
+            <Route path="/faq">
+              <FAQ></FAQ>
+            </Route>
 
-          <Route path="/faq">
-            <FAQ></FAQ>
-          </Route>
+            <Route path="/gallery">
+              <Gallery ></Gallery>
+            </Route>
 
-          <Route path="/gallery">
-            <Gallery></Gallery>
-          </Route>
+            <Route path="/notice">
+              <NoticeBoard></NoticeBoard>
+            </Route>
 
-          <Route path="/notice">
-            <NoticeBoard></NoticeBoard>
-          </Route>
+            <Route path="*">
+              <NotAvailable></NotAvailable>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
 
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      </DataContext.Provider>
     </UserContext.Provider>
   );
 }

@@ -1,0 +1,20 @@
+.select-page {
+    padding: 0 7px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+    color: rgb(58, 58, 58);
+    transition: all .35s ease-in-out;
+    position: relative;
+}
+
+.select-page::after {
+    /* content: "Photos To Show"; */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100px;
+    height: 10px;
+}
