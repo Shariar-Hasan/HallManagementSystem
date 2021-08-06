@@ -1,15 +1,18 @@
 
 import React, {  } from 'react';
 import Banner from '../../Componant/Banner/Banner';
+import Bulletin from '../../Componant/Bulletin/Bulletin';
 import DividerLeft from '../../Componant/DividerLeft/DividerLeft';
 import DividerRight from '../../Componant/DividerRight/DividerRight';
 import FooterLink from '../../Componant/FooterLink/FooterLink';
 import OneClickLogin from '../../Componant/OneClickLogin/OneClickLogin';
-const Home = () => {
 
+const Home = () => {
+const bulletin = "সকলের অবগতির জন্য জানানো যাইতেছে যে, এই ওয়েবসাইটটি আপাতত সংস্কার করা হইতেছে, তাই কেও দয়া করে এই ওয়েবসাইটের ক্ষতি হয় এমন কোনো কাজ করিবেন না। - আদেশক্রমে আব্দুর রব হল কতৃপক্ষ"
     return (
         <div>
-            <OneClickLogin></OneClickLogin>
+            <OneClickLogin></OneClickLogin> 
+            <Bulletin bulletin={bulletin}></Bulletin>
             <Banner></Banner>
             <div className="container my-4">
                 <div className="row">

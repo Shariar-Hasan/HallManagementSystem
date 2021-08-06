@@ -1,0 +1,37 @@
+.profile-card-header {
+    background-color: #0084ff;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(240, 234, 234);
+    font-weight: 600;
+}
+
+.fake-avater i {
+    font-size: 5rem;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-card{
+    margin: 20px auto;
+    border-radius: 7px;
+    background-color: white;
+    overflow: hidden;
+}
+.profile-card-child{
+    padding: 20px 30px;
+    text-transform: uppercase;
+}
+
+
+/* responsive */
+@media screen and (max-width: 400px){
+    .profile-card-header {
+        font-size: 1rem;
+    }
+    .profile-card{
+        overflow: scroll;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from "./../../images/logo2-xl.png"
@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
     const [loginUser,] = useContext(UserContext)
     const classes = useStyles();
+    const [open, setOpen] = useState(false)
+    const handleToggle = ()=>{
+        
+    }
     return (
         <div >
             <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -34,12 +38,12 @@ const Navbar = () => {
                         </Link>
 
                     </div>
-                    <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    <button className="navbar-toggler d-lg-none" onClick={handleToggle} type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="collapsibleNavId">
-                        <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <div className="collapse navbar-collapse text-right" id="collapsibleNavId">
+                        <ul className="navbar-nav ml-auto mt-2 mt-lg-0 ">
                             <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/">
                                 <li className="nav-item">Home</li>
                             </Link>

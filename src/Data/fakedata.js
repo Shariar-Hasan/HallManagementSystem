@@ -3,34 +3,41 @@ export const student = {
     personalInfo: {
         id: 18701012,
         name: "Shariar Hasan",
-        avater: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+        avater: "http://cu.ac.bd/csd/assets/image/studentphoto/18701012_PRGTCAO37P.jpg",
         birthDate: "18-09-1998",
         fatherName: "Shah Alam Mazumder",
         motherName: "Kamrun Naher",
-        contact: {
-            address: "West Ukil para",
-            city: "feni",
-            division: "chittagong",
-            zip: 1010,
-            phoneNo: "01866088233",
-            email: "Hasan@gmail.com",
-        }
+
+    },
+    contact: {
+        address: "West Ukil para",
+        city: "feni",
+        division: "chittagong",
+        zip: 1010,
+        phoneNo: "01866088233",
+        email: "Hasan@gmail.com",
     },
     institutional: {
+        course: "B.Sc Engineering",
         department: "Department of Computer Science",
         session: "2017-18"
     },
-    hallDetails: {
-        alloted: true,
-        allotedDate: "12-12-2020",
-        cardExpiryDate: "12-12-2021",
-        roomNo: 341,
-        lastAllowted: []
-    },
-    activeStatus: {
-        isActive: true,
-        lastActive: "12-12-2012"
-    },
+    hallDetails: [
+        {
+            alloted: true,
+            allotedDate: "12-12-2019",
+            cardExpiryDate: "12-12-2020",
+            expired: true,
+            roomNo: 341,
+        },
+        {
+            alloted: false,
+            allotedDate: "12-12-2020",
+            cardExpiryDate: "12-12-2021",
+            expired: true,
+            roomNo: 341,
+        },
+    ],
     authentication: {
         isAdmin: false,
         isStudent: true,
@@ -59,10 +66,6 @@ export const employee = {
     },
     institutional: {
         department: "Jharudar",
-    },
-    activeStatus: {
-        isActive: true,
-        lastActive: "12-12-2012"
     },
     authentication: {
         isAdmin: false,
@@ -269,770 +272,6 @@ export const notices = [
 
 
 
-export const studentList = [
-    {
-        id: 18701012,
-        personalInfo: {
-            id: 18701012,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701013,
-        personalInfo: {
-            id: 18701013,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701014,
-        personalInfo: {
-            id: 18701014,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701015,
-        personalInfo: {
-            id: 18701015,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701016,
-        personalInfo: {
-            id: 18701016,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701017,
-        personalInfo: {
-            id: 18701017,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701018,
-        personalInfo: {
-            id: 18701018,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701019,
-        personalInfo: {
-            id: 18701019,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701020,
-        personalInfo: {
-            id: 18701020,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701021,
-        personalInfo: {
-            id: 18701021,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701022,
-        personalInfo: {
-            id: 18701022,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701023,
-        personalInfo: {
-            id: 18701023,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701024,
-        personalInfo: {
-            id: 18701024,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701025,
-        personalInfo: {
-            id: 18701025,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701026,
-        personalInfo: {
-            id: 18701026,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701027,
-        personalInfo: {
-            id: 18701027,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701028,
-        personalInfo: {
-            id: 18701028,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701029,
-        personalInfo: {
-            id: 18701029,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-    {
-        id: 18701030,
-        personalInfo: {
-            id: 18701030,
-            name: "Shariar Hasan",
-            avater: "https://robohash.org/honey?set=set1",
-            birthDate: "18-09-1998",
-            fatherName: "Shah Alam Mazumder",
-            motherName: "Kamrun Naher",
-            contact: {
-                address: "West Ukil para",
-                city: "feni",
-                division: "chittagong",
-                zip: 1010,
-                phoneNo: "01866088233",
-                email: "Hasan@gmail.com",
-            }
-        },
-        institutional: {
-            department: "Department of Computer Science",
-            session: "2017-18"
-        },
-        hallDetails: {
-            alloted: true,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            roomNo: 341,
-            lastAllowted: []
-        },
-        activeStatus: {
-            isActive: true,
-            lastActive: "12-12-2012"
-        },
-        authentication: {
-            isAdmin: false,
-            isStudent: true,
-            isEmployee: false
-        }
-
-    },
-
-]
-
 
 
 
@@ -1069,9 +308,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1083,9 +322,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1097,9 +336,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1111,9 +350,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1125,9 +364,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1139,9 +378,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1153,9 +392,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1167,9 +406,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1181,9 +420,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1195,13 +434,13 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
-        id:11,
+        id: 11,
         originalTitle: "hahahahahhahahahahah",
         thumbnailTitle: "thumbnail title",
         thumbnailAlt: "thumbnailAlt ",
@@ -1209,9 +448,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1223,9 +462,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1237,9 +476,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1251,9 +490,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1265,9 +504,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1279,9 +518,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1293,9 +532,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1307,9 +546,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1321,9 +560,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1335,9 +574,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1349,9 +588,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1363,9 +602,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1377,9 +616,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1391,9 +630,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1405,9 +644,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1419,9 +658,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1433,9 +672,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1447,9 +686,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1461,9 +700,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1475,9 +714,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1489,9 +728,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1503,9 +742,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1517,9 +756,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1531,9 +770,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1545,9 +784,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1559,9 +798,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1573,9 +812,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1587,9 +826,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1601,9 +840,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1615,9 +854,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1629,9 +868,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1643,9 +882,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1657,9 +896,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1671,9 +910,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1685,9 +924,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1699,9 +938,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1713,9 +952,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1727,9 +966,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1741,9 +980,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1755,9 +994,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1769,9 +1008,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1783,9 +1022,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1797,9 +1036,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1811,9 +1050,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1825,9 +1064,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1839,9 +1078,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1853,9 +1092,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1867,9 +1106,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: true,
-            hall : false,
+            hall: false,
         }
     },
     {
@@ -1881,9 +1120,9 @@ export const images = [
         original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1895,9 +1134,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1909,9 +1148,9 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
     {
@@ -1923,12 +1162,12 @@ export const images = [
         original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
         uploadDate: "12-8-21",
-        category : {
+        category: {
             institutional: false,
-            hall : true,
+            hall: true,
         }
     },
-    
+
 ];
 
 
@@ -2063,3 +1302,5 @@ export const footerLink4 = [
     },
 
 ]
+
+

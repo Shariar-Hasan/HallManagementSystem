@@ -1,14 +1,21 @@
 body{
   scroll-behavior: smooth;
+  background-color: rgb(223, 221, 221);
 }
 .fake-line{
   height: 2000px;
 }
 
 .container{
-  max-width: 1300px !important;
+  max-width: 1400px !important;
   margin: 0 auto;
 }
 .lead{
   font-size: .94rem;
+}
+.bulletin{
+  padding: 20px;
+  font-size: larger;
+  background-color: #0084ff;
+  color: rgb(255, 255, 255);
 }
