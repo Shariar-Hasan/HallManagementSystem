@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../App';
+import { DataContext, UserContext } from '../../App';
 import logo from "./../../images/logo2-xl.png"
 import "./Navbar.css"
 import { isEmployee, isStudent } from '../../Functions/autoFunctions';
@@ -24,13 +24,12 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
     const [loginUser,] = useContext(UserContext)
     const classes = useStyles();
-    const [open, setOpen] = useState(false)
-    const handleToggle = ()=>{
-        
-    }
+    const [,[show, setShow]] = useContext(DataContext)
+    const handleShow = () => setShow(true)
+
     return (
         <div >
-            <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            <nav className="navbar shadow navbar-expand-sm navbar-light bg-light">
                 <div className="container">
                     <div >
                         <Link to="/">
@@ -38,7 +37,7 @@ const Navbar = () => {
                         </Link>
 
                     </div>
-                    <button className="navbar-toggler d-lg-none" onClick={handleToggle} type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

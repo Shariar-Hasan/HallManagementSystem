@@ -16,6 +16,7 @@ import Footer from './Componant/Footer/Footer'
 import './App.css';
 import { createContext, useState } from 'react';
 import { images } from './Data/fakedata';
+import DrawerBoard from './Componant/DrawerBoard/DrawerBoard';
 // import { student } from './Data/fakedata';
 
 
@@ -26,9 +27,11 @@ export const DataContext = createContext()
 function App() {
   const [loginUser, setLoginUser] = useState(null)
   const imageLoad = images;
+  const [show, setShow] = useState(false);
+
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
-      <DataContext.Provider value={[imageLoad]}>
+      <DataContext.Provider value={[imageLoad, [show, setShow]]}>
 
         <Router>
           <Navbar></Navbar>
@@ -37,35 +40,35 @@ function App() {
               <Home></Home>
             </Route>
 
-            <Route path="/profile">
+            <Route exact path="/profile">
               <Profile></Profile>
             </Route>
 
-            <Route path="/apply">
+            <Route exact path="/apply">
               <Apply></Apply>
             </Route>
 
-            <Route path="/login">
+            <Route exact path="/login">
               <Login></Login>
             </Route>
 
-            <Route path="/cPanelLogin">
+            <Route exact path="/cPanelLogin">
               <CPanelLogin></CPanelLogin>
             </Route>
 
-            <Route path="/dashboard">
+            <Route exact path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
 
-            <Route path="/faq">
+            <Route exact path="/faq">
               <FAQ></FAQ>
             </Route>
 
-            <Route path="/gallery">
+            <Route exact path="/gallery">
               <Gallery ></Gallery>
             </Route>
 
-            <Route path="/notice">
+            <Route exact path="/notice">
               <NoticeBoard></NoticeBoard>
             </Route>
 

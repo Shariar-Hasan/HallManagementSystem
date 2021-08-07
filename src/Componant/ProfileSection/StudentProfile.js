@@ -113,7 +113,7 @@ const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) =
                         <tbody >
                             {
                                 hallDetails.map((info, i) => {
-                                    return <tr>
+                                    return <tr key={i}>
                                         <td>
                                             {
                                                 hallDetails.length === i + 1

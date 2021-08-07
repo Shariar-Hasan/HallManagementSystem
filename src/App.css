@@ -1,13 +1,19 @@
 body{
   scroll-behavior: smooth;
   background-color: rgb(223, 221, 221);
+  margin: 0;
+  padding: 0;
+}
+*{
+  margin: 0;
+  padding: 0;
 }
 .fake-line{
   height: 2000px;
 }
 
 .container{
-  max-width: 1400px !important;
+  max-width: 13200px !important;
   margin: 0 auto;
 }
 .lead{
