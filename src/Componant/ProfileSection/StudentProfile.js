@@ -30,7 +30,7 @@ const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) =
 
                     </div>
                     <div className="col-md-8 my-2">
-                        <table className="table table-borderless ">
+                        <table className="table table-responsive-sm table-borderless ">
                             <tbody>
                                 <tr>
                                     <td>ID:</td>
@@ -79,7 +79,7 @@ const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) =
             <div className="profile-card shadow border-rounded">
                 <h3 className="profile-card-header">Institutional Information</h3>
                 <div className="row  profile-card-child">
-                    <table className="table text-center table-bordered w-100">
+                    <table className="table table-responsive-sm text-center table-bordered w-100">
                         <thead>
                             <tr>
                                 <th>Course Name</th>
@@ -100,7 +100,7 @@ const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) =
             <div className="profile-card shadow border-rounded">
                 <h3 className="profile-card-header">Hall Information</h3>
                 <div className="row  profile-card-child">
-                    <table className="table text-center table-bordered w-100">
+                    <table className="table table-responsive-sm text-center table-bordered w-100">
                         <thead>
                             <tr>
                                 <th>Alloted</th>
@@ -132,7 +132,7 @@ const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) =
                                         <td>{
                                             hallDetails.length === i + 1
                                                 ?
-                                                <Button onClick={handleSeat} disabled={info.expired || info.alloted} variant="outlined" color="primary">{info.alloted ? "Renew Seat" : "Apply for Seat"}</Button>
+                                                <Button onClick={handleSeat}  variant="outlined" color="primary">{info.alloted ? "Renew Seat" : "Apply for Seat"}</Button>
                                                 :
                                                 "N/A"
                                         }

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { DataContext, UserContext } from '../../App';
+import { UserContext } from '../../App';
 import logo from "./../../images/logo2-xl.png"
 import "./Navbar.css"
 import { isEmployee, isStudent } from '../../Functions/autoFunctions';
@@ -24,8 +24,6 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
     const [loginUser,] = useContext(UserContext)
     const classes = useStyles();
-    const [,[show, setShow]] = useContext(DataContext)
-    const handleShow = () => setShow(true)
 
     return (
         <div >

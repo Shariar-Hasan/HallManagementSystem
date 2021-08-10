@@ -1,6 +1,5 @@
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from "./Componant/Navbar/Navbar"
 import Home from "./Pages/Home/Home"
 import Profile from "./Pages/Profile/Profile"
 import Apply from "./Pages/Apply/Apply"
@@ -11,13 +10,10 @@ import FAQ from "./Pages/FAQ/FAQ"
 import Dashboard from "./Pages/Dashboard/Dashboard"
 import NoticeBoard from "./Pages/NoticeBoard/NoticeBoard"
 import CPanelLogin from './Pages/CPanelLogin/CPanelLogin';
-import Footer from './Componant/Footer/Footer'
 
 import './App.css';
 import { createContext, useState } from 'react';
 import { images } from './Data/fakedata';
-import DrawerBoard from './Componant/DrawerBoard/DrawerBoard';
-// import { student } from './Data/fakedata';
 
 
 export const UserContext = createContext()
@@ -34,41 +30,43 @@ function App() {
       <DataContext.Provider value={[imageLoad, [show, setShow]]}>
 
         <Router>
-          <Navbar></Navbar>
           <Switch>
-            <Route exact path="/">
+            <Route exact  path="/">
               <Home></Home>
             </Route>
 
-            <Route exact path="/profile">
+            <Route  path="/profile">
               <Profile></Profile>
             </Route>
 
-            <Route exact path="/apply">
+            <Route  path="/apply">
               <Apply></Apply>
             </Route>
 
-            <Route exact path="/login">
+            <Route  path="/login">
               <Login></Login>
             </Route>
 
-            <Route exact path="/cPanelLogin">
+            <Route  path="/cPanelLogin">
               <CPanelLogin></CPanelLogin>
             </Route>
 
-            <Route exact path="/dashboard">
+            <Route  path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
 
-            <Route exact path="/faq">
+            <Route  path="/faq">
               <FAQ></FAQ>
             </Route>
 
-            <Route exact path="/gallery">
+            <Route  path="/gallery">
               <Gallery ></Gallery>
             </Route>
 
-            <Route exact path="/notice">
+            <Route path="/notice/:newsId">
+              <NoticeBoard></NoticeBoard>
+            </Route>
+            <Route path="/notice">
               <NoticeBoard></NoticeBoard>
             </Route>
 
@@ -76,7 +74,6 @@ function App() {
               <NotAvailable></NotAvailable>
             </Route>
           </Switch>
-          <Footer></Footer>
         </Router>
 
       </DataContext.Provider>

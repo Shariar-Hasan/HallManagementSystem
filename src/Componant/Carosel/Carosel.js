@@ -16,7 +16,7 @@ const Carosel = () => {
   };
   const caroselImage = imageLoad.slice(0, 5);
   return (
-    <div className="shadow p-5">
+    <div className="shadow p-5 bg-light">
       <h2 className="text-info text-center">Short Gallery</h2>
       <Slider {...settings} className="my-5 overflow-hidden">
         {

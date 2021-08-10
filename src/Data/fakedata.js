@@ -98,7 +98,7 @@ export const cityOfSylhet = ["Habiganj", "Moulvibazar", "Sunamganj", "Sylhet"]
 export const notices = [
     {
         noticeId: 1,
-        noticeTitle: "Seats are going to be free  1",
+        noticeTitle: "Hall seats are going to to be free",
         noticeDescription: "student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,
@@ -110,11 +110,11 @@ export const notices = [
             visibleToEmployee: false,
             visibleToEveryone: false,
         },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+        noticeImage: "",  // https://i.ibb.co/0M0qW9M/1584040477-8.jpg
     },
     {
         noticeId: 2,
-        noticeTitle: "Seats are going to be free  2",
+        noticeTitle: "Hall construction project going to start in near",
         noticeDescription: "pubic Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,
@@ -131,10 +131,10 @@ export const notices = [
     },
     {
         noticeId: 3,
-        noticeTitle: "Seats are going to be free  3",
+        noticeTitle: "Hall dining will closed for two days",
         noticeDescription: "student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
-            edited: false,
+            edited: true,
             updatedDate: "12-08-21"
         },
         noticeDeadline: "12-4-22",
@@ -144,14 +144,14 @@ export const notices = [
             visibleToEveryone: false,
 
         },
-        noticeImage: "https://i.ibb.co/0M 0qW9M/1584040477-8.jpg",
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
     },
     {
         noticeId: 4,
-        noticeTitle: "Seats are going to be free  4",
+        noticeTitle: "Hall Construction will be end very soon",
         noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
-            edited: false,
+            edited: true,
             updatedDate: "12-08-21"
         },
         noticeDeadline: "12-4-22",
@@ -165,7 +165,7 @@ export const notices = [
     },
     {
         noticeId: 5,
-        noticeTitle: "Seats are going to be free  5",
+        noticeTitle: "Hall room services staff will here by tomorrow",
         noticeDescription: " student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,
@@ -182,10 +182,10 @@ export const notices = [
     },
     {
         noticeId: 6,
-        noticeTitle: "Seats are going to be free  6",
+        noticeTitle: "Hall security system updated",
         noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
-            edited: false,
+            edited: true,
             updatedDate: "12-08-21"
         },
         noticeDeadline: "12-4-22",
@@ -199,8 +199,8 @@ export const notices = [
     },
     {
         noticeId: 7,
-        noticeTitle: "Seats are going to be free  7",
-        noticeDescription: " employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        noticeTitle: "Application  for hall employee opened today",
+        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,
             updatedDate: "12-08-21"
@@ -216,7 +216,7 @@ export const notices = [
     },
     {
         noticeId: 8,
-        noticeTitle: "Seats are going to be free  8",
+        noticeTitle: "Hall website got some new updates",
         noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,
@@ -233,7 +233,7 @@ export const notices = [
     },
     {
         noticeId: 9,
-        noticeTitle: "Seats are going to be free  9",
+        noticeTitle: "Emplyees reunion will held near today",
         noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
         lastUpdated: {
             edited: false,
@@ -250,7 +250,7 @@ export const notices = [
     },
     {
         noticeId: 10,
-        noticeTitle: "Seats are going to be free  10",
+        noticeTitle: "Eid bonus for all Employee",
         noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,

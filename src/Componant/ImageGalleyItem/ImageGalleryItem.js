@@ -37,7 +37,7 @@ const ImageGalleryItem = ({heading, imageLoad}) => {
                     <option value="15">15</option>
                 </select>
 
-                <Pagination color='primary' variant="outlined" showFirstButton showLastButton siblingCount={1} boundaryCount={1} count={paginationCount} page={1} onChange={handlePageChange} />
+                <Pagination color='primary' variant="outlined" showFirstButton showLastButton siblingCount={1} boundaryCount={1} count={paginationCount} defaultPage={1} onChange={handlePageChange} />
             </div>
         </div>
     );

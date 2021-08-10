@@ -4,15 +4,18 @@ import Banner from '../../Componant/Banner/Banner';
 import Bulletin from '../../Componant/Bulletin/Bulletin';
 import DividerLeft from '../../Componant/DividerLeft/DividerLeft';
 import DividerRight from '../../Componant/DividerRight/DividerRight';
-import DrawerBoard from '../../Componant/DrawerBoard/DrawerBoard';
+import FeedBack from '../../Componant/FeedBack/FeedBack';
 import FooterLink from '../../Componant/FooterLink/FooterLink';
+import FooterMap from '../../Componant/FooterMap/FooterMap';
+import Navbar from '../../Componant/Navbar/Navbar';
 import OneClickLogin from '../../Componant/OneClickLogin/OneClickLogin';
+import Footer from '../../Componant/Footer/Footer'
 
 const Home = () => {
 const bulletin = "সকলের অবগতির জন্য জানানো যাইতেছে যে, এই ওয়েবসাইটটি আপাতত সংস্কার করা হইতেছে, তাই কেও দয়া করে এই ওয়েবসাইটের ক্ষতি হয় এমন কোনো কাজ করিবেন না। - আদেশক্রমে আব্দুর রব হল কতৃপক্ষ"
     return (
         <div>
-            {/* <DrawerBoard></DrawerBoard> */}
+            <Navbar></Navbar>
             <OneClickLogin></OneClickLogin> 
             <Bulletin bulletin={bulletin}></Bulletin>
             <Banner></Banner>
@@ -25,8 +28,17 @@ const bulletin = "সকলের অবগতির জন্য জানা�
                         <DividerRight></DividerRight>
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-md-6 my-3">
+                        <FooterMap></FooterMap>
+                    </div>
+                    <div className="col-md-6 my-3">
+                        <FeedBack></FeedBack>
+                    </div>
+                </div>
             </div>
             <FooterLink></FooterLink>
+            <Footer></Footer>
         </div>
     );
 };

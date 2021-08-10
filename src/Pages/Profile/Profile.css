@@ -34,9 +34,6 @@
     .profile-card-header {
         font-size: 1rem;
     }
-    .profile-card {
-        overflow: scroll;
-    }
 }
 
 /* sidenav css */
@@ -79,7 +76,7 @@
     top: 0;
     left: -281px;
     z-index: 9999;
-    transition: all .23s ease-in-out;
+    transition: all .53s ease-in-out;
     position: fixed;
 }
 
@@ -91,24 +88,33 @@
 
 .sideNav .sideNavIcon {
     background-color: rgb(231, 231, 231);
-    height: 40px;
-    width: 40px;
+    /* height: 40px;
+    width: 40px; */
     text-align: center;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     position: absolute;
     left: 100%;
-    top: 0;
+    top: 30%;
+    bottom: 30%;
+    margin: auto;
     cursor: pointer;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    transition: all .23s ease-in-out;
+    align-items: center; */
+    transition: all .53s ease-in-out;
+    writing-mode: vertical-lr;
+    padding: 0 5px;
+    font-size: larger;
+    font-style: italic;
+    display: inline-block;
+    border-radius: 0px 40px 40px 0px;
+
 }
 
-.sideNavBg.open .sideNavIcon {
+/* .sideNavBg.open .sideNavIcon {
     left: calc(100% - 40px);
     transform: rotate(360deg);
-}
+} */
 
 .sideNav .sideNavIcon i {
     font-size: 20px;
@@ -119,8 +125,12 @@
 
 .sideNav-header {
     width: 100%;
-    height: 20%;
+    height: 15%;
     color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
 }
 
 .sideNav-header ul li {
@@ -128,7 +138,7 @@
     margin: 0 auto;
 }
 
-.sideNav-header li .avater {
+.sideNav-header div .avater {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -139,9 +149,14 @@
     margin: 10px auto;
     text-align: center;
 }
+.sideNav-header .avater-parent {
+    display: inline-block;
+   
+}
 
 .sideNav-header .headerList {
-    padding: 20px;
+    display: inline-block;
+    padding: 10px;
 }
 
 /* ********sideNav Body************ */
@@ -155,22 +170,22 @@
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
-    transition: all .1s ease-in-out;
+    transition: all .35s ease-in-out;
 }
 
 .sideNav ul.navList li:hover {
-    background-color: rgb(27, 27, 27);
+    background-color: rgba(27, 27, 27, 0.521);
 }
 
 .sideNav .sideNav-body ul.bodyList {
     text-align: left;
     margin: 0;
-    padding: 10px 0px;
+    padding: 0px 0px;
 }
 
 .sideNav-body {
     width: 100%;
-    height: 60%;
+    height: 65%;
     color: #ffffff;
 }
 
@@ -183,6 +198,9 @@
 }
 .footerList{
     text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 .footerList li button {
     color: white;
@@ -196,10 +214,9 @@ hr {
 }
 
 .activeNow{
-    color: yellowgreen;
+    color: rgb(0, 255, 13);
 }
 
-.navList li.currentPage{
-    background-color: rgb(27, 27, 27);
-
+.navList  li.currentPage{
+    background-color: rgb(27, 27, 27) !important;
 }
