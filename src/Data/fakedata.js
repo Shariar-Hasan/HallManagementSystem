@@ -50,11 +50,11 @@ export const employee = {
     phoneNo: "01234567890",
     personalInfo: {
         phoneNo: "01234567890",
-        name: "Emplyee",
+        name: "Employee Khan",
         avater: "https://robohash.org/honey?set=set1",
         birthDate: "18-09-1998",
         fatherName: "Employees Father",
-        motherName: "Emplayees Mother",
+        motherName: "Employees Mother",
         contact: {
             address: "Employee er basha",
             city: "emplye city",
@@ -65,7 +65,9 @@ export const employee = {
         }
     },
     institutional: {
-        department: "Jharudar",
+        job: "Jharudar",
+        joiningDate: "12-09-13",
+        leavingDate: ""
     },
     authentication: {
         isAdmin: false,
@@ -76,8 +78,14 @@ export const employee = {
 export const admin = {
     name: " Admin 1",
     email: "admin@gmail.com",
-    isAdmin: true,
-    isSuperAdmin: true
+    authentication: {
+        isAdmin: true,
+        isSuperAdmin: true,
+        isStudent: false,
+        isEmployee: true
+    },
+
+
 }
 
 

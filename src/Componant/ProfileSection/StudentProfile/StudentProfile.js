@@ -2,7 +2,7 @@ import { Button } from '@material-ui/core';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) => {
+const StudentProfile = ({ personalInfo, contact, institutional, hallDetails }) => {
     const { id, name, avater, birthDate, fatherName, motherName } = personalInfo;
     const { address, city, division, zip, phoneNo, email } = contact;
     const { course, department, session } = institutional;
@@ -149,4 +149,4 @@ const ProfileSection = ({ personalInfo, contact, institutional, hallDetails }) =
     );
 };
 
-export default ProfileSection;
+export default StudentProfile;

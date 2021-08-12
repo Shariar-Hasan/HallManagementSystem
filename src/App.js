@@ -31,47 +31,44 @@ function App() {
 
         <Router>
           <Switch>
-            <Route exact  path="/">
+            <Route exact path="/">
               <Home></Home>
             </Route>
 
-            <Route  path="/profile">
+            <Route path="/profile">
               <Profile></Profile>
             </Route>
 
-            <Route  path="/apply">
+            <Route path="/apply">
               <Apply></Apply>
             </Route>
 
-            <Route  path="/login">
+            <Route path="/login">
               <Login></Login>
             </Route>
 
-            <Route  path="/cPanelLogin">
+            <Route path="/cPanelLogin">
               <CPanelLogin></CPanelLogin>
             </Route>
 
-            <Route  path="/dashboard">
+            <Route path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
 
-            <Route  path="/faq">
+            <Route path="/faq">
               <FAQ></FAQ>
             </Route>
 
-            <Route  path="/gallery">
+            <Route path="/gallery">
               <Gallery ></Gallery>
             </Route>
 
-            <Route path="/notice/:newsId">
-              <NoticeBoard></NoticeBoard>
-            </Route>
             <Route path="/notice">
               <NoticeBoard></NoticeBoard>
             </Route>
 
             <Route path="*">
-              <NotAvailable></NotAvailable>
+              <NotAvailable message={"You have choosen a wrong path"} errorCode={404}></NotAvailable>
             </Route>
           </Switch>
         </Router>
