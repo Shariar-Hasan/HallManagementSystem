@@ -38,6 +38,14 @@ export const student = {
             roomNo: 341,
         },
     ],
+    notifications: [
+        {
+            title: "Eita ekta simple notification panel"
+        },
+        {
+            title: "za kina 7 second por vanish hoi zabe"
+        },
+    ],
     authentication: {
         isAdmin: false,
         isStudent: true,
@@ -76,13 +84,16 @@ export const employee = {
     }
 }
 export const admin = {
-    name: " Admin 1",
     email: "admin@gmail.com",
+    personalInfo: {
+        name: " Admin 1",
+        email: "admin@gmail.com",
+    },
     authentication: {
         isAdmin: true,
         isSuperAdmin: true,
         isStudent: false,
-        isEmployee: true
+        isEmployee: false
     },
 
 
@@ -123,7 +134,7 @@ export const notices = [
     {
         noticeId: 2,
         noticeTitle: "Hall construction project going to start in near",
-        noticeDescription: "pubic Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        noticeDescription: "pubic Shaheed Abdur Rab Hall Seats are Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente quaerat, voluptatem dolor, quo velit architecto saepe numquam vero repudiandae minus perspiciatis autem. Vero in aperiam vel nam dolor nihil nesciunt dicta cumque recusandae tenetur deserunt quaerat incidunt nulla illum ex odit ut modi maxime fugiat repudiandae veritatis ea consequatur, voluptatibus libero? Modi dolores praesentium ratione quo cumque, eum deserunt est nostrum sunt quasi nihil asperiores hic neque sint voluptas eaque? Corrupti, repellendus! Excepturi laudantium ea cumque architecto officia! Ipsum quaerat eius velit commodi sit excepturi dignissimos ullam. Ut, temporibus praesentium, nemo rerum commodi modi amet accusamus deserunt, perferendis adipisci suscipit. Hic ea facere molestias, minima in velit adipisci cum quaerat. Doloremque ratione aliquid placeat ipsa ad quae est explicabo rerum aspernatur modi. Fugit, aut laboriosam. Expedita dolorum nesciunt corrupti, dolore sit, non perspiciatis commodi assumenda corporis amet odit sed? Voluptas iste, debitis harum a omnis aperiam deserunt error alias, laborum amet exercitationem provident animi maiores itaque? Nam, ab debitis perferendis perspiciatis iste porro tenetur iusto id ipsum fuga, illum beatae vel doloremque aliquam sunt architecto totam natus ratione, nostrum dolorem ipsa quod atque. Explicabo qui cumque, rem, quam accusantium aliquam perferendis porro magnam pariatur exercitationem optio, labore harum illo eos. going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
         lastUpdated: {
             edited: false,
             updatedDate: "12-08-21"

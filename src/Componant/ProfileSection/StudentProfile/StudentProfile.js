@@ -132,7 +132,7 @@ const StudentProfile = ({ personalInfo, contact, institutional, hallDetails }) =
                                         <td>{
                                             hallDetails.length === i + 1
                                                 ?
-                                                <Button onClick={handleSeat}  variant="outlined" color="primary">{info.alloted ? "Renew Seat" : "Apply for Seat"}</Button>
+                                                <Button onClick={handleSeat}  variant="contained" color="primary">{info.alloted ? "Renew Seat" : "Apply for Seat"}</Button>
                                                 :
                                                 "N/A"
                                         }

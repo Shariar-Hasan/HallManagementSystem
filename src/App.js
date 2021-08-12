@@ -14,6 +14,9 @@ import CPanelLogin from './Pages/CPanelLogin/CPanelLogin';
 import './App.css';
 import { createContext, useState } from 'react';
 import { images } from './Data/fakedata';
+import { NotificationManager } from 'react-notifications';
+import { useEffect } from 'react';
+import { isStudent } from './Functions/autoFunctions';
 
 
 export const UserContext = createContext()
@@ -24,6 +27,11 @@ function App() {
   const [loginUser, setLoginUser] = useState(null)
   const imageLoad = images;
   const [show, setShow] = useState(false);
+  useEffect(() => {
+    if (loginUser?.notifications?.length > 0 && isStudent(loginUser)) {
+      NotificationManager.info("You have new notification to check", "Reminder", 3000)
+    }
+  }, [loginUser])
 
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>

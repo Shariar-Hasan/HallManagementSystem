@@ -1,17 +1,12 @@
 
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 const EmployeeProfile = ({ personalInfo, contact, institutional, hallDetails }) => {
     const { phoneNo, name, avater, birthDate, fatherName, motherName } = personalInfo;
-    const { address, city, division, zip,  email } = contact;
-    const {  job, joiningDate, leavingDate } = institutional;
-    const history = useHistory()
+    const { address, city, division, zip, email } = contact;
+    const { job, joiningDate, leavingDate } = institutional;
 
 
-    const handleSeat = () => {
-        history.push("/apply")
-    }
     return (
         <div className="mx-auto col-9 my-2">
             <div className="profile-card shadow border-rounded">

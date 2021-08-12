@@ -16,6 +16,7 @@
     "react-fast-marquee": "^1.2.1",
     "react-hook-form": "^7.12.2",
     "react-image-gallery": "^1.2.6",
+    "react-notifications": "^1.7.2",
     "react-pro-sidebar": "^0.6.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

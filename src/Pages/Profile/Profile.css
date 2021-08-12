@@ -75,7 +75,7 @@
     position: absolute;
     top: 0;
     left: -281px;
-    z-index: 9999;
+    z-index: 1001;
     transition: all .53s ease-in-out;
     position: fixed;
 }
@@ -108,7 +108,6 @@
     font-style: italic;
     display: inline-block;
     border-radius: 0px 40px 40px 0px;
-
 }
 
 /* .sideNavBg.open .sideNavIcon {
@@ -138,6 +137,15 @@
     margin: 0 auto;
 }
 
+.avater-parent img {
+    display: inline-block;
+    width: 50px;
+    height: auto;
+    border-radius: 20%;
+    margin: 10px auto;
+    text-align: center;
+}
+
 .sideNav-header div .avater {
     display: inline-block;
     width: 50px;
@@ -149,9 +157,10 @@
     margin: 10px auto;
     text-align: center;
 }
+
 .sideNav-header .avater-parent {
     display: inline-block;
-   
+    overflow: hidden;
 }
 
 .sideNav-header .headerList {
@@ -172,6 +181,26 @@
     color: #ffffff;
     transition: all .35s ease-in-out;
 }
+.sideNav ul.navList li i{
+    font-size: large;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.sideNav ul.navList li::before {
+    content: "";
+    font-weight: 900;
+    margin-right: 8px;
+    font-variant: normal;
+    margin-right: 10px;
+    font-size: 20px;
+    font-family: "Font Awesome 5 Free";
+}
 
 .sideNav ul.navList li:hover {
     background-color: rgba(27, 27, 27, 0.521);
@@ -185,23 +214,72 @@
 
 .sideNav-body {
     width: 100%;
-    height: 65%;
+    height: 60%;
     color: #ffffff;
+    overflow: auto;
+}
+
+.sideNav-body::-webkit-scrollbar {
+    display: none;
 }
 
 /* *********sideNav footer*********** */
 
 .sideNav-footer {
     width: 100%;
-    height: 20%;
+    height: 4%;
     color: #ffffff;
 }
-.footerList{
+
+.footerList {
     text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
+.footerList li {
+    display: inline-block;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.notification-pannel {
+    display: none;
+    border-radius: 5px;
+}
+
+.notification-pannel ul {
+    padding: 0;
+}
+
+.notification-pannel ul li {
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.notification-pannel ul li:last-child {
+    border-bottom: none
+}
+
+.footerList .notificationIcon {
+    position: relative;
+}
+
+.footerList .notificationIcon.notificationOpen .notification-pannel {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1002;
+    display: block;
+    background-color: aliceblue;
+    color: #000000;
+    text-align: center;
+}
+
 .footerList li button {
     color: white;
     padding: 10px 20px;
@@ -213,10 +291,10 @@ hr {
     background-color: rgb(15, 15, 15);
 }
 
-.activeNow{
+.activeNow {
     color: rgb(0, 255, 13);
 }
 
-.navList  li.currentPage{
+.navList li.currentPage {
     background-color: rgb(27, 27, 27) !important;
 }

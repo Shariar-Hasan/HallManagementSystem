@@ -3,27 +3,12 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from "./../../images/logo2-xl.png"
 import "./Navbar.css"
-import { isEmployee, isStudent } from '../../Functions/autoFunctions';
-import { Avatar, makeStyles } from '@material-ui/core';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import { isAdmin, isEmployee, isStudent } from '../../Functions/autoFunctions';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-    small: {
-        width: theme.spacing(4),
-        height: theme.spacing(4),
-    }
-}));
 
 
 const Navbar = () => {
     const [loginUser,] = useContext(UserContext)
-    const classes = useStyles();
 
     return (
         <div >
@@ -50,17 +35,13 @@ const Navbar = () => {
                             <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/notice">
                                 <li className="nav-item">Noticeboard</li>
                             </Link>
-                            {
-                                isStudent(loginUser) && <li className="nav-item" title="Notifications"><NotificationsIcon></NotificationsIcon><sup className="badge badge-secondary">0</sup></li>
-                            }
 
                             {
-                                (isEmployee(loginUser) || isStudent(loginUser))
+                                (isEmployee(loginUser) || isStudent(loginUser) || isAdmin(loginUser))
                                     ?
-                                    <li className="nav-item">
-
-                                        <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/profile" title={loginUser?.personalInfo.name}><Avatar className={classes.small} alt={loginUser?.personalInfo.avatar} src={loginUser?.personalInfo.avatar} >{loginUser?.personalInfo.name.charAt(0)}</Avatar></Link>
-                                    </li>
+                                    <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/profile" title={loginUser?.personalInfo.name}>
+                                        <li className="nav-item">Profile</li>
+                                    </Link>
                                     :
                                     <li className="nav-item dropdown">
                                         <span className="dropdown-link">Login</span>

@@ -67,6 +67,9 @@ textarea {
   border-radius: 8px;
   transition: all 1s ease-in-out;
 }
+.floating-news-inside::-webkit-scrollbar {
+  display: none;
+}
 .floating-news-inside{
   width: 100%;
   height: 100%;

@@ -1,16 +1,19 @@
-import { Button } from '@material-ui/core';
-import React, { useContext, useState } from 'react';
+
+import React, { useContext } from 'react';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import LockIcon from '@material-ui/icons/Lock';
 import { UserContext } from '../../App';
 import { Link } from 'react-router-dom';
+import { isStudent } from '../../Functions/autoFunctions';
 
 
-const SideNav = ({ navData }) => {
-    const [, setShow] = useState(false)
-    const [loginUser,] = useContext(UserContext)
+const SideNav = ({ navData = [] }) => {
+    const [loginUser, setLoginUser] = useContext(UserContext)
     const handleClick = () => {
-        setShow(prev => setShow(!prev))
-        document.querySelector('.sideNavBg').classList.toggle("open")
+        const dashBoardOpen = document.querySelector('.sideNavBg');
+        dashBoardOpen.classList.toggle("open");
+
     }
     const handleActivePage = (e) => {
         const list = document.querySelectorAll(".navList li");
@@ -21,8 +24,16 @@ const SideNav = ({ navData }) => {
         })
         e.target.className = 'currentPage';
     }
+    const handleNotifications = () => {
+        const notificationOpened = document.querySelector('.notificationIcon'); notificationOpened.classList.toggle('notificationOpen');
+        setTimeout(() => {
+            document.querySelector('.notificationIcon').className = 'notificationIcon';
+        }, 7 * 1000)
+
+    }
+
     return (
-        <div className="sideNavBg">
+        <div className="sideNavBg ">
             <div className="sideNavBlackBg" onClick={handleClick}></div>
             <div className="sideNav">
                 <div className="sideNavIcon" onClick={handleClick}>
@@ -30,9 +41,14 @@ const SideNav = ({ navData }) => {
                 </div>
                 <div className="sideNav-header">
                     <div className="avater-parent">
-                        <span className="avater">
-                            <i className="fas fa-user"></i>
-                        </span>
+                        {
+                            loginUser?.personalInfo?.avater ?
+                                <img src={loginUser?.personalInfo?.avater} alt={loginUser.personalInfo?.name} />
+                                : <span className="avater">
+                                    <i className="fas fa-user"></i>
+                                </span>
+                        }
+
                     </div>
                     <ul className="headerList">
                         <li><h5>{loginUser?.personalInfo.name}</h5></li>
@@ -41,10 +57,38 @@ const SideNav = ({ navData }) => {
 
                 </div>
                 <hr />
+                <div className="sideNav-footer">
+                    <ul className="footerList">
+                        {
+                            isStudent(loginUser)
+                            &&
+                            <li title="Notifications" className="notificationIcon" onClick={handleNotifications}><NotificationsIcon />
+                                {loginUser.notifications?.length > 0 && <sup className="badge badge-secondary">{loginUser.notifications.length}</sup>}
+                                {
+                                    loginUser.notifications?.length > 0
+                                    &&
+                                    <div className="notification-pannel">
+                                        <ul>
+                                            {
+                                                loginUser?.notifications.map(nt => <li>{nt.title}</li>)
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+
+                            </li>
+                        }
+
+                        <li title="Change Password"><LockIcon /> </li>
+                        <li title="Log Out" onClick={() => alert("log out ekhono banai nai, dhoirjo dhoro")}><ExitToAppIcon /> </li>
+                    </ul>
+                </div>
+                <hr />
                 <div className="sideNav-body">
                     <ul className="navList bodyList" onClick={handleActivePage}>
                         {
                             navData.map((li, i) => <Link to={li.link} key={i} style={{ textDecoration: "none", color: "white" }}><li className={li.class}>
+                                <i class={`${li.icon}`} aria-hidden="true"></i>
                                 {li.title}
                             </li></Link>)
                         }
@@ -52,9 +96,7 @@ const SideNav = ({ navData }) => {
                 </div>
                 <hr />
                 <div className="sideNav-footer">
-                    <ul className="footerList">
-                        <li><Button variant="outlined" color="primary"><ExitToAppIcon /> Logout</Button></li>
-                    </ul>
+                    <p style={{ fontSize: 14, textAlign: 'center' }}>&copy; Powered by University of Chittagong</p>
                 </div>
 
             </div>
