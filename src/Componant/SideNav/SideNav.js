@@ -8,8 +8,113 @@ import { Link } from 'react-router-dom';
 import { isStudent } from '../../Functions/autoFunctions';
 
 
-const SideNav = ({ navData = [] }) => {
+const SideNav = ({ user }) => {
     const [loginUser, setLoginUser] = useContext(UserContext)
+    const studentDashboardlist = [
+        {
+            title: "Profile",
+            link: "/profile",
+            class: "currentPage",
+            icon: "fas fa-user",
+        },
+        {
+            title: "Apply" || "Renew",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-pen-square",
+        },
+        {
+            title: "Notice Board",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-flag",
+        },
+        {
+            title: "Issue Box",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-info",
+        },
+    ]
+    const employeeDashboardlist = [
+        {
+            title: "Profile",
+            link: "/profile",
+            class: "currentPage",
+            icon: "fas fa-user",
+        },
+        {
+            title: "Notice Board",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-flag",
+        },
+        {
+            title: "Contact Help",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-question-circle",
+        },
+        {
+            title: "Issue Box",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-info",
+        },
+    ]
+    const adminDashboardlist = [
+        {
+            title: "Profile",
+            link: "/profile",
+            class: "currentPage",
+            icon: "fas fa-user",
+        },
+        {
+            title: "Dashboard",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-tasks",
+        },
+        {
+            title: "Upload Notice",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-edit",
+        },
+        {
+            title: "Hall Issue Check",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-info-circle",
+        },
+        {
+            title: "Hall Applications",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-envelope-open",
+        },
+        {
+            title: "Gallery Management",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-file-upload",
+        },
+        {
+            title: "Notification Management",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-bell",
+        },
+        {
+            title: "Help Section",
+            link: "/profile",
+            class: "",
+            icon: "fas fa-question-circle",
+        },
+    ]
+    const navData = (user === "student") ? studentDashboardlist : (user === "employee") ? employeeDashboardlist : (user === "admin") ? adminDashboardlist : [] ;
+
+
     const handleClick = () => {
         const dashBoardOpen = document.querySelector('.sideNavBg');
         dashBoardOpen.classList.toggle("open");
@@ -31,6 +136,7 @@ const SideNav = ({ navData = [] }) => {
         }, 7 * 1000)
 
     }
+
 
     return (
         <div className="sideNavBg ">

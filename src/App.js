@@ -51,7 +51,7 @@ function App() {
               <Apply></Apply>
             </Route>
 
-            <Route path="/login">
+            <Route path="/login/:user">
               <Login></Login>
             </Route>
 

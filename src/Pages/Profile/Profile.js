@@ -15,112 +15,11 @@ const Profile = () => {
 
     const { personalInfo, contact, institutional, hallDetails } = student;
     const [loginUser,] = useContext(UserContext)
-    const studentDashboardlist = [
-        {
-            title: "Profile",
-            link: "/profile",
-            class: "currentPage",
-            icon: "fas fa-user",
-        },
-        {
-            title: "Apply" || "Renew",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-pen-square",
-        },
-        {
-            title: "Notice Board",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-flag",
-        },
-        {
-            title: "Issue Box",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-info",
-        },
-    ]
-    const employeeDashboardlist = [
-        {
-            title: "Profile",
-            link: "/profile",
-            class: "currentPage",
-            icon: "fas fa-user",
-        },
-        {
-            title: "Notice Board",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-flag",
-        },
-        {
-            title: "Contact Help",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-question-circle",
-        },
-        {
-            title: "Issue Box",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-info",
-        },
-    ]
-    const adminDashboardlist = [
-        {
-            title: "Profile",
-            link: "/profile",
-            class: "currentPage",
-            icon: "fas fa-user",
-        },
-        {
-            title: "Dashboard",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-tasks",
-        },
-        {
-            title: "Upload Notice",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-edit",
-        },
-        {
-            title: "Hall Issue Check",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-info-circle",
-        },
-        {
-            title: "Hall Applications",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-envelope-open",
-        },
-        {
-            title: "Gallery Management",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-file-upload",
-        },
-        {
-            title: "Notification Management",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-bell",
-        },
-        {
-            title: "Help Section",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-question-circle",
-        },
-    ]
+    
 
     return (
         <>
-            <SideNav navData={(isStudent(loginUser) && studentDashboardlist) || (isEmployee(loginUser) && employeeDashboardlist) || (isAdmin(loginUser) && adminDashboardlist)}></SideNav>
+            <SideNav user={(isStudent(loginUser) && "student") || (isEmployee(loginUser) && "employee")}></SideNav>
             <div className="container">
                 <div className="row w-100">
                     <>

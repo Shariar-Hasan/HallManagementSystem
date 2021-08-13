@@ -9,20 +9,23 @@ body {
   /* overflow-x: hidden; */
 }
 
-.box-background{
+.box-background {
   background-color: blueviolet;
 }
+
 html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
   width: 10px;
   background-color: black;
 }
-::placeholder{
+
+::placeholder {
   font-style: italic;
   font-weight: 500;
 }
@@ -58,7 +61,6 @@ textarea {
   right: 0;
   bottom: 0;
   z-index: 1000;
-
   background-color: aliceblue;
   margin: 20px auto 0 auto;
   padding: 50px 20px;
@@ -67,15 +69,18 @@ textarea {
   border-radius: 8px;
   transition: all 1s ease-in-out;
 }
+
 .floating-news-inside::-webkit-scrollbar {
   display: none;
 }
-.floating-news-inside{
+
+.floating-news-inside {
   width: 100%;
   height: 100%;
   overflow: auto;
 }
-.floating-news-bg{
+
+.floating-news-bg {
   content: "";
   position: absolute;
   top: 0;
@@ -87,19 +92,52 @@ textarea {
   background-color: rgba(0, 0, 0, 0.425);
 }
 
-@media all and (max-width: 700px){
+/* login page and cPanlel page*/
+
+.loginPage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.loginBox {
+  background-color: rgb(206, 233, 255);
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+
+.form-control {
+  height: 50px;
+}
+.passfield{
+  position: relative;
+}
+.showHidePass{
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  cursor: pointer;
+}
+input[data-aria="password"]{
+  padding-right: 60px;
+}
+/* media section */
+
+@media all and (max-width: 700px) {
   .floating-news {
     height: 500px;
   }
 }
 
-@media all and (max-width: 500px){
+@media all and (max-width: 500px) {
   .floating-news {
     height: 450px;
   }
 }
 
-@media all and (max-width: 300px){
+@media all and (max-width: 300px) {
   .floating-news {
     height: 400px;
   }

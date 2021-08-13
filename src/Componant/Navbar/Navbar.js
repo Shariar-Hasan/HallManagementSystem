@@ -46,8 +46,8 @@ const Navbar = () => {
                                     <li className="nav-item dropdown">
                                         <span className="dropdown-link">Login</span>
                                         <ul className="dropdown-menu">
-                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/login?user=std"><li className="dropdown-item" >Student</li></Link>
-                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/login?user=emp"><li className="dropdown-item" >Employee</li></Link>
+                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/login/student"><li className="dropdown-item" >Student</li></Link>
+                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/login/employee"><li className="dropdown-item" >Employee</li></Link>
                                             <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/cPanelLogin"><li className="dropdown-item" >Admin</li></Link>
 
                                         </ul>
