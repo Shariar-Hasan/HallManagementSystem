@@ -33,7 +33,7 @@ const Login = () => {
         minLenError: `${(userIsStudent && "Student Id") || (userIsEmployee && "Phone No.")} must have ${(userIsStudent && "8") || (userIsEmployee && "11")} Digit`,
         onlyNumber: `Wrong ${(userIsStudent && "Id") || (userIsEmployee && "Phone No.")} Entered`,
         passReqError: `Password Required`,
-        passMinLenError: `Password must have 6 Digit`,
+        passMinLenError: `Password atleast have 6 digit`,
     }
     return (
         <div>
@@ -47,6 +47,7 @@ const Login = () => {
                                 <>
                                     <div className="loginBox col-md-5 ">
                                         <h4 className="card-title text-info text-center">{`${(userIsStudent && "Student") || (userIsEmployee && "Employee")} Login`}</h4>
+                                        <hr  />
                                         <form onSubmit={handleSubmit(onSubmit)}>
                                             <div className="form-group  my-4">
                                                 <input type="text" className="form-control form-control-lgd p-3" placeholder={`${(userIsStudent && "Student Id") || (userIsEmployee && "Employee Phone No")}`} {...register("id", {

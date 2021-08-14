@@ -284,6 +284,210 @@ export const notices = [
         },
         noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
     },
+    {
+        noticeId: 11,
+        noticeTitle: "Hall dining will closed for two days",
+        noticeDescription: "student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: true,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: true,
+            visibleToEmployee: false,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 12,
+        noticeTitle: "Hall Construction will be end very soon",
+        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: true,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: false,
+            visibleToEveryone: true,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 13,
+        noticeTitle: "Hall room services staff will here by tomorrow",
+        noticeDescription: " student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: true,
+            visibleToEmployee: false,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 14,
+        noticeTitle: "Hall security system updated",
+        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: true,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: false,
+            visibleToEveryone: true,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 15,
+        noticeTitle: "Application  for hall employee opened today",
+        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 16,
+        noticeTitle: "Hall website got some new updates",
+        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: false,
+            visibleToEveryone: true,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 17,
+        noticeTitle: "Emplyees reunion will held near today",
+        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 18,
+        noticeTitle: "Eid bonus for all Employee",
+        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 19,
+        noticeTitle: "Emplyees reunion will held near today",
+        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 20,
+        noticeTitle: "Eid bonus for all Employee",
+        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 21,
+        noticeTitle: "Emplyees reunion will held near today",
+        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
+    {
+        noticeId: 22,
+        noticeTitle: "Eid bonus for all Employee",
+        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
+        lastUpdated: {
+            edited: false,
+            updatedDate: "12-08-21"
+        },
+        noticeDeadline: "12-4-22",
+        noticePrivacy: {
+            visibleToStudent: false,
+            visibleToEmployee: true,
+            visibleToEveryone: false,
+
+        },
+        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    },
 ]
 
 

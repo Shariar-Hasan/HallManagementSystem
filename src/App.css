@@ -111,18 +111,59 @@ textarea {
 .form-control {
   height: 50px;
 }
-.passfield{
+
+.passfield {
   position: relative;
 }
-.showHidePass{
+
+.showHidePass {
   position: absolute;
   top: 30%;
   right: 10px;
   cursor: pointer;
 }
-input[data-aria="password"]{
+
+input[data-aria="password"] {
   padding-right: 60px;
 }
+
+/* pagination */
+
+.page-item {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  transition: all .35s ease-in-out;
+}
+.page-item:hover {
+  color: #ffffff;
+  background-color: #00203b ;
+}
+
+.previous-btn {
+  border-radius: 6px 0 0 6px;
+}
+
+.next-btn {
+  border-radius: 0 6px 6px 0;
+}
+
+
+.elementPerPage {
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+.page-item.active {
+  color: white;
+  background-color: #00203b;
+}
+
+.page-item.disabled-btn {
+  color: rgba(61, 61, 61, 0.418);
+  background-color: rgb(184, 182, 182);
+}
+
 /* media section */
 
 @media all and (max-width: 700px) {

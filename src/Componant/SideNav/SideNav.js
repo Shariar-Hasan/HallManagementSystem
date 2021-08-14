@@ -18,6 +18,12 @@ const SideNav = ({ user }) => {
             icon: "fas fa-user",
         },
         {
+            title: "Gallery",
+            link: "/gallery",
+            class: "",
+            icon: "fas fa-camera",
+        },
+        {
             title: "Apply" || "Renew",
             link: "/profile",
             class: "",
