@@ -7,15 +7,38 @@
     font-weight: 600;
 }
 
-.fake-avater i {
-    font-size: 5rem;
-    width: 80%;
+.fake-avater {
+    font-size: 2rem;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+.fake-avater i {
+    border: 1px solid #0084ff;
+    padding: 20px 10px;
+    background-color: #0084ff5b;
+    border-radius: 10px;
+    position: relative;
+}
+.ul_image_input{
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.floating-btn{
+    position: fixed;
+    bottom: 40px;
+    left: 40%;
+    right: 40%;
+    margin: 0 auto;
+}
 .profile-card {
     margin: 20px auto;
     border-radius: 7px;
@@ -25,7 +48,7 @@
 
 .profile-card-child {
     padding: 20px 30px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 /* responsive */

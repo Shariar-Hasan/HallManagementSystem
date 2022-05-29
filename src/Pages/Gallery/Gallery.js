@@ -17,9 +17,9 @@ const Gallery = () => {
     const [loginUser, setLoginUser] = useContext(UserContext)
     return (
         <>
-            {
+            {/* {
                 activeStatus(loginUser) && <SideNav user={(isStudent(loginUser) && "student") || (isEmployee(loginUser) && "employee")}></SideNav>
-            }
+            } */}
             <Navbar></Navbar>
             <SmallTalk heading={smallTalkData.heading} message={smallTalkData.text}></SmallTalk>
             <ImageGalleryItem heading="Gallery : Institutional Photos" imageLoad={institutionalImage}></ImageGalleryItem>

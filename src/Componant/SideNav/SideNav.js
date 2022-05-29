@@ -200,7 +200,7 @@ const SideNav = ({ user }) => {
                     <ul className="navList bodyList" onClick={handleActivePage}>
                         {
                             navData.map((li, i) => <Link to={li.link} key={i} style={{ textDecoration: "none", color: "white" }}><li className={li.class}>
-                                <i class={`${li.icon}`} aria-hidden="true"></i>
+                                <i className={`${li.icon}`} aria-hidden="true"></i>
                                 {li.title}
                             </li></Link>)
                         }

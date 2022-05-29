@@ -8,7 +8,7 @@ import { isAdmin, isEmployee, isStudent } from '../../Functions/autoFunctions';
 
 
 const Navbar = () => {
-    const [loginUser,] = useContext(UserContext)
+    const [loginUser,setLoginUser] = useContext(UserContext)
 
     return (
         <div >
@@ -48,12 +48,10 @@ const Navbar = () => {
                                         <ul className="dropdown-menu">
                                             <Link style={{ textDecoration: "none", color: "#2b2b2b" }} to="/login/student"><li className="dropdown-item" >Student</li></Link>
                                             <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/login/employee"><li className="dropdown-item" >Employee</li></Link>
-                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/cPanelLogin"><li className="dropdown-item" >Admin</li></Link>
-
+                                            <Link style={{ textDecoration: "none", color: "#2b2b2b" }} className="dropdown-item" to="/login/admin"><li className="dropdown-item" >Admin</li></Link>
                                         </ul>
                                     </li>
                             }
-
                         </ul>
                     </div>
                 </div>

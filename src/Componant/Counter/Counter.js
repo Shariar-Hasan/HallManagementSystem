@@ -1,15 +1,19 @@
 import React, { } from 'react';
+import { useState } from 'react';
 
 const Counter = () => {
+    const [oneTimeRun, setOneTimeRun] = useState(true)
     window.addEventListener('scroll', () => {
         const speed = 400;
         const counterParent = document.getElementById("counter");
-        let topSide = 0;
+        let topSide = Infinity;
         if (counterParent) {
             topSide = counterParent.getBoundingClientRect().top;
         }
         const screenSize = window.innerHeight;
-        if (topSide < screenSize / 2) {
+
+        if ((topSide < (screenSize / 2)) && oneTimeRun) {
+            setOneTimeRun(false)
             document.querySelectorAll(".counterNumber").forEach(counter => {
                 const updateCount = () => {
                     const end = +counter.getAttribute('data-counter');
@@ -18,7 +22,8 @@ const Counter = () => {
 
                     if (start < end) {
                         counter.innerText = start + inc;
-                        setTimeout(updateCount, 40)
+
+                        setTimeout(updateCount, 100)
                     }
                     else {
                         counter.innerText = end;

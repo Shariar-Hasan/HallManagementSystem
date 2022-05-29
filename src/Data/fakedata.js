@@ -3,7 +3,7 @@ export const student = {
     personalInfo: {
         id: 18701012,
         name: "Shariar Hasan",
-        avater: "http://cu.ac.bd/csd/assets/image/studentphoto/18701012_PRGTCAO37P.jpg",
+        avater: "xvdfb zdf",
         birthDate: "18-09-1998",
         fatherName: "Shah Alam Mazumder",
         motherName: "Kamrun Naher",
@@ -40,11 +40,60 @@ export const student = {
     ],
     notifications: [
         {
-            title: "Eita ekta simple notification panel"
-        },
-        {
-            title: "za kina 7 second por vanish hoi zabe"
-        },
+            title : "amar nam winter"
+        }
+    ],
+    authentication: {
+        isAdmin: false,
+        isStudent: true,
+        isEmployee: false
+    }
+
+}
+export const emptyStudent = {
+    id: 18701012,
+    personalInfo: {
+        id: 18701012,
+        name: "",
+        avater: "",
+        birthDate: "",
+        fatherName: "",
+        motherName: "",
+
+    },
+    contact: {
+        address: "",
+        city: "",
+        division: "",
+        zip: "",
+        phoneNo: "",
+        email: "",
+    },
+    institutional: {
+        course: "",
+        department: "",
+        session: ""
+    },
+    hallDetails: [
+        // {
+        //     alloted: true,
+        //     allotedDate: "12-12-2019",
+        //     cardExpiryDate: "12-12-2020",
+        //     expired: true,
+        //     roomNo: 341,
+        // },
+        // {
+        //     alloted: false,
+        //     allotedDate: "12-12-2020",
+        //     cardExpiryDate: "12-12-2021",
+        //     expired: true,
+        //     roomNo: 341,
+        // },
+    ],
+    notifications: [
+        // {
+        //     title : "amar nam winter"
+        // }
     ],
     authentication: {
         isAdmin: false,
@@ -1526,4 +1575,23 @@ export const footerLink4 = [
 
 ]
 
-
+export const randomRoom = [
+    {
+        roomNo : 441,
+        roomCapacity : 4,
+        roomPeapleId : [18701012, 18701018, 17701093, 17701024],
+        isRoomFree : false,
+    },
+    {
+        roomNo : 442,
+        roomCapacity : 4,
+        roomPeapleId : [18701012, 18701018, 17701093, 17701024],
+        isRoomFree : false,
+    },
+    {
+        roomNo : 443,
+        roomCapacity : 2,
+        roomPeapleId : [18701012, 18701018],
+        isRoomFree : false,
+    },
+]

@@ -55,9 +55,9 @@ function App() {
               <Login></Login>
             </Route>
 
-            <Route path="/cPanelLogin">
+            {/* <Route path="/cPanelLogin">
               <CPanelLogin></CPanelLogin>
-            </Route>
+            </Route> */}
 
             <Route path="/dashboard">
               <Dashboard></Dashboard>
