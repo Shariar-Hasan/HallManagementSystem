@@ -26,10 +26,12 @@ html {
 }
 
 ::placeholder {
-  font-style: italic;
+  font-style: none;
   font-weight: 500;
 }
-
+.cursor-pointer{
+  cursor: pointer;
+}
 .fake-line {
   height: 2000px;
 }

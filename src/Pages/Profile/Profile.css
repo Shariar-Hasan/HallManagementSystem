@@ -1,4 +1,5 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+
 .profile-card-header {
     background-color: #0084ff;
     padding: 10px 20px;
@@ -15,14 +16,17 @@
     justify-content: center;
     align-items: center;
 }
+
 .fake-avater i {
     border: 1px solid #0084ff;
     padding: 20px 10px;
     background-color: #0084ff5b;
     border-radius: 10px;
     position: relative;
+    cursor: pointer;
 }
-.ul_image_input{
+
+.ul_image_input {
     background-color: red;
     height: 100%;
     width: 100%;
@@ -32,13 +36,15 @@
     left: 0;
     cursor: pointer;
 }
-.floating-btn{
+
+.floating-btn {
     position: fixed;
-    bottom: 40px;
+    bottom: 10px;
     left: 40%;
     right: 40%;
-    margin: 0 auto;
+    z-index: 10;
 }
+
 .profile-card {
     margin: 20px auto;
     border-radius: 7px;
@@ -204,7 +210,8 @@
     color: #ffffff;
     transition: all .35s ease-in-out;
 }
-.sideNav ul.navList li i{
+
+.sideNav ul.navList li i {
     font-size: large;
     margin-right: 10px;
     width: 30px;

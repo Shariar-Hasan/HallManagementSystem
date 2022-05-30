@@ -3,7 +3,7 @@ export const student = {
     personalInfo: {
         id: 18701012,
         name: "Shariar Hasan",
-        avater: "xvdfb zdf",
+        avater: "https://i.pravatar.cc/300",
         birthDate: "18-09-1998",
         fatherName: "Shah Alam Mazumder",
         motherName: "Kamrun Naher",
@@ -13,7 +13,7 @@ export const student = {
         address: "West Ukil para",
         city: "feni",
         division: "chittagong",
-        zip: 1010,
+        zip: "1010",
         phoneNo: "01866088233",
         email: "Hasan@gmail.com",
     },
@@ -106,20 +106,49 @@ export const emptyStudent = {
 export const employee = {
     phoneNo: "01234567890",
     personalInfo: {
-        phoneNo: "01234567890",
         name: "Employee Khan",
         avater: "https://robohash.org/honey?set=set1",
         birthDate: "18-09-1998",
         fatherName: "Employees Father",
         motherName: "Employees Mother",
-        contact: {
-            address: "Employee er basha",
-            city: "emplye city",
-            division: "emplyee division",
-            zip: 1000,
-            phoneNo: "01234567890",
-            email: "employee@gmail.com",
-        }
+    },
+    contact: {
+        address: "Employee er basha",
+        city: "emplye city",
+        division: "emplyee division",
+        zip: "1000",
+        phoneNo: "01234567890",
+        email: "employee@gmail.com",
+    },
+    institutional: {
+        job: "Jharudar",
+        joiningDate: "12-09-13",
+        leavingDate: ""
+    },
+    authentication: {
+        isAdmin: false,
+        isStudent: false,
+        isEmployee: true
+    }
+}
+
+export const emptyEmployee = {
+    phoneNo: "01234567890",
+    personalInfo: {
+        name: "",
+        avater: "",
+        birthDate: "",
+        fatherName: "",
+        motherName: "",
+        
+    },
+    contact: {
+        address: "",
+        city: "",
+        division: "",
+        zip: "",
+        phoneNo: "01234567890",
+        email: "",
     },
     institutional: {
         job: "Jharudar",
@@ -140,12 +169,9 @@ export const admin = {
     },
     authentication: {
         isAdmin: true,
-        isSuperAdmin: true,
         isStudent: false,
         isEmployee: false
     },
-
-
 }
 
 
@@ -1595,3 +1621,13 @@ export const randomRoom = [
         isRoomFree : false,
     },
 ]
+
+
+
+
+
+
+
+
+
+

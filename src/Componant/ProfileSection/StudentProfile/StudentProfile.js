@@ -1,8 +1,10 @@
-import { Button, Select } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import React from "react";
+import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
 import "../profile.css";
 import { useForm } from "react-hook-form";
+import { NotificationManager } from "react-notifications";
 
 const StudentProfile = ({
   personalInfo,
@@ -13,11 +15,30 @@ const StudentProfile = ({
   const { id, name, avater, birthDate, fatherName, motherName } = personalInfo;
   const { address, city, division, zip, phoneNo, email } = contact;
   const { course, department, session } = institutional;
-  const history = useHistory();
+  const allInfoFound =
+    (course &&
+      department &&
+      session &&
+      address &&
+      city &&
+      division &&
+      zip &&
+      phoneNo &&
+      email &&
+      name &&
+      avater &&
+      birthDate &&
+      motherName &&
+      fatherName) !== "";
+
   const { handleSubmit } = useForm();
   const onSubmit = (data) => {};
   const handleSeat = () => {
-    history.push("/apply");
+    if (allInfoFound) {
+      swal("Applied!", "Your application has been sent", "success");
+    } else {
+      NotificationManager.warning("WARNING!!!!  Please Complete your profile");
+    }
   };
   return (
     <div className="mx-auto col-9 my-2">
@@ -28,7 +49,11 @@ const StudentProfile = ({
           <div className="row  profile-card-child">
             <div className="col-md-4">
               {avater ? (
-                <img className="img-fluid mx-auto" src={avater} alt={name} />
+                <img
+                  className="img-fluid mx-auto"
+                  src={avater + `?u=${id}`}
+                  alt={name}
+                />
               ) : (
                 <div className="fake-avater">
                   <i className="fa fa-upload" aria-hidden="true">
@@ -200,7 +225,9 @@ const StudentProfile = ({
                       <div className="form-group">
                         <select className="form-control">
                           <option>B.Sc</option>
+                          <option>B.Sc Engineering</option>
                           <option>M.Sc</option>
+                          <option>M.Sc Engineering</option>
                         </select>
                       </div>
                     )}
@@ -255,26 +282,15 @@ const StudentProfile = ({
             </table>
           </div>
         </div>
+        {allInfoFound || (
+          <button type="submit" className="floating-btn  btn-lg btn-outline-primary">
+            Save informations
+            <i className="p-2 fas fa-save"></i>
+          </button>
+        )}
       </form>
-      {(!course ||
-        !department ||
-        !session ||
-        !address ||
-        !city ||
-        !division ||
-        !zip ||
-        !phoneNo ||
-        !email ||
-        !name ||
-        !avater ||
-        !birthDate ||
-        !fatherName ||
-        !motherName) && (
-        <button className="floating-btn  btn-lg btn-outline-primary">
-          Save informations
-        </button>
-      )}
-      <div className="profile-card shadow border-rounded">
+
+      <div className="profile-card mb-5 shadow border-rounded">
         <h3 className="profile-card-header">Hall Information</h3>
         <div className="row  profile-card-child">
           {hallDetails.length !== 0 ? (
@@ -324,7 +340,15 @@ const StudentProfile = ({
               </table>
             </>
           ) : (
-            <h4 className="text-center">No information</h4>
+            // <h4 className="text-center">No information</h4>
+            <Button
+              onClick={handleSeat}
+              variant="contained"
+              color="primary"
+              className="mx-auto"
+            >
+              Apply for Seat
+            </Button>
           )}
         </div>
       </div>

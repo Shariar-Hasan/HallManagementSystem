@@ -23,21 +23,21 @@ const SideNav = ({ user }) => {
             class: "",
             icon: "fas fa-camera",
         },
-        {
-            title: "Apply" || "Renew",
-            link: "/profile",
-            class: "",
-            icon: "fas fa-pen-square",
-        },
+        // {
+        //     title: "Apply" || "Renew",
+        //     link: "/profile",
+        //     class: "",
+        //     icon: "fas fa-pen-square",
+        // },
         {
             title: "Notice Board",
-            link: "/profile",
+            link: "/notice",
             class: "",
             icon: "fas fa-flag",
         },
         {
             title: "Issue Box",
-            link: "/profile",
+            link: "/issuebox",
             class: "",
             icon: "fas fa-info",
         },
@@ -51,35 +51,41 @@ const SideNav = ({ user }) => {
         },
         {
             title: "Notice Board",
-            link: "/profile",
+            link: "/notice",
             class: "",
             icon: "fas fa-flag",
         },
         {
             title: "Contact Help",
-            link: "/profile",
+            link: "/help",
             class: "",
             icon: "fas fa-question-circle",
         },
         {
             title: "Issue Box",
-            link: "/profile",
+            link: "/issuebox",
             class: "",
             icon: "fas fa-info",
         },
     ]
     const adminDashboardlist = [
-        {
-            title: "Profile",
-            link: "/profile",
-            class: "currentPage",
-            icon: "fas fa-user",
-        },
+        // {
+        //     title: "Profile",
+        //     link: "/profile",
+        //     class: "currentPage",
+        //     icon: "fas fa-user",
+        // },
         {
             title: "Dashboard",
             link: "/profile",
             class: "",
             icon: "fas fa-tasks",
+        },
+        {
+            title: "Users List",
+            link: "/userlist",
+            class: "",
+            icon: "fas fa-user",
         },
         {
             title: "Upload Notice",
@@ -89,13 +95,13 @@ const SideNav = ({ user }) => {
         },
         {
             title: "Hall Issue Check",
-            link: "/profile",
+            link: "/issuebox",
             class: "",
             icon: "fas fa-info-circle",
         },
         {
             title: "Hall Applications",
-            link: "/profile",
+            link: "/applications",
             class: "",
             icon: "fas fa-envelope-open",
         },
@@ -136,10 +142,11 @@ const SideNav = ({ user }) => {
         e.target.className = 'currentPage';
     }
     const handleNotifications = () => {
-        const notificationOpened = document.querySelector('.notificationIcon'); notificationOpened.classList.toggle('notificationOpen');
+        const notificationOpened = document.querySelector('.notificationIcon'); 
+        notificationOpened.classList.toggle('notificationOpen');
         setTimeout(() => {
             document.querySelector('.notificationIcon').className = 'notificationIcon';
-        }, 7 * 1000)
+        }, 2 * 1000)
 
     }
 
@@ -182,7 +189,7 @@ const SideNav = ({ user }) => {
                                     <div className="notification-pannel">
                                         <ul>
                                             {
-                                                loginUser?.notifications.map(nt => <li>{nt.title}</li>)
+                                                loginUser?.notifications.map((nt,i) => <li key={i}>{nt.title}</li>)
                                             }
                                         </ul>
                                     </div>

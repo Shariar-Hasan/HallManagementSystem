@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../App';
-import { admin, employee, emptyStudent, student } from '../../Data/fakedata';
+import { admin, emptyEmployee,  emptyStudent, student } from '../../Data/fakedata';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
@@ -11,8 +11,8 @@ const OneClickLogin = () => {
         <div>
             <NotificationContainer />
             <button onClick={() => setLoginUser(student)} className="btn btn-primary m-1">Student Login Button</button>
+            <button onClick={() => setLoginUser(emptyEmployee)} className="btn btn-primary m-1">Employee Login Button</button>
             <button onClick={() => setLoginUser(null)} className="btn btn-primary m-1">Log out</button>
-            <button onClick={() => setLoginUser(employee)} className="btn btn-primary m-1">Employee Login Button</button>
             <button onClick={() => setLoginUser(admin)} className="btn btn-primary m-1">Admin Login Button</button>
             <button onClick={() => NotificationManager.info("temporary popup settings")} className="btn btn-primary m-1">Fake push info</button>
             <button onClick={() => NotificationManager.success("this is a success push notification")} className="btn btn-primary m-1">Fake push success</button>

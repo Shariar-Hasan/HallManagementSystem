@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from "./Pages/Home/Home"
 import Profile from "./Pages/Profile/Profile"
-import Apply from "./Pages/Apply/Apply"
+import Applications from "./Pages/Applications/Applications"
 import Login from "./Pages/Login/Login"
 import NotAvailable from "./Pages/NotAvailable/NotAvailable"
 import Gallery from "./Pages/Gallery/Gallery"
@@ -17,6 +17,7 @@ import { images } from './Data/fakedata';
 import { NotificationManager } from 'react-notifications';
 import { useEffect } from 'react';
 import { isStudent } from './Functions/autoFunctions';
+import Userlist from './Pages/Userlist/Userlist';
 
 
 export const UserContext = createContext()
@@ -47,8 +48,12 @@ function App() {
               <Profile></Profile>
             </Route>
 
-            <Route path="/apply">
-              <Apply></Apply>
+            <Route path="/applications">
+              <Applications></Applications>
+            </Route>
+
+            <Route path="/userlist">
+              <Userlist></Userlist>
             </Route>
 
             <Route path="/login/:user">
