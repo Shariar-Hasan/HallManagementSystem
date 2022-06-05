@@ -33,8 +33,6 @@ const UserModal = ({ user, editingFunc , handlesubmit}) => {
     setUserDepartment(user?.institutional.department);
     setUserSession(user?.institutional.session);
   }, [user]);
-  console.log(userSession);
-  console.log(user);
   if (document.getElementById("modal")?.style.visibility === "hidden") {
     setEditInfo(false);
   }

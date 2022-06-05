@@ -26,7 +26,6 @@ function App() {
   const [loginUser, setLoginUser] = useState(JSON.parse(oldUser) );
   const imageLoad = images;
   const [show, setShow] = useState(false);
-  console.log(loginUser);
   useEffect(() => {
     if (loginUser?.notifications?.length > 0 && isStudent(loginUser)) {
       NotificationManager.info(

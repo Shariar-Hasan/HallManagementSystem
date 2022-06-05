@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import "../profile.css";
 import { useForm } from "react-hook-form";
 import { NotificationManager } from "react-notifications";
+import { generateInvoice } from "../../../Functions/autoFunctions";
 
 const StudentProfile = ({
   personalInfo,
@@ -39,6 +40,21 @@ const StudentProfile = ({
     } else {
       NotificationManager.warning("WARNING!!!!  Please Complete your profile");
     }
+  };
+  const handleHallLeave = () => {
+    swal({
+      title: `Confirm Leave`,
+      text: ", you want to leave the Hall",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willLeave) => {
+      if (willLeave) {
+        swal("User Left  the Hall", {
+          icon: "success",
+        });
+      }
+    });
   };
   return (
     <div className="mx-auto col-9 my-2">
@@ -283,7 +299,10 @@ const StudentProfile = ({
           </div>
         </div>
         {allInfoFound || (
-          <button type="submit" className="floating-btn  btn-lg btn-outline-primary">
+          <button
+            type="submit"
+            className="floating-btn  btn-lg btn-outline-primary"
+          >
             Save informations
             <i className="p-2 fas fa-save"></i>
           </button>
@@ -350,6 +369,17 @@ const StudentProfile = ({
               Apply for Seat
             </Button>
           )}
+        </div>
+      </div>
+      <div className="profile-card mb-5 shadow border-rounded">
+        <h3 className="profile-card-header">Hall Leave</h3>
+        <div className="row  profile-card-child">
+          <button
+            className="btn btn-block btn-outline-primary"
+            onClick={handleHallLeave}
+          >
+            Leave Hall
+          </button>
         </div>
       </div>
     </div>

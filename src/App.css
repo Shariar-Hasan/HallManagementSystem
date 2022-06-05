@@ -185,3 +185,6 @@ input[data-aria="password"] {
     height: 400px;
   }
 }
+.hover-text-white:hover{
+  color: white !important;
+}

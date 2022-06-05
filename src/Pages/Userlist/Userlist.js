@@ -4,6 +4,8 @@ import swal from "sweetalert";
 import UserModal from "../../Componant/UserModal/UserModal";
 import SideNav from "./../../Componant/SideNav/SideNav";
 import UsersListUser from "../../Componant/UsersListUser/UsersListUser";
+import { fakeEmployees } from "../../Data/fakeEmployeeList";
+import { fakeStudents } from "../../Data/fakeStudentList";
 
 const Userlist = () => {
   const [allUser, setAllUser] = useState([]);
@@ -11,25 +13,21 @@ const Userlist = () => {
   const [employeeList, setEmployeeList] = useState([]);
   const [clickedUser, setClickedUser] = useState();
   const [editInfo, setEditInfo] = useState(false);
+  // useEffect(() => {
+  //   fetch("./../../Data/fakeStudentList.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setStudentList(data));
+  // }, []);
   useEffect(() => {
-    fetch("./../../Data/fakeEmployeeList.json")
-    .then(data => setStudentList(data))
-
-    console.log(studentList);
+    setEmployeeList(fakeEmployees);
+    setStudentList(fakeStudents);
   }, []);
+
   useEffect(() => {
-    fetch("./../../Data/fakeEmployeeList.json")
-    .then(data => setEmployeeList(data))
-
-    console.log(employeeList);
-
-  }, []);
-  useEffect(() => {
-    const newFakeList = fakeUserlist.filter(
-      (user) => user.authentication.isAdmin !== true
-    );
-    setAllUser(newFakeList);
-  }, []);
+    const fakeUserList = [...fakeEmployees, ...fakeStudents];
+    fakeUserList.sort(() => (Math.random() > 0.5 ? -1 : 1));
+    setAllUser(fakeUserList);
+  }, [employeeList, studentList]);
 
   const handleUserClick = (user) => {
     setEditInfo(false);
@@ -39,7 +37,6 @@ const Userlist = () => {
   // function all
   const handlesubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
     document.getElementById("clickid").click();
   };
   const handleDelete = (name) => {
@@ -73,7 +70,7 @@ const Userlist = () => {
           <div className="col-md-11 mx-auto">
             <div className="table-responsive">
               <table className="table  text-left table-striped cursor-pointer">
-                <thead>
+                <thead className="thead-light">
                   <tr>
                     <th scope="col">Id/Phone</th>
                     <th scope="col">Avater</th>
