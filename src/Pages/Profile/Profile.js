@@ -17,13 +17,7 @@ const Profile = () => {
 
   return (
     <>
-      <SideNav
-        user={
-          (isStudent(loginUser) && "student") ||
-          (isEmployee(loginUser) && "employee") ||
-          (isAdmin(loginUser) && "admin")
-        }
-      ></SideNav>
+      <SideNav></SideNav>
       <NotificationContainer />
 
       <div className="container">

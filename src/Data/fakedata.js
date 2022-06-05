@@ -1,10 +1,10 @@
 export const student = {
-    id: 18701012,
+    id: "18701012",
     personalInfo: {
-        id: 18701012,
+        id: "18701012",
         name: "Shariar Hasan",
         avater: "https://i.pravatar.cc/300",
-        birthDate: "18-09-1998",
+        birthDate: "09/18/1998",
         fatherName: "Shah Alam Mazumder",
         motherName: "Kamrun Naher",
 
@@ -50,65 +50,43 @@ export const student = {
     }
 
 }
-export const emptyStudent = {
-    id: 18701012,
-    personalInfo: {
-        id: 18701012,
-        name: "",
-        avater: "",
-        birthDate: "",
-        fatherName: "",
-        motherName: "",
+// export const emptyStudent = {
+//     id: "01234567891",
+//     personalInfo: {
+//         id: "01234567891",
+//         name: "Abdul Bari",
+//         avater: "https://i.pravatar.cc/300",
+//         birthDate: "08/22/1992",
+//         fatherName: "Abul Kashem",
+//         motherName: "Amena Begum",
 
-    },
-    contact: {
-        address: "",
-        city: "",
-        division: "",
-        zip: "",
-        phoneNo: "",
-        email: "",
-    },
-    institutional: {
-        course: "",
-        department: "",
-        session: ""
-    },
-    hallDetails: [
-        // {
-        //     alloted: true,
-        //     allotedDate: "12-12-2019",
-        //     cardExpiryDate: "12-12-2020",
-        //     expired: true,
-        //     roomNo: 341,
-        // },
-        // {
-        //     alloted: false,
-        //     allotedDate: "12-12-2020",
-        //     cardExpiryDate: "12-12-2021",
-        //     expired: true,
-        //     roomNo: 341,
-        // },
-    ],
-    notifications: [
-        // {
-        //     title : "amar nam winter"
-        // }
-    ],
-    authentication: {
-        isAdmin: false,
-        isStudent: true,
-        isEmployee: false
-    }
-
-}
+//     },
+//     contact: {
+//         address: "West Monu Bari",
+//         city: "Mymanshingh",
+//         division: "Mymanshingh",
+//         zip: "1234",
+//         phoneNo: "01234567891",
+//         email: "employee@gmail.com",
+//     },
+//     institutional: {
+//         course: "4th Class",
+//         department: "Hall Employee",
+//         session: "02/05/2022"
+//     },
+//     authentication: {
+//         isAdmin: false,
+//         isStudent: false,
+//         isEmployee: true,
+//     }
+// }
 
 export const employee = {
     phoneNo: "01234567890",
     personalInfo: {
         name: "Employee Khan",
-        avater: "https://robohash.org/honey?set=set1",
-        birthDate: "18-09-1998",
+        avater: "https://i.pravatar.cc/300",
+        birthDate: "02/05/2022",
         fatherName: "Employees Father",
         motherName: "Employees Mother",
     },
@@ -121,9 +99,9 @@ export const employee = {
         email: "employee@gmail.com",
     },
     institutional: {
-        job: "Jharudar",
-        joiningDate: "12-09-13",
-        leavingDate: ""
+        course: "Jharudar",
+        department: "Hall Employee",
+        session: "02/05/2022"
     },
     authentication: {
         isAdmin: false,
@@ -132,40 +110,45 @@ export const employee = {
     }
 }
 
-export const emptyEmployee = {
-    phoneNo: "01234567890",
-    personalInfo: {
-        name: "",
-        avater: "",
-        birthDate: "",
-        fatherName: "",
-        motherName: "",
+// export const emptyEmployee = {
+//     phoneNo: "01234567890",
+//     personalInfo: {
+//         name: "",
+//         avater: "",
+//         birthDate: "",
+//         fatherName: "",
+//         motherName: "",
         
-    },
-    contact: {
-        address: "",
-        city: "",
-        division: "",
-        zip: "",
-        phoneNo: "01234567890",
-        email: "",
-    },
-    institutional: {
-        job: "Jharudar",
-        joiningDate: "12-09-13",
-        leavingDate: ""
-    },
-    authentication: {
-        isAdmin: false,
-        isStudent: false,
-        isEmployee: true
-    }
-}
+//     },
+//     contact: {
+//         address: "",
+//         city: "",
+//         division: "",
+//         zip: "",
+//         phoneNo: "01234567890",
+//         email: "",
+//     },
+//     institutional: {
+//         course: "Jharudar",
+//         department: "12-09-13",
+//         session: ""
+//     },
+//     authentication: {
+//         isAdmin: false,
+//         isStudent: false,
+//         isEmployee: true
+//     }
+// }
+
+
+
+
 export const admin = {
     email: "admin@gmail.com",
     personalInfo: {
         name: " Admin 1",
         email: "admin@gmail.com",
+        avater : "https://i.pravatar.cc/300"
     },
     authentication: {
         isAdmin: true,

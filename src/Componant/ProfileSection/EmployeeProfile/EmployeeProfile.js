@@ -9,7 +9,7 @@ const EmployeeProfile = ({
   const { phoneNo, name, avater, birthDate, fatherName, motherName, email } =
     personalInfo;
   const { address, city, division, zip } = contact;
-  const { job, joiningDate, leavingDate } = institutional;
+  const { course, department, session } = institutional;
   console.log(personalInfo, contact, institutional)
   const allInfoFound =
     phoneNo &&
@@ -177,16 +177,16 @@ const EmployeeProfile = ({
           <table className="table table-responsive-sm text-center table-bordered w-100">
             <thead>
               <tr>
-                <th>Job</th>
+                <th>course</th>
                 <th>Joining Date</th>
                 <th>Leaving Date</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>{job}</td>
-                <td>{joiningDate}</td>
-                <td>{leavingDate || "--"}</td>
+                <td>{course}</td>
+                <td>{department}</td>
+                <td>{session || "--"}</td>
               </tr>
             </tbody>
           </table>

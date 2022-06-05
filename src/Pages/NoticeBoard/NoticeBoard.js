@@ -8,6 +8,7 @@ import FloatNews from '../../Componant/FloatNews/FloatNews';
 import Footer from '../../Componant/Footer/Footer';
 import Navbar from '../../Componant/Navbar/Navbar';
 import NoticeCard from '../../Componant/NoticeCard/NoticeCard';
+// import TextEditor from '../../Componant/TextEditor/TextEditor';
 import { notices } from '../../Data/fakedata';
 import { isEmployee, isStudent } from '../../Functions/autoFunctions';
 
@@ -99,7 +100,13 @@ const NoticeBoard = () => {
                 <FloatNews hideFloatingNews={hideFloatingNews} floatingNews={floatingNews} ></FloatNews>
 
             }
-
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-10 mx-auto">
+                        {/* <TextEditor placeholder={"hasan"}></TextEditor> */}
+                    </div>
+                </div>
+            </div>
             <div className="container">
                 <div className="row ">
                     <div className="col-md mt-5">

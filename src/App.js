@@ -1,43 +1,45 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Profile from "./Pages/Profile/Profile";
+import Applications from "./Pages/Applications/Applications";
+import Login from "./Pages/Login/Login";
+import NotAvailable from "./Pages/NotAvailable/NotAvailable";
+import Gallery from "./Pages/Gallery/Gallery";
+import FAQ from "./Pages/FAQ/FAQ";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import NoticeBoard from "./Pages/NoticeBoard/NoticeBoard";
+import CPanelLogin from "./Pages/CPanelLogin/CPanelLogin";
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from "./Pages/Home/Home"
-import Profile from "./Pages/Profile/Profile"
-import Applications from "./Pages/Applications/Applications"
-import Login from "./Pages/Login/Login"
-import NotAvailable from "./Pages/NotAvailable/NotAvailable"
-import Gallery from "./Pages/Gallery/Gallery"
-import FAQ from "./Pages/FAQ/FAQ"
-import Dashboard from "./Pages/Dashboard/Dashboard"
-import NoticeBoard from "./Pages/NoticeBoard/NoticeBoard"
-import CPanelLogin from './Pages/CPanelLogin/CPanelLogin';
+import "./App.css";
+import { createContext, useState } from "react";
+import { images } from "./Data/fakedata";
+import { NotificationManager } from "react-notifications";
+import { useEffect } from "react";
+import { isStudent } from "./Functions/autoFunctions";
+import Userlist from "./Pages/Userlist/Userlist";
 
-import './App.css';
-import { createContext, useState } from 'react';
-import { images } from './Data/fakedata';
-import { NotificationManager } from 'react-notifications';
-import { useEffect } from 'react';
-import { isStudent } from './Functions/autoFunctions';
-import Userlist from './Pages/Userlist/Userlist';
-
-
-export const UserContext = createContext()
-export const DataContext = createContext()
-
+export const UserContext = createContext();
+export const DataContext = createContext();
 
 function App() {
-  const [loginUser, setLoginUser] = useState(null)
+  const oldUser = localStorage.getItem("user") || {};
+  const [loginUser, setLoginUser] = useState(JSON.parse(oldUser) );
   const imageLoad = images;
   const [show, setShow] = useState(false);
+  console.log(loginUser);
   useEffect(() => {
     if (loginUser?.notifications?.length > 0 && isStudent(loginUser)) {
-      NotificationManager.info("You have new notification to check", "Reminder", 3000)
+      NotificationManager.info(
+        "You have new notification to check",
+        "Reminder",
+        3000
+      );
     }
-  }, [loginUser])
+  }, [loginUser]);
 
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <DataContext.Provider value={[imageLoad, [show, setShow]]}>
-
         <Router>
           <Switch>
             <Route exact path="/">
@@ -73,19 +75,24 @@ function App() {
             </Route>
 
             <Route path="/gallery">
-              <Gallery ></Gallery>
+              <Gallery></Gallery>
             </Route>
 
             <Route path="/notice">
               <NoticeBoard></NoticeBoard>
             </Route>
+            <Route path="/upload-notice">
+              <NoticeBoard></NoticeBoard>
+            </Route>
 
             <Route path="*">
-              <NotAvailable message={"You have choosen a wrong path"} errorCode={404}></NotAvailable>
+              <NotAvailable
+                message={"You have choosen a wrong path"}
+                errorCode={404}
+              ></NotAvailable>
             </Route>
           </Switch>
         </Router>
-
       </DataContext.Provider>
     </UserContext.Provider>
   );

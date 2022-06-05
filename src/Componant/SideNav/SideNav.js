@@ -23,12 +23,6 @@ const SideNav = ({ user }) => {
             class: "",
             icon: "fas fa-camera",
         },
-        // {
-        //     title: "Apply" || "Renew",
-        //     link: "/profile",
-        //     class: "",
-        //     icon: "fas fa-pen-square",
-        // },
         {
             title: "Notice Board",
             link: "/notice",
@@ -69,16 +63,10 @@ const SideNav = ({ user }) => {
         },
     ]
     const adminDashboardlist = [
-        // {
-        //     title: "Profile",
-        //     link: "/profile",
-        //     class: "currentPage",
-        //     icon: "fas fa-user",
-        // },
         {
             title: "Dashboard",
             link: "/profile",
-            class: "",
+            class: "currentPage",
             icon: "fas fa-tasks",
         },
         {
@@ -89,7 +77,7 @@ const SideNav = ({ user }) => {
         },
         {
             title: "Upload Notice",
-            link: "/profile",
+            link: "/upload-notice",
             class: "",
             icon: "fas fa-edit",
         },
@@ -124,7 +112,7 @@ const SideNav = ({ user }) => {
             icon: "fas fa-question-circle",
         },
     ]
-    const navData = (user === "student") ? studentDashboardlist : (user === "employee") ? employeeDashboardlist : (user === "admin") ? adminDashboardlist : [] ;
+    const navData = loginUser?.authentication?.isStudent  ? studentDashboardlist : loginUser?.authentication.isEmployee  ? employeeDashboardlist : loginUser?.authentication.isAdmin ? adminDashboardlist : [] ;
 
 
     const handleClick = () => {
