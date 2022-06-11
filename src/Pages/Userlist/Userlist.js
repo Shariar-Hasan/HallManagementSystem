@@ -59,7 +59,6 @@ const Userlist = () => {
 
   return (
     <div>
-      <SideNav></SideNav>
       <UserModal
         user={clickedUser}
         editingFunc={[editInfo, setEditInfo]}

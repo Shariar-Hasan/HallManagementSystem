@@ -12,16 +12,7 @@ export const isEmployee = (user) =>
 // checking logged in or not
 export const activeStatus = (data) => (data ? true : false);
 
-// when log in
-export const quickChangeOnLogIn = (data) => {
-  data.activeStatus.isActive = true;
-};
 
-// when log out
-export const quickChangeOnLogOut = (data) => {
-  data.activeStatus.isActive = false;
-  data.activeStatus.lastActive = new Date().toLocaleString();
-};
 
 // random invoice generator
 export const generateInvoice = () => {

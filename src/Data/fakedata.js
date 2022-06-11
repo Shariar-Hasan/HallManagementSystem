@@ -1,55 +1,62 @@
 export const student = {
+  id: "18701012",
+  personalInfo: {
     id: "18701012",
-    personalInfo: {
-        id: "18701012",
-        name: "Shariar Hasan",
-        avater: "https://i.pravatar.cc/300",
-        birthDate: "09/18/1998",
-        fatherName: "Shah Alam Mazumder",
-        motherName: "Kamrun Naher",
-
+    name: "Shariar Hasan",
+    avater: "https://i.pravatar.cc/300",
+    birthDate: "09/18/1998",
+    fatherName: "Shah Alam Mazumder",
+    motherName: "Kamrun Naher",
+  },
+  contact: {
+    address: "West Ukil para",
+    city: "feni",
+    division: "chittagong",
+    zip: "1010",
+    phoneNo: "01866088233",
+    email: "Hasan@gmail.com",
+  },
+  institutional: {
+    course: "B.Sc Engineering",
+    department: "Department of Computer Science",
+    session: "2017-18",
+  },
+  hallDetails: [
+    {
+      alloted: true,
+      allotedDate: "12-12-2019",
+      cardExpiryDate: "12-12-2020",
+      expired: true,
+      roomNo: 341,
     },
-    contact: {
-        address: "West Ukil para",
-        city: "feni",
-        division: "chittagong",
-        zip: "1010",
-        phoneNo: "01866088233",
-        email: "Hasan@gmail.com",
+    {
+      alloted: false,
+      allotedDate: "12-12-2020",
+      cardExpiryDate: "12-12-2021",
+      expired: true,
+      roomNo: 341,
     },
-    institutional: {
-        course: "B.Sc Engineering",
-        department: "Department of Computer Science",
-        session: "2017-18"
+  ],
+  notifications: [
+    {
+      title: "You hall card has been expired",
     },
-    hallDetails: [
-        {
-            alloted: true,
-            allotedDate: "12-12-2019",
-            cardExpiryDate: "12-12-2020",
-            expired: true,
-            roomNo: 341,
-        },
-        {
-            alloted: false,
-            allotedDate: "12-12-2020",
-            cardExpiryDate: "12-12-2021",
-            expired: true,
-            roomNo: 341,
-        },
-    ],
-    notifications: [
-        {
-            title : "amar nam winter"
-        }
-    ],
-    authentication: {
-        isAdmin: false,
-        isStudent: true,
-        isEmployee: false
-    }
-
-}
+    {
+      title: "New Notice Arrived! Please Check",
+    },
+    {
+      title: "New Notice Arrived! Please Check",
+    },
+    {
+      title: "Please Renew your Hall Card",
+    },
+  ],
+  authentication: {
+    isAdmin: false,
+    isStudent: true,
+    isEmployee: false,
+  },
+};
 // export const emptyStudent = {
 //     id: "01234567891",
 //     personalInfo: {
@@ -82,33 +89,33 @@ export const student = {
 // }
 
 export const employee = {
+  phoneNo: "01234567890",
+  personalInfo: {
+    name: "Employee Khan",
+    avater: "https://i.pravatar.cc/300",
+    birthDate: "02/05/2022",
+    fatherName: "Employees Father",
+    motherName: "Employees Mother",
+  },
+  contact: {
+    address: "Employee er basha",
+    city: "emplye city",
+    division: "emplyee division",
+    zip: "1000",
     phoneNo: "01234567890",
-    personalInfo: {
-        name: "Employee Khan",
-        avater: "https://i.pravatar.cc/300",
-        birthDate: "02/05/2022",
-        fatherName: "Employees Father",
-        motherName: "Employees Mother",
-    },
-    contact: {
-        address: "Employee er basha",
-        city: "emplye city",
-        division: "emplyee division",
-        zip: "1000",
-        phoneNo: "01234567890",
-        email: "employee@gmail.com",
-    },
-    institutional: {
-        course: "Jharudar",
-        department: "Hall Employee",
-        session: "02/05/2022"
-    },
-    authentication: {
-        isAdmin: false,
-        isStudent: false,
-        isEmployee: true
-    }
-}
+    email: "employee@gmail.com",
+  },
+  institutional: {
+    course: "Jharudar",
+    department: "Hall Employee",
+    session: "02/05/2022",
+  },
+  authentication: {
+    isAdmin: false,
+    isStudent: false,
+    isEmployee: true,
+  },
+};
 
 // export const emptyEmployee = {
 //     phoneNo: "01234567890",
@@ -118,7 +125,7 @@ export const employee = {
 //         birthDate: "",
 //         fatherName: "",
 //         motherName: "",
-        
+
 //     },
 //     contact: {
 //         address: "",
@@ -140,1477 +147,1312 @@ export const employee = {
 //     }
 // }
 
-
-
-
 export const admin = {
+  email: "admin@gmail.com",
+  personalInfo: {
+    name: " Admin 1",
     email: "admin@gmail.com",
-    personalInfo: {
-        name: " Admin 1",
-        email: "admin@gmail.com",
-        avater : "https://i.pravatar.cc/300"
-    },
-    authentication: {
-        isAdmin: true,
-        isStudent: false,
-        isEmployee: false
-    },
-}
+    avater: "https://i.pravatar.cc/300",
+  },
+  authentication: {
+    isAdmin: true,
+    isStudent: false,
+    isEmployee: false,
+  },
+};
 
+export const allCity = [
+  "Barguna",
+  "Barisal",
+  "Bhola",
+  "Jhalokati",
+  "Patuakhali",
+  "Pirojpur",
+  "Bandarban",
+  "Brahmanbaria",
+  "Chandpur",
+  "Chittagong",
+  "Comilla",
+  "Cox's Bazar",
+  "Feni",
+  "Khagrachhari",
+  "Lakshmipur",
+  "Noakhali",
+  "Rangamati",
+  "Dhaka",
+  "Faridpur",
+  "Gazipur",
+  "Gopalganj",
+  "Kishoreganj",
+  "Madaripur",
+  "Manikganj",
+  "Munshiganj",
+  "Narayanganj",
+  "Narsingdi",
+  "Rajbari",
+  "Shariatpur",
+  "Tangail",
+  "Bagerhat",
+  "Chuadanga",
+  "Jessore",
+  "Jhenaidah",
+  "Khulna",
+  "Kushtia",
+  "Magura",
+  "Meherpur",
+  "Narail",
+  "Satkhira",
+  "Jamalpur",
+  "Mymensingh",
+  "Netrokona",
+  "Sherpur",
+  "Bogra",
+  "Joypurhat",
+  "Naogaon",
+  "Natore",
+  "Chapainawabganj",
+  "Pabna",
+  "Rajshahi",
+  "Sirajganj",
+  "Dinajpur",
+  "Gaibandha",
+  "Kurigram",
+  "Lalmonirhat",
+  "Nilphamari",
+  "Panchagarh",
+  "Rangpur",
+  "Thakurgaon",
+  "Habiganj",
+  "Moulvibazar",
+  "Sunamganj",
+  "Sylhet",
+];
 
-export const allCity = ["Barguna", "Barisal", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur", "Bandarban", "Brahmanbaria", "Chandpur", "Chittagong", "Comilla", "Cox's Bazar", "Feni", "Khagrachhari", "Lakshmipur", "Noakhali", "Rangamati", "Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj", "Narayanganj", "Narsingdi", "Rajbari", "Shariatpur", "Tangail", "Bagerhat", "Chuadanga", "Jessore", "Jhenaidah", "Khulna", "Kushtia", "Magura", "Meherpur", "Narail", "Satkhira", "Jamalpur", "Mymensingh", "Netrokona", "Sherpur", "Bogra", "Joypurhat", "Naogaon", "Natore", "Chapainawabganj", "Pabna", "Rajshahi", "Sirajganj", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Rangpur", "Thakurgaon", "Habiganj", "Moulvibazar", "Sunamganj", "Sylhet"]
-
-
-export const cityOfBarishal = ["Barguna", "Barisal", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur"]
-export const cityOfChittagong = ["Bandarban", "Brahmanbaria", "Chandpur", "Chittagong", "Comilla", "Cox's Bazar", "Feni", "Khagrachhari", "Lakshmipur", "Noakhali", "Rangamati "]
-export const cityOfDhaka = ["Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj", "Narayanganj", "Narsingdi", "Rajbari", "Shariatpur", "Tangail"]
-export const cityOfKhulna = ["Bagerhat", "Chuadanga", "Jessore", "Jhenaidah", "Khulna", "Kushtia", "Magura", "Meherpur", "Narail", "Satkhira"]
-export const cityOfMymensingh = ["Jamalpur", "Mymensingh", "Netrokona", "Sherpur"]
-export const cityOfRajshahi = ["Bogra", "Joypurhat", "Naogaon", "Natore", "Chapainawabganj", "Pabna", "Rajshahi", "Sirajganj"]
-export const cityOfRangpur = ["Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Rangpur", "Thakurgaon"]
-export const cityOfSylhet = ["Habiganj", "Moulvibazar", "Sunamganj", "Sylhet"]
-
-
+export const cityOfBarishal = [
+  "Barguna",
+  "Barisal",
+  "Bhola",
+  "Jhalokati",
+  "Patuakhali",
+  "Pirojpur",
+];
+export const cityOfChittagong = [
+  "Bandarban",
+  "Brahmanbaria",
+  "Chandpur",
+  "Chittagong",
+  "Comilla",
+  "Cox's Bazar",
+  "Feni",
+  "Khagrachhari",
+  "Lakshmipur",
+  "Noakhali",
+  "Rangamati ",
+];
+export const cityOfDhaka = [
+  "Dhaka",
+  "Faridpur",
+  "Gazipur",
+  "Gopalganj",
+  "Kishoreganj",
+  "Madaripur",
+  "Manikganj",
+  "Munshiganj",
+  "Narayanganj",
+  "Narsingdi",
+  "Rajbari",
+  "Shariatpur",
+  "Tangail",
+];
+export const cityOfKhulna = [
+  "Bagerhat",
+  "Chuadanga",
+  "Jessore",
+  "Jhenaidah",
+  "Khulna",
+  "Kushtia",
+  "Magura",
+  "Meherpur",
+  "Narail",
+  "Satkhira",
+];
+export const cityOfMymensingh = [
+  "Jamalpur",
+  "Mymensingh",
+  "Netrokona",
+  "Sherpur",
+];
+export const cityOfRajshahi = [
+  "Bogra",
+  "Joypurhat",
+  "Naogaon",
+  "Natore",
+  "Chapainawabganj",
+  "Pabna",
+  "Rajshahi",
+  "Sirajganj",
+];
+export const cityOfRangpur = [
+  "Dinajpur",
+  "Gaibandha",
+  "Kurigram",
+  "Lalmonirhat",
+  "Nilphamari",
+  "Panchagarh",
+  "Rangpur",
+  "Thakurgaon",
+];
+export const cityOfSylhet = ["Habiganj", "Moulvibazar", "Sunamganj", "Sylhet"];
 
 export const notices = [
     {
-        noticeId: 1,
-        noticeTitle: "Hall seats are going to to be free",
-        noticeDescription: "student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: true,
-            visibleToEmployee: false,
-            visibleToEveryone: false,
-        },
-        noticeImage: "",  // https://i.ibb.co/0M0qW9M/1584040477-8.jpg
+      noticeId: "ea2f88b4-fd05-4b53-bc08-1c1349e56332",
+      noticeTitle: "ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti",
+      noticeDescription: "justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui",
+      postUpdated: "02/11/2022",
+      visibleToEveryone: false,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 2,
-        noticeTitle: "Hall construction project going to start in near",
-        noticeDescription: "pubic Shaheed Abdur Rab Hall Seats are Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente quaerat, voluptatem dolor, quo velit architecto saepe numquam vero repudiandae minus perspiciatis autem. Vero in aperiam vel nam dolor nihil nesciunt dicta cumque recusandae tenetur deserunt quaerat incidunt nulla illum ex odit ut modi maxime fugiat repudiandae veritatis ea consequatur, voluptatibus libero? Modi dolores praesentium ratione quo cumque, eum deserunt est nostrum sunt quasi nihil asperiores hic neque sint voluptas eaque? Corrupti, repellendus! Excepturi laudantium ea cumque architecto officia! Ipsum quaerat eius velit commodi sit excepturi dignissimos ullam. Ut, temporibus praesentium, nemo rerum commodi modi amet accusamus deserunt, perferendis adipisci suscipit. Hic ea facere molestias, minima in velit adipisci cum quaerat. Doloremque ratione aliquid placeat ipsa ad quae est explicabo rerum aspernatur modi. Fugit, aut laboriosam. Expedita dolorum nesciunt corrupti, dolore sit, non perspiciatis commodi assumenda corporis amet odit sed? Voluptas iste, debitis harum a omnis aperiam deserunt error alias, laborum amet exercitationem provident animi maiores itaque? Nam, ab debitis perferendis perspiciatis iste porro tenetur iusto id ipsum fuga, illum beatae vel doloremque aliquam sunt architecto totam natus ratione, nostrum dolorem ipsa quod atque. Explicabo qui cumque, rem, quam accusantium aliquam perferendis porro magnam pariatur exercitationem optio, labore harum illo eos. going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "577297c0-6ed5-4268-bade-674c59cfe7d1",
+      noticeTitle: "condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget",
+      noticeDescription: "ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere",
+      postUpdated: "10/27/2021",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 3,
-        noticeTitle: "Hall dining will closed for two days",
-        noticeDescription: "student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: true,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: true,
-            visibleToEmployee: false,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "f4b67aa6-7f5a-4da2-9546-d33607b615f7",
+      noticeTitle: "integer pede justo lacinia eget tincidunt eget tempus vel pede morbi",
+      noticeDescription: "rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit",
+      postUpdated: "03/01/2022",
+      visibleToEveryone: false,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 4,
-        noticeTitle: "Hall Construction will be end very soon",
-        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: true,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "8c547018-ed92-4b3b-8980-dbbc031dc673",
+      noticeTitle: "amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque",
+      noticeDescription: "turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas",
+      postUpdated: "08/14/2021",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 5,
-        noticeTitle: "Hall room services staff will here by tomorrow",
-        noticeDescription: " student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: true,
-            visibleToEmployee: false,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "14dc2361-67f6-4309-85ab-ed919bf92cd4",
+      noticeTitle: "commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet",
+      noticeDescription: "est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus",
+      postUpdated: "11/12/2021",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 6,
-        noticeTitle: "Hall security system updated",
-        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: true,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "247a37c7-95e1-4fac-93c3-a5ff3a7af966",
+      noticeTitle: "nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus",
+      noticeDescription: "diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus",
+      postUpdated: "06/23/2021",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 7,
-        noticeTitle: "Application  for hall employee opened today",
-        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "12f1d5bd-7ba6-49fa-9e3d-893454bf7cb7",
+      noticeTitle: "ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus",
+      noticeDescription: "molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus",
+      postUpdated: "10/05/2021",
+      visibleToEveryone: false,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 8,
-        noticeTitle: "Hall website got some new updates",
-        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "f26b502c-eafe-45f0-8e24-88b6cbcf56f8",
+      noticeTitle: "mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem",
+      noticeDescription: "morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis",
+      postUpdated: "03/03/2022",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 9,
-        noticeTitle: "Emplyees reunion will held near today",
-        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "94f74d52-fa5e-4787-be3d-4cc5b9c501d8",
+      noticeTitle: "felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis",
+      noticeDescription: "laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur",
+      postUpdated: "05/16/2022",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 10,
-        noticeTitle: "Eid bonus for all Employee",
-        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "98455973-06aa-478d-b2e5-ce896768f647",
+      noticeTitle: "tortor risus dapibus augue vel accumsan tellus nisi eu orci",
+      noticeDescription: "consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis",
+      postUpdated: "01/11/2022",
+      visibleToEveryone: false,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 11,
-        noticeTitle: "Hall dining will closed for two days",
-        noticeDescription: "student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: true,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: true,
-            visibleToEmployee: false,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "ecc8f53b-7177-43b8-985a-f464b9afd02a",
+      noticeTitle: "aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede",
+      noticeDescription: "in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus",
+      postUpdated: "04/05/2022",
+      visibleToEveryone: false,
+      noticeImage: ""
     },
     {
-        noticeId: 12,
-        noticeTitle: "Hall Construction will be end very soon",
-        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: true,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "2e60e1e2-3ac8-470a-8af7-e1d245b5a61c",
+      noticeTitle: "in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa",
+      noticeDescription: "faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar",
+      postUpdated: "11/05/2021",
+      visibleToEveryone: true,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 13,
-        noticeTitle: "Hall room services staff will here by tomorrow",
-        noticeDescription: " student Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: true,
-            visibleToEmployee: false,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+      noticeId: "c84e9412-3def-43bd-9a8c-73801192092d",
+      noticeTitle: "rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet",
+      noticeDescription: "nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit",
+      postUpdated: "05/02/2022",
+      visibleToEveryone: false,
+      noticeImage: "https://picsum.photos/500/300"
     },
     {
-        noticeId: 14,
-        noticeTitle: "Hall security system updated",
-        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: true,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 15,
-        noticeTitle: "Application  for hall employee opened today",
-        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 16,
-        noticeTitle: "Hall website got some new updates",
-        noticeDescription: "public Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: false,
-            visibleToEveryone: true,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 17,
-        noticeTitle: "Emplyees reunion will held near today",
-        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 18,
-        noticeTitle: "Eid bonus for all Employee",
-        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 19,
-        noticeTitle: "Emplyees reunion will held near today",
-        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 20,
-        noticeTitle: "Eid bonus for all Employee",
-        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 21,
-        noticeTitle: "Emplyees reunion will held near today",
-        noticeDescription: "employee Shaheed Abdur  Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-    {
-        noticeId: 22,
-        noticeTitle: "Eid bonus for all Employee",
-        noticeDescription: "employee Shaheed Abdur Rab Hall Seats are going to be free from 12-3-22 and the latest Apply for your seat lorelorelroe re fdafs af asf a sf af sa f asf a s sfasfa sfa sf asf as f asf asfa ",
-        lastUpdated: {
-            edited: false,
-            updatedDate: "12-08-21"
-        },
-        noticeDeadline: "12-4-22",
-        noticePrivacy: {
-            visibleToStudent: false,
-            visibleToEmployee: true,
-            visibleToEveryone: false,
-
-        },
-        noticeImage: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
-    },
-]
-
-
-
-
-
-
-
-
+      noticeId: "5d09924a-1578-4fb9-afb5-c590b878a079",
+      noticeTitle: "vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus",
+      noticeDescription: "nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
+      postUpdated: "12/11/2021",
+      visibleToEveryone: false,
+      noticeImage: "https://picsum.photos/500/300"
+    }
+  ]
 
 export const provostMessage = {
-    info: {
-        name: "Prof. Dr. AKM Moinul Haque Meaze",
-        designation: "Provost",
-        hallName: "Shaheed Abdur Rab Hall",
-        university: "University of Chittagong",
-        imgUrl: "https://i.ibb.co/2Y9xPy0/51-1-H6-DNZ4-YDL.png"
-    },
-    title: "Welcome Message",
-    message: `Warm greetings to the students of the Shaheed Abdur Rab Hall, their respected parents/guardians, alumni and valued surfers of this website! It gives me immense pleasure to welcome you all to be a part of this stunning hall family that strives to offer CU science male students a homely environment with desirable ambience for academic, cultural, extracurricular and personality development.   
+  info: {
+    name: "Prof. Dr. AKM Moinul Haque Meaze",
+    designation: "Provost",
+    hallName: "Shaheed Abdur Rab Hall",
+    university: "University of Chittagong",
+    imgUrl: "https://i.ibb.co/2Y9xPy0/51-1-H6-DNZ4-YDL.png",
+  },
+  title: "Welcome Message",
+  message: `Warm greetings to the students of the Shaheed Abdur Rab Hall, their respected parents/guardians, alumni and valued surfers of this website! It gives me immense pleasure to welcome you all to be a part of this stunning hall family that strives to offer CU science male students a homely environment with desirable ambience for academic, cultural, extracurricular and personality development.   
 
     Shaheed Abdur Rab Hall infrastructure is already fastened with 24 hour clean water availability, clean and green hygienic milieu, comfy rooms, spacious dining hall, Wi Fi connectivity, activity/indoor games, tiled open-air shower house, large playground, laundry support, seminar library, mosque, beautiful garden, and many more. We are committed to promote clean and natural green sustainability to the entire hall premises.
     
     Hall Provost, dedicated House Tutors and trained Staffs are always ready to take great opportunity to provide students net, clean and comfortable place where talent students can study, relax, laugh and live with safety. Hall administration is always conscious to make residential students feel at home.  
-    Respected Parents, Guardians, Alumni and Visitor are most welcome to the Shaheed Abdur Rab Hall!`
-
-}
+    Respected Parents, Guardians, Alumni and Visitor are most welcome to the Shaheed Abdur Rab Hall!`,
+};
 
 export const smallTalkData = {
-    heading: "Photo Gallery of Shaheed Abdur Rab Hall",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, repudiandae. Ad, exercitationem praesentium dolor sequi delectus rerum sit possimus tempore mollitia numquam odio dolorum enim ratione iure alias ullam minima voluptate libero natus, voluptatum amet doloribus. Fuga velit sit eaque magnam nostrum. Nostrum at deserunt expedita numquam laudantium ducimus laborum nihil reprehenderit nisi, illo, tenetur assumenda quas quibusdam repudiandae deleniti inventore quia odit totam accusamus doloremque officiis ratione. Officia alias incidunt expedita doloremque aspernatur facilis culpa officiis. Suscipit ad quisquam velit at minus, praesentium dolorum corporis asperiores voluptates non facilis perferendis temporibus consectetur eligendi, rem harum dolor sit quia maiores."
-}
+  heading: "Photo Gallery of Shaheed Abdur Rab Hall",
+  text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, repudiandae. Ad, exercitationem praesentium dolor sequi delectus rerum sit possimus tempore mollitia numquam odio dolorum enim ratione iure alias ullam minima voluptate libero natus, voluptatum amet doloribus. Fuga velit sit eaque magnam nostrum. Nostrum at deserunt expedita numquam laudantium ducimus laborum nihil reprehenderit nisi, illo, tenetur assumenda quas quibusdam repudiandae deleniti inventore quia odit totam accusamus doloremque officiis ratione. Officia alias incidunt expedita doloremque aspernatur facilis culpa officiis. Suscipit ad quisquam velit at minus, praesentium dolorum corporis asperiores voluptates non facilis perferendis temporibus consectetur eligendi, rem harum dolor sit quia maiores.",
+};
 
 export const images = [
-    {
-        id: 1,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  {
+    id: 1,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 2,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 2,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 3,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 3,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 4,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 4,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 5,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 5,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 6,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 6,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 7,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 7,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 8,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 8,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 9,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 9,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 10,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 10,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 11,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 11,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 12,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 12,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 13,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 13,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 14,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 14,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 15,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 15,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 16,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 16,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 17,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 17,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 18,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 18,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 19,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 19,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 20,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 20,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 21,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 21,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 22,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 22,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 23,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 23,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 24,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 24,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 25,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 25,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 26,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 26,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 27,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 27,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 28,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 28,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 29,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 29,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 30,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 30,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 31,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 31,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 32,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 32,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 33,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 33,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 34,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 34,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 35,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 35,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 36,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 36,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 37,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 37,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 38,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 38,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 39,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 39,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 40,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 40,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 41,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 41,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 42,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 42,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 43,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 43,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 44,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 44,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 45,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 45,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 46,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 46,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 47,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 47,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 48,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 48,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 49,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 49,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 50,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 50,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 51,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 51,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 52,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 52,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 53,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 53,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 54,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 54,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 55,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 55,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 56,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 56,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 57,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 57,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 58,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: true,
-            hall: false,
-        }
+  },
+  {
+    id: 58,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: true,
+      hall: false,
     },
-    {
-        id: 59,
-        originalTitle: "hahahahahhahahahahah",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        thumbnail: 'https://i.ibb.co/0M0qW9M/1584040477-8.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 59,
+    originalTitle: "hahahahahhahahahahah",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    thumbnail: "https://i.ibb.co/0M0qW9M/1584040477-8.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 60,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 60,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 61,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 61,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-    {
-        id: 62,
-        originalTitle: "huhuhuhuhuhuuhuh",
-        thumbnailTitle: "thumbnail title",
-        thumbnailAlt: "thumbnailAlt ",
-        description: "eita omuk din tola pic bujhcho ni mia",
-        original: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        thumbnail: 'https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg',
-        uploadDate: "12-8-21",
-        category: {
-            institutional: false,
-            hall: true,
-        }
+  },
+  {
+    id: 62,
+    originalTitle: "huhuhuhuhuhuuhuh",
+    thumbnailTitle: "thumbnail title",
+    thumbnailAlt: "thumbnailAlt ",
+    description: "eita omuk din tola pic bujhcho ni mia",
+    original: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    thumbnail: "https://i.ibb.co/8BwzSWc/IMG-20210521-221907.jpg",
+    uploadDate: "12-8-21",
+    category: {
+      institutional: false,
+      hall: true,
     },
-
+  },
 ];
 
-
 export const footerLink1 = [
-    {
-        title: "Vision and Mission",
-        url: "https://cu.ac.bd/content/index.php?menumapno=13"
-    },
-    {
-        title: "Facts and Acts",
-        url: "https://cu.ac.bd/content/index.php?menumapno=14"
-    },
-    {
-        title: "News & Events",
-        url: "https://cu.ac.bd/news_and_events.php?id=1"
-    },
-    {
-        title: "Notice Board",
-        url: "/notice"
-    },
-    {
-        title: "Directories",
-        url: "https://cu.ac.bd/content/index.php?menumapno=22"
-    },
-    {
-        title: "Department/Institute",
-        url: "https://cu.ac.bd/allsections.php?menumapno=28"
-    },
-    {
-        title: "Academic Calendar",
-        url: "https://cu.ac.bd/content/index.php?menumapno=31"
-    },
-    {
-        title: "Contact Us",
-        url: "https://cu.ac.bd/content/index.php?menumapno=26"
-    },
-
-]
+  {
+    title: "Vision and Mission",
+    url: "https://cu.ac.bd/content/index.php?menumapno=13",
+  },
+  {
+    title: "Facts and Acts",
+    url: "https://cu.ac.bd/content/index.php?menumapno=14",
+  },
+  {
+    title: "News & Events",
+    url: "https://cu.ac.bd/news_and_events.php?id=1",
+  },
+  {
+    title: "Notice Board",
+    url: "/notice",
+  },
+  {
+    title: "Directories",
+    url: "https://cu.ac.bd/content/index.php?menumapno=22",
+  },
+  {
+    title: "Department/Institute",
+    url: "https://cu.ac.bd/allsections.php?menumapno=28",
+  },
+  {
+    title: "Academic Calendar",
+    url: "https://cu.ac.bd/content/index.php?menumapno=31",
+  },
+  {
+    title: "Contact Us",
+    url: "https://cu.ac.bd/content/index.php?menumapno=26",
+  },
+];
 
 export const footerLink2 = [
-    {
-        title: "Central Library",
-        url: "https://library.cu.ac.bd/"
-    },
-    {
-        title: "Financial Aid",
-        url: "https://cu.ac.bd/content/index.php?menumapno=48"
-    },
-    {
-        title: "Office of the Vice-Chancellor",
-        url: "https://cu.ac.bd/vco/"
-    },
-    {
-        title: "Registrar Office",
-        url: "https://cu.ac.bd/rego/"
-    },
-    {
-        title: "Controller of Examination Office",
-        url: "https://cu.ac.bd/cexo/"
-    },
-    {
-        title: "Medical Center",
-        url: "https://cu.ac.bd/medicalcenter/"
-    },
-    {
-        title: "Proctorial Body",
-        url: "https://cu.ac.bd/proctoroffice/"
-    },
-
-]
+  {
+    title: "Central Library",
+    url: "https://library.cu.ac.bd/",
+  },
+  {
+    title: "Financial Aid",
+    url: "https://cu.ac.bd/content/index.php?menumapno=48",
+  },
+  {
+    title: "Office of the Vice-Chancellor",
+    url: "https://cu.ac.bd/vco/",
+  },
+  {
+    title: "Registrar Office",
+    url: "https://cu.ac.bd/rego/",
+  },
+  {
+    title: "Controller of Examination Office",
+    url: "https://cu.ac.bd/cexo/",
+  },
+  {
+    title: "Medical Center",
+    url: "https://cu.ac.bd/medicalcenter/",
+  },
+  {
+    title: "Proctorial Body",
+    url: "https://cu.ac.bd/proctoroffice/",
+  },
+];
 export const footerLink3 = [
-    {
-        title: "ICT Cell",
-        url: "https://cu.ac.bd/ict/"
-    },
-    {
-        title: "Guest Houses",
-        url: "https://cu.ac.bd/content/index.php?menumapno=660"
-    },
-    {
-        title: "Research and Publication Cell",
-        url: "https://curpc.cu.ac.bd/"
-    },
-    {
-        title: "University Journal",
-        url: "https://cu.ac.bd/content/index.php?menumapno=72"
-    },
-    {
-        title: "Conference",
-        url: "https://cu.ac.bd/content/index.php?menumapno=73"
-    },
-    {
-        title: "Publications",
-        url: "https://cu.ac.bd/content/index.php?menumapno=74"
-    },
-    {
-        title: "Residence Halls",
-        url: "/"
-    },
-
-]
-
+  {
+    title: "ICT Cell",
+    url: "https://cu.ac.bd/ict/",
+  },
+  {
+    title: "Guest Houses",
+    url: "https://cu.ac.bd/content/index.php?menumapno=660",
+  },
+  {
+    title: "Research and Publication Cell",
+    url: "https://curpc.cu.ac.bd/",
+  },
+  {
+    title: "University Journal",
+    url: "https://cu.ac.bd/content/index.php?menumapno=72",
+  },
+  {
+    title: "Conference",
+    url: "https://cu.ac.bd/content/index.php?menumapno=73",
+  },
+  {
+    title: "Publications",
+    url: "https://cu.ac.bd/content/index.php?menumapno=74",
+  },
+  {
+    title: "Residence Halls",
+    url: "/",
+  },
+];
 
 export const footerLink4 = [
-    {
-        title: "CU Shuttle",
-        url: "https://cu.ac.bd/content/index.php?menumapno=86"
-    },
-    {
-        title: "Arts & Culture",
-        url: "https://cu.ac.bd/content/index.php?menumapno=91"
-    },
-    {
-        title: "Campus Attractions",
-        url: "https://cu.ac.bd/content/index.php?menumapno=91"
-    },
-    {
-        title: "Gallery",
-        url: "/gallery"
-    },
-    {
-        title: "Forms & Downloads",
-        url: "https://cu.ac.bd/forms.php"
-    },
-    {
-        title: "Important Weblinks",
-        url: "https://cu.ac.bd/important_weblinks.php"
-    },
-    {
-        title: "FAQ",
-        url: "/faq"
-    },
-
-]
+  {
+    title: "CU Shuttle",
+    url: "https://cu.ac.bd/content/index.php?menumapno=86",
+  },
+  {
+    title: "Arts & Culture",
+    url: "https://cu.ac.bd/content/index.php?menumapno=91",
+  },
+  {
+    title: "Campus Attractions",
+    url: "https://cu.ac.bd/content/index.php?menumapno=91",
+  },
+  {
+    title: "Gallery",
+    url: "/gallery",
+  },
+  {
+    title: "Forms & Downloads",
+    url: "https://cu.ac.bd/forms.php",
+  },
+  {
+    title: "Important Weblinks",
+    url: "https://cu.ac.bd/important_weblinks.php",
+  },
+  {
+    title: "FAQ",
+    url: "/faq",
+  },
+];
 
 export const randomRoom = [
-    {
-        roomNo : 441,
-        roomCapacity : 4,
-        roomPeapleId : [18701012, 18701018, 17701093, 17701024],
-        isRoomFree : false,
-    },
-    {
-        roomNo : 442,
-        roomCapacity : 4,
-        roomPeapleId : [18701012, 18701018, 17701093, 17701024],
-        isRoomFree : false,
-    },
-    {
-        roomNo : 443,
-        roomCapacity : 2,
-        roomPeapleId : [18701012, 18701018],
-        isRoomFree : false,
-    },
-]
-
-
-
-
-
-
-
-
-
-
+  {
+    roomNo: 441,
+    roomCapacity: 4,
+    roomPeapleId: [18701012, 18701018, 17701093, 17701024],
+  },
+  {
+    roomNo: 442,
+    roomCapacity: 4,
+    roomPeapleId: [18701012, 18701018, 17701093, 17701024],
+  },
+  {
+    roomNo: 443,
+    roomCapacity: 2,
+    roomPeapleId: [18701012, 18701018],
+  },
+];

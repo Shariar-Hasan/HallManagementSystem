@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ApplicationCard from "../../Componant/ApplicationCard/ApplicationCard";
+import SideNav from "../../Componant/SideNav/SideNav";
 import { fakeApplications } from "../../Data/applicationList";
 
 const Applications = () => {
@@ -14,7 +15,7 @@ const Applications = () => {
           <div className="col-md-10  mx-auto">
             <div className="table-responsive ">
               <table className="table  text-left table-striped cursor-pointer">
-                <thead className="thead-light">
+                <thead className="thead-light ">
                   <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Avater</th>

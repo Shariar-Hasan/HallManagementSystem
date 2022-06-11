@@ -29,9 +29,11 @@ html {
   font-style: none;
   font-weight: 500;
 }
-.cursor-pointer{
+
+.cursor-pointer {
   cursor: pointer;
 }
+
 .fake-line {
   height: 2000px;
 }
@@ -63,7 +65,7 @@ textarea {
   right: 0;
   bottom: 0;
   z-index: 1000;
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   margin: 20px auto 0 auto;
   padding: 50px 20px;
   text-align: justify;
@@ -137,9 +139,10 @@ input[data-aria="password"] {
   border: 1px solid gray;
   transition: all .35s ease-in-out;
 }
+
 .page-item:hover {
   color: #ffffff;
-  background-color: #00203b ;
+  background-color: #00203b;
 }
 
 .previous-btn {
@@ -185,6 +188,37 @@ input[data-aria="password"] {
     height: 400px;
   }
 }
-.hover-text-white:hover{
+
+.hover-text-white:hover {
   color: white !important;
+}
+
+.click-effect {
+  transition: .35s;
+  transform: scale(1);
+}
+
+.click-effect:active {
+  transform: scale(.95);
+}
+
+
+
+.notice-description{
+  font-weight: 400;
+}
+
+.close-btn{
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  color: black;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  border-radius: 50%;
 }

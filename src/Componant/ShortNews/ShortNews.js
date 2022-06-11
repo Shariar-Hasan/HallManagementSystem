@@ -4,15 +4,15 @@ import { UserContext } from '../../App';
 import LinkButton from '../Linkbutton/LinkButton';
 import NewsCard from '../NewsCard/NewsCard';
 import NoNewsAvailable from '../NothingAvailable/NothingAvailable';
-import {isStudent} from './../../Functions/autoFunctions'
 
 const ShortNews = ({ headerText, noticeFor, privacy }) => {
     const [loginUser,] = useContext(UserContext)
-    if (loginUser && privacy) {
-        noticeFor = (isStudent(loginUser)) ? (noticeFor.filter(n => n.noticePrivacy.visibleToStudent === true)) :  (noticeFor.filter(n => n.noticePrivacy.visibleToEmployee === true))
+
+    if (privacy) {
+         noticeFor = noticeFor.filter(n => n.visibleToEveryone === false)
     }
     else{
-        noticeFor = noticeFor.filter(n => n.noticePrivacy.visibleToEveryone === true)
+        noticeFor = noticeFor.filter(n => n.visibleToEveryone === true)
     }
     return (
         <div className="col-12 mx-auto my-3">

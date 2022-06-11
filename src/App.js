@@ -13,17 +13,22 @@ import CPanelLogin from "./Pages/CPanelLogin/CPanelLogin";
 import "./App.css";
 import { createContext, useState } from "react";
 import { images } from "./Data/fakedata";
-import { NotificationManager } from "react-notifications";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 import { useEffect } from "react";
-import { isStudent } from "./Functions/autoFunctions";
+import { activeStatus, isStudent } from "./Functions/autoFunctions";
 import Userlist from "./Pages/Userlist/Userlist";
+import SideNav from "./Componant/SideNav/SideNav";
+import NoticeDetails from "./Pages/NoticeDetails/NoticeDetails";
 
 export const UserContext = createContext();
 export const DataContext = createContext();
 
 function App() {
-  const oldUser = localStorage.getItem("user") || {};
-  const [loginUser, setLoginUser] = useState(JSON.parse(oldUser) );
+  const oldUser = JSON.parse(localStorage.getItem("user")) || null;
+  const [loginUser, setLoginUser] = useState(oldUser);
   const imageLoad = images;
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -39,7 +44,9 @@ function App() {
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <DataContext.Provider value={[imageLoad, [show, setShow]]}>
+        <NotificationContainer />
         <Router>
+          {activeStatus(loginUser) && <SideNav></SideNav>}
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -77,10 +84,11 @@ function App() {
               <Gallery></Gallery>
             </Route>
 
-            <Route path="/notice">
-              <NoticeBoard></NoticeBoard>
+            <Route path="/notice/:nid">
+              <NoticeDetails></NoticeDetails>
             </Route>
-            <Route path="/upload-notice">
+            
+            <Route path="/notice">
               <NoticeBoard></NoticeBoard>
             </Route>
 

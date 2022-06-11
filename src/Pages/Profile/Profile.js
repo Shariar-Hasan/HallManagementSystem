@@ -9,16 +9,12 @@ import { isAdmin, isEmployee, isStudent } from "../../Functions/autoFunctions";
 import { useContext } from "react";
 import { UserContext } from "../../App";
 import NotAvailable from "../NotAvailable/NotAvailable";
-import { NotificationContainer } from "react-notifications";
-
 const Profile = () => {
   const [loginUser] = useContext(UserContext);
   const { personalInfo, contact, institutional, hallDetails } = loginUser;
 
   return (
     <>
-      <SideNav></SideNav>
-      <NotificationContainer />
 
       <div className="container">
         <div className="row w-100">

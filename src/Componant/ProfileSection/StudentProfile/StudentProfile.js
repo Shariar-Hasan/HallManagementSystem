@@ -44,7 +44,7 @@ const StudentProfile = ({
   const handleHallLeave = () => {
     swal({
       title: `Confirm Leave`,
-      text: ", you want to leave the Hall",
+      text: "Do you want to leave the Hall?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -341,13 +341,12 @@ const StudentProfile = ({
                         <td>{info.cardExpiryDate || "N/A"}</td>
                         <td>
                           {hallDetails.length === i + 1 ? (
-                            <Button
+                            <button
                               onClick={handleSeat}
-                              variant="contained"
-                              color="primary"
+                              className="btn btn-outline-primary"
                             >
                               {info.alloted ? "Renew Seat" : "Apply for Seat"}
-                            </Button>
+                            </button>
                           ) : (
                             "N/A"
                           )}
@@ -375,7 +374,7 @@ const StudentProfile = ({
         <h3 className="profile-card-header">Hall Leave</h3>
         <div className="row  profile-card-child">
           <button
-            className="btn btn-block btn-outline-primary"
+            className="btn-lg btn-block btn-outline-primary"
             onClick={handleHallLeave}
           >
             Leave Hall

@@ -45,34 +45,7 @@ const OneClickLogin = () => {
           Log out
         </button>
       )}
-      {/* <button
-        onClick={() => NotificationManager.info("temporary popup settings")}
-        className="btn btn-primary m-1"
-      >
-        Fake push info
-      </button>
-      <button
-        onClick={() =>
-          NotificationManager.success("this is a success push notification")
-        }
-        className="btn btn-primary m-1"
-      >
-        Fake push success
-      </button>
-      <button
-        onClick={() => NotificationManager.error("this is an error message")}
-        className="btn btn-primary m-1"
-      >
-        Fake push error
-      </button>
-      <button
-        onClick={() =>
-          NotificationManager.warning("this is your last warning beta")
-        }
-        className="btn btn-primary m-1"
-      >
-        Fake Popup warning
-      </button> */}
+      
     </div>
   );
 };
