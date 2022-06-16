@@ -3,35 +3,32 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import LockIcon from "@material-ui/icons/Lock";
 import { UserContext } from "../../App";
-import { Link } from "react-router-dom";
-import { isStudent } from "../../Functions/autoFunctions";
+import { Link, useHistory } from "react-router-dom";
+import { isStudent, sleepInMiliseconds } from "../../Functions/autoFunctions";
 import { NotificationManager } from "react-notifications";
 
 const SideNav = ({ user }) => {
   const [loginUser, setLoginUser] = useContext(UserContext);
+  const history = useHistory()
   const studentDashboardlist = [
     {
       title: "Profile",
       link: "/profile",
-      class: "currentPage",
       icon: "fas fa-user",
     },
     {
       title: "Gallery",
       link: "/gallery",
-      class: "",
       icon: "fas fa-camera",
     },
     {
       title: "Notice Board",
       link: "/notice",
-      class: "",
       icon: "fas fa-flag",
     },
     {
       title: "Issue Box",
       link: "/issuebox",
-      class: "",
       icon: "fas fa-info",
     },
   ];
@@ -39,25 +36,21 @@ const SideNav = ({ user }) => {
     {
       title: "Profile",
       link: "/profile",
-      class: "currentPage",
       icon: "fas fa-user",
     },
     {
       title: "Notice Board",
       link: "/notice",
-      class: "",
       icon: "fas fa-flag",
     },
     {
       title: "Contact Help",
       link: "/help",
-      class: "",
       icon: "fas fa-question-circle",
     },
     {
       title: "Issue Box",
       link: "/issuebox",
-      class: "",
       icon: "fas fa-info",
     },
   ];
@@ -65,49 +58,41 @@ const SideNav = ({ user }) => {
     {
       title: "Dashboard",
       link: "/profile",
-      class: "currentPage",
       icon: "fas fa-tasks",
     },
     {
       title: "Users List",
       link: "/userlist",
-      class: "",
       icon: "fas fa-user",
     },
     {
       title: "Upload Notice",
-      link: "/upload-notice",
-      class: "",
+      link: "/notice",
       icon: "fas fa-edit",
+    },
+    {
+      title: "Create User",
+      link: "/create-user",
+      icon: "fas fa-user-plus",
     },
     {
       title: "Hall Issue Check",
       link: "/issuebox",
-      class: "",
       icon: "fas fa-info-circle",
     },
     {
       title: "Hall Applications",
       link: "/applications",
-      class: "",
       icon: "fas fa-envelope-open",
     },
     {
       title: "Gallery Management",
       link: "/gallery",
-      class: "",
       icon: "fas fa-file-upload",
-    },
-    {
-      title: "Notification Management",
-      link: "/profile",
-      class: "",
-      icon: "fas fa-bell",
     },
     {
       title: "Help Section",
       link: "/profile",
-      class: "",
       icon: "fas fa-question-circle",
     },
   ];
@@ -133,25 +118,17 @@ const SideNav = ({ user }) => {
     e.target.className = "currentPage";
   };
   const handleNotifications = () => {
-    const notificationOpened = document.querySelector(".notificationIcon");
-    loginUser?.notifications.forEach(notification => {
-      NotificationManager.info(
-        notification.title,
-        "Notification",
-        3000
-      );
-      setTimeout(()=>{}, 3000)
+    // const notificationOpened = document.querySelector(".notificationIcon");
+    loginUser?.notifications.forEach((notification) => {
+      NotificationManager.info(notification.title);
     });
-
-    // notificationOpened.classList.toggle('notificationOpen');
-    // setTimeout(() => {
-    //     document.querySelector('.notificationIcon').className = 'notificationIcon';
-    // }, 2 * 1000)
   };
-const handleLogOut = ( )=>{
-  setLoginUser(null);
-  localStorage.setItem("user", null)
-}
+  const handleLogOut = () => {
+    setLoginUser(null);
+    localStorage.setItem("user", null);
+    history.push('/')
+
+  };
   return (
     <div className="sideNavBg ">
       <div className="sideNavBlackBg" onClick={handleClick}></div>
@@ -211,10 +188,7 @@ const handleLogOut = ( )=>{
             <li title="Change Password">
               <LockIcon />
             </li>
-            <li
-              title="Log Out"
-              onClick={handleLogOut}
-            >
+            <li title="Log Out" onClick={handleLogOut}>
               <ExitToAppIcon />
             </li>
           </ul>

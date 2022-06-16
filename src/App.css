@@ -221,4 +221,40 @@ input[data-aria="password"] {
   top: -30px;
   right: -30px;
   border-radius: 50%;
+  opacity: .7;
+}
+.edit-btn{
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  color: black;
+  position: absolute;
+  top: 30px;
+  right: -30px;
+  border-radius: 50%;
+  opacity: .7;
+}
+.delete-btn{
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  color: black;
+  position: absolute;
+  top: 90px;
+  right: -30px;
+  border-radius: 50%;
+  opacity: .7;
+}
+.delete-btn:hover,.close-btn:hover,.edit-btn:hover{
+  background-color: #0084ff;
+  color: white;
+  opacity: 1;
 }

@@ -34,6 +34,7 @@ const Profile = () => {
               />
             ) : isAdmin(loginUser) ? (
               <AdminProfile admin={admin} />
+              
             ) : (
               <NotAvailable
                 message={"Un-authorize Access"}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import swal from "sweetalert";
 
 const ApplicationCard = ({ appl }) => {
@@ -15,8 +16,10 @@ const ApplicationCard = ({ appl }) => {
     session,
   } = appl.personalInfo;
 
+  const history = useHistory()
+
   //   function start from here
-  const handleApprove = () => {
+  const handleApprove = (id) => {
     swal({
       title: `Approve application`,
       text: `${name} will be elegible for the hall seat`,
@@ -24,8 +27,14 @@ const ApplicationCard = ({ appl }) => {
       buttons: true,
     }).then((isApproved) => {
       if (isApproved) {
-        swal("Application Approved", {
+        swal("Application Approved! Appoint the seat for the student", {
           icon: "success",
+        }).then((isOkay) => {
+          if (isOkay) {
+            history.push(`/appoint-seat?stdid=${id}`)
+          } else {
+            swal("Application not Approved");
+          }
         });
       } else {
         swal("Application not Approved");
@@ -36,8 +45,8 @@ const ApplicationCard = ({ appl }) => {
     swal({
       title: `Application Rejected`,
       text: `${name}'s application has been rejected`,
-      icon: "success"
-    })
+      icon: "success",
+    });
   };
   return (
     <tr>
@@ -61,7 +70,7 @@ const ApplicationCard = ({ appl }) => {
         <div className="btn-group" role="group" aria-label="Basic example">
           <button
             type="button"
-            onClick={handleApprove}
+            onClick={() => handleApprove(id)}
             className="btn btn-outline-secondary hover-text-white  text-success"
           >
             <i className="fas fa-check mx-1"></i>

@@ -12,12 +12,10 @@ export const isEmployee = (user) =>
 // checking logged in or not
 export const activeStatus = (data) => (data ? true : false);
 
-
-
 // random invoice generator
-export const generateInvoice = () => {
+export const generateInvoice = (randomDigit) => {
   const invoiceCharList = "12sd6789ifghjxcvk0qwertyulz345opabnm".split("");
-  let loopTime = 15,
+  let loopTime = randomDigit,
     createdInvoice = [];
 
   while (loopTime--) {
@@ -25,9 +23,50 @@ export const generateInvoice = () => {
       ...createdInvoice,
       invoiceCharList[Math.floor(Math.random() * 100) % 36],
     ];
-
   }
   const invoiceString = createdInvoice.join("");
-  
+
   return invoiceString;
 };
+
+export const sleepInMiliseconds = (miliseconds) => {
+  const stopTime = new Date().getTime() + miliseconds;
+  console.log(stopTime);
+  while (new Date().getTime() <= stopTime) {
+    console.log(new Date().getTime());
+  }
+};
+
+// about posting Datas
+export const postData = (url = "", data = {}) => {
+  return new Promise((res, err) => {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((r) => res(r))
+    .catch(e => err(e))
+  });
+};
+
+// about getting datas
+export const getData = (url = "") => {
+  return new Promise((res, err) => {
+    fetch(url).then((r) => res(r))
+    .catch(e => err(e))
+  });
+};
+
+// about deleting Data
+export const deleteData = (url = "") => {
+  return new Promise((res, err) => {
+    fetch(url,{
+      method : "DELETE"
+    }).then((r) => res(r))
+    .catch(e => err(e))
+  });
+};
+
+

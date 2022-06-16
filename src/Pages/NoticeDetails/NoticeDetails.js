@@ -1,18 +1,46 @@
 import React, { useEffect, useState } from "react";
+import { NotificationManager } from "react-notifications";
+import swal from "sweetalert";
 import { useParams } from "react-router-dom";
-import { notices } from "../../Data/fakedata";
+import { deleteData, getData } from "../../Functions/autoFunctions";
 
 const NoticeDetails = () => {
   const { nid } = useParams();
   const [NoticeDetails, setNoticeDetails] = useState({});
   console.log(nid);
   useEffect(() => {
-    const selectedNotice = notices.find((n) => n.noticeId === nid);
-    setNoticeDetails(selectedNotice);
+    getData(`http://localhost:5500/notice/${nid}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setNoticeDetails(data);
+      });
   }, [nid]);
+
   const handleBack = (e) => {
     window.history.back();
-    e.stopPropagation();
+  };
+  const handleEdit = () => {
+    NotificationManager.info("Edit option is not implemented yet");
+  };
+  const handleDelete = () => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this Notice!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteData(`http://localhost:5500/deleteNotice/${nid}`).then((res) => {
+          if (res) {
+            NotificationManager.success("Successfully Deleted the notice");
+            handleBack();
+          }
+        });
+      } else {
+        swal("Notice Not deleted");
+      }
+    });
   };
   return (
     <div className="container">
@@ -26,6 +54,20 @@ const NoticeDetails = () => {
                 className="btn-lg btn close-btn"
               >
                 <i className="fa fa-window-close" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                onClick={handleEdit}
+                className="btn-lg btn edit-btn"
+              >
+                <i className="fa fa-edit" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                onClick={handleDelete}
+                className="btn-lg btn delete-btn"
+              >
+                <i className="fa fa-trash" aria-hidden="true"></i>
               </button>
               <div className="floating-news-inside">
                 {NoticeDetails?.noticeImage && (
@@ -44,9 +86,7 @@ const NoticeDetails = () => {
                   <h4 className="text-primary mb-4">
                     {NoticeDetails?.noticeTitle}
                   </h4>
-                  <h6 className="font-italic">
-                    Posted : {NoticeDetails?.postUpdated}
-                  </h6>
+                  <h6 className="font-italic">{NoticeDetails?.postUpdated}</h6>
                 </div>
                 <hr />
                 <div className="col-12">

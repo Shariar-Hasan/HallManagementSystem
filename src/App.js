@@ -22,6 +22,8 @@ import { activeStatus, isStudent } from "./Functions/autoFunctions";
 import Userlist from "./Pages/Userlist/Userlist";
 import SideNav from "./Componant/SideNav/SideNav";
 import NoticeDetails from "./Pages/NoticeDetails/NoticeDetails";
+import AppointSeat from "./Pages/AppointSeat/AppointSeat";
+import CreateUser from "./Pages/CreateUser/CreateUser";
 
 export const UserContext = createContext();
 export const DataContext = createContext();
@@ -64,6 +66,14 @@ function App() {
               <Userlist></Userlist>
             </Route>
 
+            <Route path="/appoint-seat">
+              <AppointSeat></AppointSeat>
+            </Route>
+
+            <Route path="/create-user">
+              <CreateUser></CreateUser>
+            </Route>
+
             <Route path="/login/:user">
               <Login></Login>
             </Route>
@@ -87,7 +97,7 @@ function App() {
             <Route path="/notice/:nid">
               <NoticeDetails></NoticeDetails>
             </Route>
-            
+
             <Route path="/notice">
               <NoticeBoard></NoticeBoard>
             </Route>

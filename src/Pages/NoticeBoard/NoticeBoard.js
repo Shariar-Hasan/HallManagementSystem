@@ -2,14 +2,13 @@ import React from "react";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import TextEditor from "./../../Componant/TextEditor/TextEditor"
+import TextEditor from "./../../Componant/TextEditor/TextEditor";
 import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import Footer from "../../Componant/Footer/Footer";
 import Navbar from "../../Componant/Navbar/Navbar";
 import NoticeCard from "../../Componant/NoticeCard/NoticeCard";
-import { notices } from "../../Data/fakedata";
-import { isEmployee, isStudent } from "../../Functions/autoFunctions";
+import { getData, isAdmin } from "../../Functions/autoFunctions";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -18,6 +17,7 @@ function useQuery() {
 const NoticeBoard = () => {
   const [showNews, setShowNews] = useState(true);
   const [floatingNews, setFloatingNews] = useState(null);
+  const [notices, setNotices] = useState([]);
 
   // pagination section
 
@@ -29,6 +29,17 @@ const NoticeBoard = () => {
   const [pageNotices, setPageNotices] = useState([]);
   const [emptyArray, setEmptyArray] = useState([]);
 
+  //      fetch and load notice data
+  useEffect(() => {
+    getData("http://localhost:5500/notices")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setNotices(data);
+      });
+  }, []);
+
+  // Pagination full functionality
   useEffect(() => {
     const noticeEnd = noticePerPage * currentPage;
     const noticeStart = noticeEnd - noticePerPage;
@@ -41,31 +52,9 @@ const NoticeBoard = () => {
     setPageNotices(newNotices);
     setEmptyArray(newEmptyArr);
     setPageCount(Math.ceil(notices.length / noticePerPage));
-  }, [currentPage, noticePerPage, pageCount]);
+  }, [currentPage, noticePerPage, pageCount,notices]);
 
   const [loginUser] = useContext(UserContext);
-  // const {nid} = useParams();
-  // const history = useHistory();
-  // console.log(nid);
-
-  // useEffect(() => {
-  //   if(nid)showFloatingNews(nid);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   console.log(nid);
-  // }, [nid]);
-
-  // const showFloatingNews = (nid) => {
-  //   const newFloatingNews = notices.find((notice) => notice.noticeId === +nid);
-  //   const { visibleToEveryone } = newFloatingNews;
-  //   setFloatingNews(newFloatingNews);
-  //   setShowNews(true);
-  // };
-
-  // const hideFloatingNews = () => {
-  //   setShowNews(false);
-  //   history.push("/notice");
-  //   setFloatingNews(null);
-  // };
 
   const handleElementPerPage = (e) => {
     setCurrentPage(1);
@@ -75,13 +64,15 @@ const NoticeBoard = () => {
   return (
     <div className="notice-page">
       <Navbar></Navbar>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-10 mx-auto">
-            <TextEditor placeholder={"hasan"}></TextEditor>
+      {isAdmin(loginUser) && (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-10 mx-auto">
+              <TextEditor></TextEditor>
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div className="container">
         <div className="row ">
           <div className="col-md mt-5">
