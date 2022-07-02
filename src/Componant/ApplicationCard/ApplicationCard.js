@@ -1,22 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import swal from "sweetalert";
+import { deleteData } from "../../Functions/autoFunctions";
 
 const ApplicationCard = ({ appl }) => {
-  const {
-    id,
-    name,
-    avater,
-    address,
-    city,
-    division,
-    zip,
-    course,
-    department,
-    session,
-  } = appl.personalInfo;
-
-  const history = useHistory()
+  const { id, name, avater, course, session, address, city, division, zip } =
+    appl;
+  const history = useHistory();
 
   //   function start from here
   const handleApprove = (id) => {
@@ -31,7 +21,7 @@ const ApplicationCard = ({ appl }) => {
           icon: "success",
         }).then((isOkay) => {
           if (isOkay) {
-            history.push(`/appoint-seat?stdid=${id}`)
+            history.push(`/appoint-seat?stdid=${id}`);
           } else {
             swal("Application not Approved");
           }
@@ -42,22 +32,22 @@ const ApplicationCard = ({ appl }) => {
     });
   };
   const handleReject = () => {
-    swal({
-      title: `Application Rejected`,
-      text: `${name}'s application has been rejected`,
-      icon: "success",
-    });
+    deleteData("http://localhost:5500/deleteApplication/" + id)
+      .then((res) => res.json())
+      .then((data) => {
+        swal({
+          title: `Application Rejected`,
+          text: `${name}'s application will be rejected`,
+          icon: "success",
+        });
+      });
   };
   return (
     <tr>
       <td>{id}</td>
       <td>
         {avater ? (
-          <img
-            src={avater + "/?img=" + Math.random()}
-            style={{ height: "50px" }}
-            alt={appl?.personalInfo.name}
-          />
+          <img src={avater} style={{ height: "50px" }} alt={appl?.name} />
         ) : (
           <i class="fa fa-appl-circle" aria-hidden="true"></i>
         )}
@@ -82,7 +72,7 @@ const ApplicationCard = ({ appl }) => {
             onClick={handleReject}
             className="btn btn-outline-secondary hover-text-white text-danger"
           >
-            <i class="fas fa-times mx-1"></i>
+            <i className="fas fa-times mx-1"></i>
             Reject
           </button>
         </div>

@@ -6,7 +6,6 @@ import NewsCard from '../NewsCard/NewsCard';
 import NoNewsAvailable from '../NothingAvailable/NothingAvailable';
 
 const ShortNews = ({ headerText, noticeFor, privacy }) => {
-    const [loginUser,] = useContext(UserContext)
 
     if (privacy) {
          noticeFor = noticeFor.filter(n => n.visibleToEveryone === false)

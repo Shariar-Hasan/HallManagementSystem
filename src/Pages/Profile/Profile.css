@@ -52,10 +52,11 @@
     overflow: hidden;
     position: relative;
 }
-.load-float-bg{
+
+.load-float-bg {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -66,7 +67,7 @@
 
 .profile-card-child {
     padding: 20px 30px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 /* responsive */
@@ -169,8 +170,8 @@
     color: #ffffff;
     padding: 20px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: end;
+    justify-content: space-around;
+    align-items: start;
 }
 
 .sideNav-header ul li {
@@ -339,4 +340,47 @@ hr {
 
 .navList li.currentPage {
     background-color: rgb(27, 27, 27) !important;
+}
+
+
+
+/* sticky news css */
+.sticky-news {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 500px;
+    border-width: 2px;
+    /* overflow: hidden; */
+    
+}
+
+.sticky-news i {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    z-index: 100000;
+    cursor: pointer;
+    padding: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    color: black;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky-news .card-text {
+    overflow: hidden;
+    height: 100%;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.323);
+    
+}
+.sticky-news .card {
+    overflow: hidden;
+    height: 100%;
 }

@@ -4,12 +4,16 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import LockIcon from "@material-ui/icons/Lock";
 import { UserContext } from "../../App";
 import { Link, useHistory } from "react-router-dom";
-import { isStudent, sleepInMiliseconds } from "../../Functions/autoFunctions";
-import { NotificationManager } from "react-notifications";
+import toast from "react-hot-toast";
+import {
+  isStudent,
+  postData,
+  sleepInMiliseconds,
+} from "../../Functions/autoFunctions";
 
 const SideNav = ({ user }) => {
   const [loginUser, setLoginUser] = useContext(UserContext);
-  const history = useHistory()
+  const history = useHistory();
   const studentDashboardlist = [
     {
       title: "Profile",
@@ -27,7 +31,7 @@ const SideNav = ({ user }) => {
       icon: "fas fa-flag",
     },
     {
-      title: "Issue Box",
+      title: "Open Issue",
       link: "/issuebox",
       icon: "fas fa-info",
     },
@@ -66,9 +70,24 @@ const SideNav = ({ user }) => {
       icon: "fas fa-user",
     },
     {
+      title: "Hall Applications",
+      link: "/applications",
+      icon: "fas fa-envelope-open",
+    },
+    {
+      title: "Appoint Seat",
+      link: "/appoint-seat",
+      icon: "fas fa-plus-square",
+    },
+    {
       title: "Upload Notice",
       link: "/notice",
       icon: "fas fa-edit",
+    },
+    {
+      title: "Gallery Management",
+      link: "/gallery",
+      icon: "fas fa-file-upload",
     },
     {
       title: "Create User",
@@ -79,16 +98,6 @@ const SideNav = ({ user }) => {
       title: "Hall Issue Check",
       link: "/issuebox",
       icon: "fas fa-info-circle",
-    },
-    {
-      title: "Hall Applications",
-      link: "/applications",
-      icon: "fas fa-envelope-open",
-    },
-    {
-      title: "Gallery Management",
-      link: "/gallery",
-      icon: "fas fa-file-upload",
     },
     {
       title: "Help Section",
@@ -119,16 +128,17 @@ const SideNav = ({ user }) => {
   };
   const handleNotifications = () => {
     // const notificationOpened = document.querySelector(".notificationIcon");
-    loginUser?.notifications.forEach((notification) => {
-      NotificationManager.info(notification.title);
-    });
+    // loginUser?.notifications.forEach((notification) => {
+    //   toast.custom(notification.title);
+    // });
+    toast.error("You have no Notifications");
   };
   const handleLogOut = () => {
     setLoginUser(null);
     localStorage.setItem("user", null);
-    history.push('/')
-
+    history.push("/");
   };
+
   return (
     <div className="sideNavBg ">
       <div className="sideNavBlackBg" onClick={handleClick}></div>
@@ -151,7 +161,7 @@ const SideNav = ({ user }) => {
           </div>
           <ul className="headerList">
             <li>
-              <h5>{loginUser?.personalInfo.name}</h5>
+              <h6>{loginUser?.personalInfo.name || loginUser.id}</h6>
             </li>
             <li>
               <span className="activeNow">Active Now</span>
@@ -184,10 +194,15 @@ const SideNav = ({ user }) => {
                 )}
               </li>
             )}
+            <Link
+              to={"/change-password"}
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <li title="Change Password">
+                <LockIcon />
+              </li>
+            </Link>
 
-            <li title="Change Password">
-              <LockIcon />
-            </li>
             <li title="Log Out" onClick={handleLogOut}>
               <ExitToAppIcon />
             </li>

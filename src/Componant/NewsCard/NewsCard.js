@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useHistory, useLocation } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
-  const { noticeId, noticeTitle } = news;
+  const {  _id : noticeId, noticeTitle } = news;
 
   return (
     <Link

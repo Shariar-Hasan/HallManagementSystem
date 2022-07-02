@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import Navbar from "./../../Componant/Navbar/Navbar";
 import Footer from "./../../Componant/Footer/Footer";
 import { Button } from "@material-ui/core";
 import NotAvailable from "../NotAvailable/NotAvailable";
+import LoadingCard from "../../Componant/LoadingCard/LoadingCard";
+import {
+  getData,
+  postData,
+  SharuEncryption,
+} from "../../Functions/autoFunctions";
+import { useContext } from "react";
+import { UserContext } from "../../App";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { user } = useParams();
+  const [loginuser, setLoginuser] = useContext(UserContext);
+
   const [userIsStudent, setUserIsStudent] = useState(false);
   const [userIsEmployee, setUserIsEmployee] = useState(false);
   const [userIsAdmin, setUserIsAdmin] = useState(false);
   const [hiddenPass, setHiddenPass] = useState(true);
+  const [loadpage, setLoadpage] = useState(false);
+
+  let history = useHistory();
+  let location = useLocation();
+
+  let { from } = location.state || { from: { pathname: "/profile" } };
   useEffect(() => {
     setUserIsStudent(user === "student" ? true : false);
     setUserIsEmployee(user === "employee" ? true : false);
@@ -25,14 +42,50 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    if (userIsAdmin) {
-        // login handle
-    } else {
-      data.id = data.id + "@sarh.cu.bd";
+  useEffect(() => {
+    if (loginuser !== null) {
+      history.push({
+        pathname: "/profile",
+        state: { from: location },
+      });
     }
+  }, []);
+  // ask for profile from database
+  const getProfile = (data) => {
+    postData(`http://localhost:5500/getprofile/${data.id}`, data)
+      .then((res) => res.json())
+      .then((data) => {
+        setLoginuser(data);
+        localStorage.setItem("user", JSON.stringify(data));
+        console.log(data);
+        history.push(from);
+      });
+  };
 
-    console.log(data);
+  const onSubmit = (data) => {
+    data.password = SharuEncryption(data.password);
+    setLoadpage(true);
+    postData(`http://localhost:5500/authentication`, data)
+      .then((r) => {
+        if (r.status === 401) {
+          toast.error("Wrong Password");
+        } else if (r.status === 403) {
+          toast.error("Invalid ID or Email");
+        } else if (r.status === 200) {
+          toast.success("Welcome to Abdur Rab Hall Website");
+          document.getElementById("login-form").reset();
+        } else {
+          toast.error("Something went wrong");
+        }
+        setLoadpage(false);
+        return r.json();
+      })
+      .then((res) => {
+        data.authentication = res;
+        getProfile(data);
+        setLoadpage(false);
+        // console.log(data);
+      });
   };
   const userLoginError = {
     reqError: `${
@@ -56,6 +109,7 @@ const Login = () => {
   return (
     <div>
       <Navbar></Navbar>
+      {loadpage && <LoadingCard></LoadingCard>}
 
       <div className="container">
         <div className="row">
@@ -69,7 +123,7 @@ const Login = () => {
                     (userIsAdmin && "Admin")
                   } Login`}</h4>
                   <hr />
-                  <form onSubmit={handleSubmit(onSubmit)}>
+                  <form onSubmit={handleSubmit(onSubmit)} id="login-form">
                     <div className="form-group  my-4">
                       <input
                         type="text"
@@ -83,15 +137,15 @@ const Login = () => {
                           required: userLoginError.reqError,
                           maxLength: {
                             value:
-                              (userIsStudent && 8) ||
-                              (userIsEmployee && 11) ||
+                              (userIsStudent && 12121) ||
+                              (userIsEmployee && 99999) ||
                               (userIsAdmin && 9999999),
                             message: userLoginError.maxLenError,
                           },
                           minLength: {
                             value:
-                              (userIsStudent && 8) ||
-                              (userIsEmployee && 11) ||
+                              (userIsStudent && 0) ||
+                              (userIsEmployee && 0) ||
                               (userIsAdmin && 0),
                             message: userLoginError.minLenError,
                           },
@@ -104,7 +158,7 @@ const Login = () => {
                               : userLoginError.onlyNumber,
                           },
                         })}
-                        autoComplete="off"
+                        autoComplete="on"
                       />
                       {errors.id && (
                         <span className="text-danger">
@@ -118,14 +172,14 @@ const Login = () => {
                         type={hiddenPass ? "password" : "text"}
                         className="form-control "
                         placeholder="Enter Password"
-                        {...register("pass", {
+                        {...register("password", {
                           required: userLoginError.passReqError,
                           minLength: {
                             value: 6,
                             message: userLoginError.passMinLenError,
                           },
                         })}
-                        autoComplete="off"
+                        autoComplete="on"
                         data-aria="password"
                       />
                       <span

@@ -34,8 +34,12 @@ const NoticeBoard = () => {
     getData("http://localhost:5500/notices")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setNotices(data);
+        if (loginUser !== null) {
+          setNotices(data);
+        } else {
+          const allNotices = data.filter((n) => n.visibleToEveryone);
+          setNotices(allNotices);
+        }
       });
   }, []);
 
@@ -52,7 +56,7 @@ const NoticeBoard = () => {
     setPageNotices(newNotices);
     setEmptyArray(newEmptyArr);
     setPageCount(Math.ceil(notices.length / noticePerPage));
-  }, [currentPage, noticePerPage, pageCount,notices]);
+  }, [currentPage, noticePerPage, pageCount, notices]);
 
   const [loginUser] = useContext(UserContext);
 

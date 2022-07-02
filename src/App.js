@@ -15,7 +15,7 @@ import { createContext, useState } from "react";
 import { images } from "./Data/fakedata";
 import {
   NotificationContainer,
-  NotificationManager,
+  toast,
 } from "react-notifications";
 import { useEffect } from "react";
 import { activeStatus, isStudent } from "./Functions/autoFunctions";
@@ -24,6 +24,11 @@ import SideNav from "./Componant/SideNav/SideNav";
 import NoticeDetails from "./Pages/NoticeDetails/NoticeDetails";
 import AppointSeat from "./Pages/AppointSeat/AppointSeat";
 import CreateUser from "./Pages/CreateUser/CreateUser";
+import ChangePassword from "./Pages/ChangePassword/ChangePassword";
+import { Toaster } from "react-hot-toast";
+import PrivateRoute from "./Componant/PrivateRoute/PrivateRoute";
+import AdminRoute from "./Componant/AdminRoute/AdminRoute";
+import IssueBox from "./Pages/IssueBox/IssueBox";
 
 export const UserContext = createContext();
 export const DataContext = createContext();
@@ -33,20 +38,28 @@ function App() {
   const [loginUser, setLoginUser] = useState(oldUser);
   const imageLoad = images;
   const [show, setShow] = useState(false);
-  useEffect(() => {
-    if (loginUser?.notifications?.length > 0 && isStudent(loginUser)) {
-      NotificationManager.info(
-        "You have new notification to check",
-        "Reminder",
-        3000
-      );
-    }
-  }, [loginUser]);
+ 
 
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <DataContext.Provider value={[imageLoad, [show, setShow]]}>
         <NotificationContainer />
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            // Define default options
+            className: "",
+            duration: 3000,
+            style: {
+              background: "#363636",
+              color: "#fff",
+            }
+          }}
+        />
         <Router>
           {activeStatus(loginUser) && <SideNav></SideNav>}
           <Switch>
@@ -54,41 +67,40 @@ function App() {
               <Home></Home>
             </Route>
 
-            <Route path="/profile">
+            <PrivateRoute path="/profile">
               <Profile></Profile>
-            </Route>
+            </PrivateRoute>
 
-            <Route path="/applications">
+            <AdminRoute path="/applications">
               <Applications></Applications>
-            </Route>
+            </AdminRoute>
 
-            <Route path="/userlist">
+            <AdminRoute path="/userlist">
               <Userlist></Userlist>
-            </Route>
+            </AdminRoute>
 
-            <Route path="/appoint-seat">
+            <AdminRoute path="/appoint-seat">
               <AppointSeat></AppointSeat>
-            </Route>
+            </AdminRoute>
 
-            <Route path="/create-user">
+            <PrivateRoute path="/change-password">
+              <ChangePassword></ChangePassword>
+            </PrivateRoute>
+
+            <AdminRoute path="/create-user">
               <CreateUser></CreateUser>
-            </Route>
+            </AdminRoute>
 
             <Route path="/login/:user">
               <Login></Login>
             </Route>
 
-            {/* <Route path="/cPanelLogin">
-              <CPanelLogin></CPanelLogin>
-            </Route> */}
-
-            <Route path="/dashboard">
-              <Dashboard></Dashboard>
-            </Route>
-
-            <Route path="/faq">
+            <PrivateRoute path="/faq">
               <FAQ></FAQ>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/issuebox">
+              <IssueBox/>
+            </PrivateRoute>
 
             <Route path="/gallery">
               <Gallery></Gallery>

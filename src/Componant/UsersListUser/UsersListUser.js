@@ -3,16 +3,16 @@ import React from "react";
 const UsersListUser = ({ handleDelete, handleUserClick, user }) => {
   return (
     <tr>
-      <td>{user?.authentication.isStudent ? user?.id : user?.phoneNo}</td>
-      <td>
+      <td>{user?.id}</td>
+      <td style={{fontSize : "40px"}}>
         {user?.personalInfo.avater ? (
-          <img src={user?.personalInfo?.avater +"/?img="+ Math.random()} style={{height : "50px"}} alt={user?.personalInfo.name} />
+          <img src={user?.personalInfo?.avater} style={{height : "50px"}} alt={user?.personalInfo.name} />
         ) : (
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
+          <i className="fa fa-user-circle" aria-hidden="true"></i>
         )}
       </td>
-      <td>{user?.personalInfo.name}</td>
-      <td>{user?.contact.city}</td>
+      <td>{user?.personalInfo.name || "Incomplete Profile"}</td>
+      <td>{user?.contact.city || "Incomplete Profile"}</td>
       <td>{user?.authentication.isStudent ? "Student" : "Employee"}</td>
       <td>
         <div className="btn-group" role="group" aria-label="Basic example">

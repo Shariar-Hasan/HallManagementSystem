@@ -1,3 +1,7 @@
+
+import moment from "moment";
+
+
 // checking admin or not
 export const isAdmin = (user) => (user ? user.authentication?.isAdmin : false);
 
@@ -37,6 +41,9 @@ export const sleepInMiliseconds = (miliseconds) => {
   }
 };
 
+// ************************************************************
+// *******************Fetching Functions***********************
+// ************************************************************
 // about posting Datas
 export const postData = (url = "", data = {}) => {
   return new Promise((res, err) => {
@@ -46,27 +53,66 @@ export const postData = (url = "", data = {}) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then((r) => res(r))
-    .catch(e => err(e))
+    })
+      .then((r) => res(r))
+      .catch((e) => err(e));
   });
 };
 
 // about getting datas
 export const getData = (url = "") => {
   return new Promise((res, err) => {
-    fetch(url).then((r) => res(r))
-    .catch(e => err(e))
+    fetch(url)
+      .then((r) => res(r))
+      .catch((e) => err(e));
   });
 };
 
 // about deleting Data
 export const deleteData = (url = "") => {
   return new Promise((res, err) => {
-    fetch(url,{
-      method : "DELETE"
-    }).then((r) => res(r))
-    .catch(e => err(e))
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((r) => res(r))
+      .catch((e) => err(e));
   });
 };
 
+// about updating Data
+export const updateData = (url = "", data = {}) => {
+  return new Promise((res, err) => {
+    fetch(url, {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((r) => res(r))
+      .catch((e) => err(e));
+  });
+};
 
+// ************************************************************
+// *******************Encryption Functions*********************
+// ************************************************************
+
+export const SharuEncryption = (plaintext) => {
+  return plaintext
+    .split("")
+    .map((char) => String.fromCharCode(char.charCodeAt() + 5))
+    .join("");
+};
+export const SharuDecryption = (chipherText) => {
+  return chipherText
+    .split("")
+    .map((char) => String.fromCharCode(char.charCodeAt() - 5))
+    .join("");
+};
+
+
+export const fromNow = (dateNtime) =>{
+  return moment(
+    dateNtime,
+    "hh:mm:ss A, MM/DD/YYYY"
+  ).fromNow()
+}

@@ -57,6 +57,45 @@ export const student = {
     isEmployee: false,
   },
 };
+
+
+export const example = {
+  id: "18701012",
+  personalInfo: {
+    id: "18701012",
+    name: "",
+    avater: "",
+    birthDate: "",
+    fatherName: "",
+    motherName: "",
+  },
+  contact: {
+    address: "",
+    city: "",
+    division: "",
+    zip: "",
+    phoneNo: "",
+    email: "",
+  },
+  institutional: {
+    course: "",
+    department: "",
+    session: "",
+  },
+  hallDetails: [],
+  notifications: [
+    {
+      title : "Welcome to Abdur Rab Hall Website"
+    }
+  ],
+  authentication: {
+    isAdmin: false,
+    isStudent: true,
+    isEmployee: false,
+  },
+};
+
+
 // export const emptyStudent = {
 //     id: "01234567891",
 //     personalInfo: {
@@ -148,11 +187,11 @@ export const employee = {
 // }
 
 export const admin = {
-  email: "admin@gmail.com",
+  id: "admin@gmail.com",
   personalInfo: {
-    name: " Admin 1",
-    email: "admin@gmail.com",
-    avater: "https://i.pravatar.cc/300",
+    name: "",
+    email: "",
+    avater: "",
   },
   authentication: {
     isAdmin: true,

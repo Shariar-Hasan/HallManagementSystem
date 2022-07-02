@@ -7,18 +7,16 @@ import FeedBack from "../../Componant/FeedBack/FeedBack";
 import FooterLink from "../../Componant/FooterLink/FooterLink";
 import FooterMap from "../../Componant/FooterMap/FooterMap";
 import Navbar from "../../Componant/Navbar/Navbar";
-import OneClickLogin from "../../Componant/OneClickLogin/OneClickLogin";
 import Footer from "../../Componant/Footer/Footer";
 import { UserContext } from "../../App";
 
 const Home = () => {
   const [loginUser, setLoginUser] = useContext(UserContext);
   const bulletin =
-    "সকলের অবগতির জন্য জানানো যাইতেছে যে, এই ওয়েবসাইটটি আপাতত সংস্কার করা হইতেছে, তাই কেও দয়া করে এই ওয়েবসাইটের ক্ষতি হয় এমন কোনো কাজ করিবেন না। - আদেশক্রমে আব্দুর রব হল কতৃপক্ষ";
+    "এই ওয়েবসাইট তৈরির কাজ অনেকাংশই শেষ হয়ে গেছে। আর কিছুদিন পর পুর্নাঙ্গ ওয়েবসাইট লাঞ্চ হবে, সকলের অপেক্ষার অবসান ঘটিয়ে - আব্দুর রব হল কতৃপক্ষ";
   return (
     <div>
       <Navbar></Navbar>
-      <OneClickLogin></OneClickLogin>
       <Bulletin bulletin={bulletin}></Bulletin>
       <Banner></Banner>
       <div className="container my-4">
