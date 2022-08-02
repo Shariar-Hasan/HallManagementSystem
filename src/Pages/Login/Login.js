@@ -57,7 +57,7 @@ const Login = () => {
       .then((data) => {
         setLoginuser(data);
         localStorage.setItem("user", JSON.stringify(data));
-        console.log(data);
+        // console.log(data);
         history.push(from);
       });
   };

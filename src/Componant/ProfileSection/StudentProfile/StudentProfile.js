@@ -187,6 +187,7 @@ const StudentProfile = ({
                     <i className="fa fa-upload" aria-hidden="true">
                       <small>Upload Image</small>
                       <input
+                        id="uploadButton"
                         className="ul_image_input"
                         type="file"
                         accept="image/*"
