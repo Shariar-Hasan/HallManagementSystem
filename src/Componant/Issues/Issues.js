@@ -3,9 +3,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../App";
-import { fromNow, isAdmin, updateData } from "../../Functions/autoFunctions";
+import {
+  fromNow,
+  isAdmin,
+  isEmployee,
+  updateData,
+} from "../../Functions/autoFunctions";
 
-const Issues = ({ issue }) => {
+const Issues = ({ issue, query }) => {
   const [loginuser, setLoginuser] = useContext(UserContext);
   const {
     id,
@@ -34,19 +39,18 @@ const Issues = ({ issue }) => {
     <div className="card">
       <div
         className="card-header d-flex justify-content-between align-items-baseline"
-        id={`heading${_id}`}
+        id={`headingIssue${_id}`}
       >
         <span
           className=" font-italic cursor-pointer text-primary border border-primary p-1 rounded"
           data-toggle="collapse"
-          data-target={`#collapse${_id}`}
-          aria-expanded="true"
-          aria-controls={`collapse${_id}`}
+          data-target={`#collapseIssue${_id}`}
+          aria-controls={`collapseIssue${_id}`}
         >
           {`#${issueTopic.split(" ").join("_")} for  Room No ${roomNo}`}
         </span>
         <span>
-          {isAdmin(loginuser) ? (
+          {isAdmin(loginuser) || (isEmployee(loginuser) && query === "IP") ? (
             <select
               className={`form-control border-0 text-${
                 runningStatus === "Pending"
@@ -62,9 +66,11 @@ const Issues = ({ issue }) => {
               defaultValue={runningStatus}
               onChange={(e) => setRunningStatus(e.target.value)}
             >
-              <option className="text-warning" value="Pending">
-                Pending
-              </option>
+              {!isEmployee(loginuser) && (
+                <option className="text-warning" value="Pending">
+                  Pending
+                </option>
+              )}
               <option className="text-info" value="In Progress">
                 In Progress
               </option>
@@ -96,10 +102,10 @@ const Issues = ({ issue }) => {
       </div>
 
       <div
-        id={`collapse${_id}`}
+        id={`collapseIssue${_id}`}
         className="collapse"
-        aria-labelledby={`heading${_id}`}
-        data-parent="#accordion"
+        aria-labelledby={`headingIssue${_id}`}
+        data-parent={`#accordionIssue${query}`}
       >
         <div className="card-body">
           <div className="col border">

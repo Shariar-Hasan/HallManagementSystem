@@ -42,33 +42,10 @@ const IssueEditor = () => {
     <>
       {issueOpened && (
         <div className="profile-card mb-5 shadow border-rounded">
-          <h3 className="profile-card-header">Post Notice</h3>
+          <h3 className="profile-card-header">Open An Issue</h3>
           <div className="profile-card-child">
             <form onSubmit={handleSubmit(onSubmit)} id="noticeForm">
-              {/* <div className="form-group">
-                <label className="w-100">
-                  <h6>Id :</h6>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={loginUser?.id}
-                    disabled
-                    {...register("id")}
-                  />
-                </label>
-              </div> */}
-              {/* <div className="form-group">
-                <label className="w-100">
-                  <h6>Room No :</h6>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={roomNo}
-                    disabled
-                    {...register("roomNo")}
-                  />
-                </label>
-              </div> */}
+              
               <div className="form-group">
                 <label className="w-100">
                   <h6>Select Issue Topic :</h6>

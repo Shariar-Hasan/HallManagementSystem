@@ -5,106 +5,17 @@ import LockIcon from "@material-ui/icons/Lock";
 import { UserContext } from "../../App";
 import { Link, useHistory } from "react-router-dom";
 import toast from "react-hot-toast";
+import { isStudent } from "../../Functions/autoFunctions";
 import {
-  isStudent,
-  postData,
-  sleepInMiliseconds,
-} from "../../Functions/autoFunctions";
+  adminDashboardlist,
+  employeeDashboardlist,
+  studentDashboardlist,
+} from "../../Data/fakedata";
 
 const SideNav = ({ user }) => {
   const [loginUser, setLoginUser] = useContext(UserContext);
   const history = useHistory();
-  const studentDashboardlist = [
-    {
-      title: "Profile",
-      link: "/profile",
-      icon: "fas fa-user",
-    },
-    {
-      title: "Gallery",
-      link: "/gallery",
-      icon: "fas fa-camera",
-    },
-    {
-      title: "Notice Board",
-      link: "/notice",
-      icon: "fas fa-flag",
-    },
-    {
-      title: "Open Issue",
-      link: "/issuebox",
-      icon: "fas fa-info",
-    },
-  ];
-  const employeeDashboardlist = [
-    {
-      title: "Profile",
-      link: "/profile",
-      icon: "fas fa-user",
-    },
-    {
-      title: "Notice Board",
-      link: "/notice",
-      icon: "fas fa-flag",
-    },
-    {
-      title: "Contact Help",
-      link: "/help",
-      icon: "fas fa-question-circle",
-    },
-    {
-      title: "Issue Box",
-      link: "/issuebox",
-      icon: "fas fa-info",
-    },
-  ];
-  const adminDashboardlist = [
-    {
-      title: "Dashboard",
-      link: "/profile",
-      icon: "fas fa-tasks",
-    },
-    {
-      title: "Users List",
-      link: "/userlist",
-      icon: "fas fa-user",
-    },
-    {
-      title: "Hall Applications",
-      link: "/applications",
-      icon: "fas fa-envelope-open",
-    },
-    {
-      title: "Appoint Seat",
-      link: "/appoint-seat",
-      icon: "fas fa-plus-square",
-    },
-    {
-      title: "Upload Notice",
-      link: "/notice",
-      icon: "fas fa-edit",
-    },
-    {
-      title: "Gallery Management",
-      link: "/gallery",
-      icon: "fas fa-file-upload",
-    },
-    {
-      title: "Create User",
-      link: "/create-user",
-      icon: "fas fa-user-plus",
-    },
-    {
-      title: "Hall Issue Check",
-      link: "/issuebox",
-      icon: "fas fa-info-circle",
-    },
-    {
-      title: "Help Section",
-      link: "/profile",
-      icon: "fas fa-question-circle",
-    },
-  ];
+
   const navData = loginUser?.authentication?.isStudent
     ? studentDashboardlist
     : loginUser?.authentication?.isEmployee

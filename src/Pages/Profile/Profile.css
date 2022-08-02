@@ -118,7 +118,7 @@
     top: 0;
     left: -281px;
     z-index: 1001;
-    transition: all .53s ease-in-out;
+    transition: all .23s ease-in-out;
     position: fixed;
 }
 
@@ -352,6 +352,8 @@ hr {
     width: 300px;
     max-height: 500px;
     border-width: 2px;
+    z-index: 887;
+    transition: all .5s ease-in-out;
     /* overflow: hidden; */
     
 }

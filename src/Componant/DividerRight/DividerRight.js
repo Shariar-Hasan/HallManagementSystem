@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../App";
-import { notices } from "../../Data/fakedata";
 import { activeStatus, getData } from "../../Functions/autoFunctions";
 import ShortNews from "../ShortNews/ShortNews";
 
@@ -18,6 +17,9 @@ const DividerRight = () => {
         setNews(newNews)
         const newNotices = data.filter((n) => n.visibleToEveryone === false);
         setNotices(newNotices)
+      })
+      .catch(error =>{
+        console.log(error)
       });
   }, []);
   return (

@@ -7,7 +7,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-      loginUser !== null ? ( //(Object.keys(loginUser).length)
+      loginUser !== null  ? ( //(Object.keys(loginUser).length)
           children
         ) : (
           <Redirect

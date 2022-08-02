@@ -7,8 +7,6 @@ import { useContext } from 'react';
 import { DataContext, UserContext } from '../../App';
 import Navbar from '../../Componant/Navbar/Navbar';
 import Footer from '../../Componant/Footer/Footer';
-import SideNav from '../../Componant/SideNav/SideNav';
-import { activeStatus, isEmployee, isStudent } from '../../Functions/autoFunctions';
 const Gallery = () => {
 
     const [imageLoad] = useContext(DataContext);

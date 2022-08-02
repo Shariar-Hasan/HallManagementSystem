@@ -3,11 +3,14 @@ import toast from "react-hot-toast";
 import swal from "sweetalert";
 import moment from "moment";
 import { useParams } from "react-router-dom";
-import { deleteData, getData } from "../../Functions/autoFunctions";
+import { deleteData, getData, isAdmin } from "../../Functions/autoFunctions";
+import { useContext } from "react";
+import { UserContext } from "../../App";
 
 const NoticeDetails = () => {
   const { nid } = useParams();
   const [NoticeDetails, setNoticeDetails] = useState({});
+  const [loginuser] = useContext(UserContext);
   useEffect(() => {
     getData(`http://localhost:5500/notice/${nid}`)
       .then((res) => res.json())
@@ -51,7 +54,7 @@ const NoticeDetails = () => {
           }
         });
       } else {
-        toast.custom("Notice Not Deleted");
+        toast.info("Notice Not Deleted");
       }
     });
   };
@@ -77,20 +80,24 @@ const NoticeDetails = () => {
               >
                 <i className="fa fa-window-close" aria-hidden="true"></i>
               </button>
-              <button
-                type="button"
-                onClick={handleEdit}
-                className="btn-lg btn edit-btn"
-              >
-                <i className="fa fa-edit" aria-hidden="true"></i>
-              </button>
-              <button
-                type="button"
-                onClick={handleDelete}
-                className="btn-lg btn delete-btn"
-              >
-                <i className="fa fa-trash" aria-hidden="true"></i>
-              </button>
+              {((Object.keys(loginuser || {}).length !== 0) &&  isAdmin(loginuser)) && (
+                <>
+                  <button
+                    type="button"
+                    onClick={handleEdit}
+                    className="btn-lg btn edit-btn"
+                  >
+                    <i className="fa fa-edit" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleDelete}
+                    className="btn-lg btn delete-btn"
+                  >
+                    <i className="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </>
+              )}
               <div className="floating-news-inside">
                 {!NoticeDetails?.visibleToEveryone && (
                   <div className="private">
@@ -127,11 +134,13 @@ const NoticeDetails = () => {
                   <h4 className="text-primary mb-4">
                     {NoticeDetails?.noticeTitle}
                   </h4>
-                  {/* <h6 className="font-italic">{NoticeDetails?.postUpdated}</h6> */}
-                  <h6 className="font-italic">{moment(
-                    NoticeDetails?.postUpdated,
-                    "hh:mm:ss A, MM/DD/YYYY"
-                  ).fromNow()}</h6>
+                  <h6 className="font-italic">
+                    Posted{" "}
+                    {moment(
+                      NoticeDetails?.postUpdated,
+                      "hh:mm:ss A, MM/DD/YYYY"
+                    ).fromNow()}
+                  </h6>
                 </div>
                 <hr />
                 <div className="col-12">

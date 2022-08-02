@@ -8,10 +8,10 @@ import { isAdmin, isEmployee, isStudent } from '../../Functions/autoFunctions';
 
 
 const Navbar = () => {
-    const [loginUser,setLoginUser] = useContext(UserContext)
+    const [loginUser] = useContext(UserContext)
 
     return (
-        <div >
+        <div  className='sticky-top' style={{zIndex : "888"}}>
             <nav className="navbar shadow navbar-expand-sm navbar-light bg-light">
                 <div className="container">
                     <div >

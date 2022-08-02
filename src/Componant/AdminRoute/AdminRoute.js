@@ -7,7 +7,7 @@ const AdminRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-        loginUser !== null ? (
+        loginUser !== null  ? (
           loginUser?.authentication.isAdmin ? (
             children
           ) : (

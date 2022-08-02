@@ -16,9 +16,10 @@ const HorizontalCard = () => {
                         <p className="card-text text-justify">{message}</p>
                         <hr />
                         <div className="card-text">
-                            <h5 className="card-title display-6">{name}</h5>
-                            <h6 className="card-title display-6">{designation},{hallName}</h6>
-                            <h6 className="card-title display-6">{university}</h6>
+                            <h5 className="card-title h5">Prof. {name}</h5>
+                            <h6 className="card-title h6">{designation},</h6>
+                            <h6 className="card-title h6">{hallName}</h6>
+                            <h6 className="card-title h5">{university}</h6>
                         </div>
                     </div>
                 </div>

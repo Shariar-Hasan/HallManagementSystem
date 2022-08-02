@@ -3,16 +3,15 @@ import { useState } from "react";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../App";
-import { updateData } from "../../Functions/autoFunctions";
+import { SharuEncryption, updateData } from "../../Functions/autoFunctions";
 import toast from "react-hot-toast";
 
 const ChangePassword = () => {
-  const [loginuser, setLoginuser] = useContext(UserContext);
+  const [loginuser] = useContext(UserContext);
   const [hiddenPass, setHiddenPass] = useState(true);
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
 
   const errorHandling = (data) => {
@@ -20,9 +19,7 @@ const ChangePassword = () => {
       toast.error("Password doesn't matched");
       return false;
     } else if (data.password.length < 6) {
-      toast.error(
-        "Password length should be more then 6 digit"
-      );
+      toast.error("Password length should be more then 6 digit");
       return false;
     } else {
       return true;
@@ -30,14 +27,19 @@ const ChangePassword = () => {
   };
   const onSubmit = (data) => {
     if (errorHandling(data)) {
-        const newData = {
-            id : loginuser.id,
-            password : data.password
-        }
-        updateData("/changepass",newData)
-        .then(res => res.json())
-        .then(data => console.log(data))
-    } 
+      const newData = {
+        id: loginuser?.id,
+        password: SharuEncryption(data.password),
+      };
+      updateData("http://localhost:5500/changepass", newData)
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Password successfully updated")
+        })
+        .catch((err) => {
+          toast.error("Something went wrong");
+        });
+    }
   };
   return (
     <div>

@@ -6,19 +6,13 @@ import Login from "./Pages/Login/Login";
 import NotAvailable from "./Pages/NotAvailable/NotAvailable";
 import Gallery from "./Pages/Gallery/Gallery";
 import FAQ from "./Pages/FAQ/FAQ";
-import Dashboard from "./Pages/Dashboard/Dashboard";
 import NoticeBoard from "./Pages/NoticeBoard/NoticeBoard";
-import CPanelLogin from "./Pages/CPanelLogin/CPanelLogin";
 
 import "./App.css";
 import { createContext, useState } from "react";
-import { images } from "./Data/fakedata";
-import {
-  NotificationContainer,
-  toast,
-} from "react-notifications";
-import { useEffect } from "react";
-import { activeStatus, isStudent } from "./Functions/autoFunctions";
+import { images } from "./Data/imageData";
+import { NotificationContainer } from "react-notifications";
+import { activeStatus, getData, isAdmin } from "./Functions/autoFunctions";
 import Userlist from "./Pages/Userlist/Userlist";
 import SideNav from "./Componant/SideNav/SideNav";
 import NoticeDetails from "./Pages/NoticeDetails/NoticeDetails";
@@ -29,6 +23,8 @@ import { Toaster } from "react-hot-toast";
 import PrivateRoute from "./Componant/PrivateRoute/PrivateRoute";
 import AdminRoute from "./Componant/AdminRoute/AdminRoute";
 import IssueBox from "./Pages/IssueBox/IssueBox";
+import { useEffect } from "react";
+import StickyNews from "./Componant/StickyNews/StickyNews";
 
 export const UserContext = createContext();
 export const DataContext = createContext();
@@ -38,8 +34,42 @@ function App() {
   const [loginUser, setLoginUser] = useState(oldUser);
   const imageLoad = images;
   const [show, setShow] = useState(false);
- 
+  const [showSticky, setShowSticky] = useState(false);
+  const [stickyNote, setStickyNote] = useState({});
+  useEffect(() => {
+    getData(`http://localhost:5500/getprofile/${loginUser?._id}`)
+      .then((res) => res.json())
+      .then((data) => setLoginUser(data))
+      .catch((err) => {
+        console.log(err);
+      });
 
+    getData(`http://localhost:5500/getStickyNote`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setStickyNote(data);
+          const oldSticky =
+            JSON.parse(sessionStorage.getItem("stickyShow")) || null;
+          if (data._id !== oldSticky?._id && !oldSticky?.show) {
+            setShowSticky(true);
+          } else {
+            setShowSticky(false);
+          }
+        }
+      })
+      .catch((err) => {
+        return true;
+      });
+  }, []);
+  // useEffect(() => {
+  //   const oldSticky = JSON.parse(sessionStorage.getItem("stickyShow")) || null;
+  //   if (stickyNote._id !== oldSticky?._id) {
+  //     setShowSticky(true);
+  //   } else {
+  //     setShowSticky(false);
+  //   }
+  // }, [stickyNote]);
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <DataContext.Provider value={[imageLoad, [show, setShow]]}>
@@ -57,9 +87,16 @@ function App() {
             style: {
               background: "#363636",
               color: "#fff",
-            }
+            },
           }}
         />
+
+        {showSticky && !isAdmin(loginUser) && (
+          <StickyNews
+            stickyNote={stickyNote}
+            sticky={[showSticky, setShowSticky]}
+          />
+        )}
         <Router>
           {activeStatus(loginUser) && <SideNav></SideNav>}
           <Switch>
@@ -99,7 +136,7 @@ function App() {
               <FAQ></FAQ>
             </PrivateRoute>
             <PrivateRoute path="/issuebox">
-              <IssueBox/>
+              <IssueBox />
             </PrivateRoute>
 
             <Route path="/gallery">

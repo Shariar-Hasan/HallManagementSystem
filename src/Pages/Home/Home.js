@@ -9,15 +9,15 @@ import FooterMap from "../../Componant/FooterMap/FooterMap";
 import Navbar from "../../Componant/Navbar/Navbar";
 import Footer from "../../Componant/Footer/Footer";
 import { UserContext } from "../../App";
-
 const Home = () => {
   const [loginUser, setLoginUser] = useContext(UserContext);
   const bulletin =
     "এই ওয়েবসাইট তৈরির কাজ অনেকাংশই শেষ হয়ে গেছে। আর কিছুদিন পর পুর্নাঙ্গ ওয়েবসাইট লাঞ্চ হবে, সকলের অপেক্ষার অবসান ঘটিয়ে - আব্দুর রব হল কতৃপক্ষ";
+    
   return (
     <div>
       <Navbar></Navbar>
-      <Bulletin bulletin={bulletin}></Bulletin>
+      {/* <Bulletin bulletin={bulletin}></Bulletin> */}
       <Banner></Banner>
       <div className="container my-4">
         <div className="row">

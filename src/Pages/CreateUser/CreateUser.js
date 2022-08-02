@@ -49,21 +49,26 @@ const CreateUser = () => {
   };
   // set to database function
   const setToDatabase = (userArray, generatedList) => {
-    postData("http://localhost:5500/createUser/", userArray).then((res) => {
-      if (res.status === 200) {
-        toast.success("All user Successfully created!");
+    postData("http://localhost:5500/createUser/", userArray)
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("All user Successfully created!");
+          setLoadpage(false);
+          setCreatedUsers(generatedList);
+          console.log(res);
+        } else {
+          console.log(res);
+          toast.error(res.statusText);
+          setCreatedUsers("");
+          setLoadpage(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
         setLoadpage(false);
-        setCreatedUsers(generatedList);
-        console.log(res);
-      } else {
-        console.log(res);
-        toast.error(res.statusText);
-        setCreatedUsers("");
-        setLoadpage(false);
-      }
-    });
+      });
   };
-  console.log(SharuDecryption("}vnmql~jit"));
+  // console.log(SharuDecryption("}vnmql~jit"));
   // onsubmit function
   const onSubmit = (data) => {
     setLoadpage(true);
@@ -71,9 +76,7 @@ const CreateUser = () => {
       data.endsOn = data.startsFrom;
     }
     if (+data.endsOn - +data.startsFrom > 500) {
-      toast.error(
-        "Can not create more then 500 user at a time"
-      );
+      toast.error("Can not create more then 500 user at a time");
       setLoadpage(false);
       return;
     }

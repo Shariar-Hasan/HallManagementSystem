@@ -1,8 +1,6 @@
-import { Button } from "@material-ui/core";
 import React from "react";
 import swal from "sweetalert";
-import { useHistory } from "react-router-dom";
-import moment from 'moment'
+import moment from "moment";
 import "../profile.css";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -17,6 +15,7 @@ import { useState } from "react";
 import LoadingCard from "../../LoadingCard/LoadingCard";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { allCity, allDivision } from "../../../Data/fakedata";
 
 const StudentProfile = ({
   personalInfo,
@@ -25,7 +24,7 @@ const StudentProfile = ({
   hallDetails,
 }) => {
   const { register, handleSubmit } = useForm();
-  const [loginuser, setLoginuser] = useContext(UserContext);
+  const [loginuser] = useContext(UserContext);
   const { id, name, avater, birthDate, fatherName, motherName } =
     loginuser?.personalInfo || {};
   const { address, city, division, zip, phoneNo, email } = loginuser?.contact;
@@ -52,8 +51,8 @@ const StudentProfile = ({
     getData("http://localhost:5500/appliedornot/" + id)
       .then((res) => res.json())
       .then((data) => {
-        setApplied(data)
-        console.log("appliced",data)
+        setApplied(data);
+        console.log("appliced", data);
       });
   });
 
@@ -103,6 +102,7 @@ const StudentProfile = ({
     }
   };
   const handleSeat = () => {
+    setLoadpage(true);
     if (allInfoFound) {
       swal({
         title: "Apply for seat",
@@ -113,23 +113,21 @@ const StudentProfile = ({
       }).then((apply) => {
         if (apply) {
           const appliedUser = {
-            id : loginuser.id,
-            name : loginuser.personalInfo.name,
-            avater : loginuser.personalInfo.avater,
-            address : loginuser.contact.address,
-            city : loginuser.contact.city,
-            division : loginuser.contact.division,
-            zip : loginuser.contact.zip,
-            course : loginuser.institutional.course,
-            session : loginuser.institutional.session
-          }
+            id: loginuser.id,
+            name: loginuser.personalInfo.name,
+            avater: loginuser.personalInfo.avater,
+            address: loginuser.contact.address,
+            city: loginuser.contact.city,
+            division: loginuser.contact.division,
+            zip: loginuser.contact.zip,
+            course: loginuser.institutional.course,
+            session: loginuser.institutional.session,
+          };
           postData(`http://localhost:5500/applyseat`, appliedUser)
             .then((res) => res.json())
             .then((data) => {
               if (data.acknowledged) {
-                toast.success(
-                  "Successfully Applied for Hall seat"
-                );
+                toast.success("Successfully Applied for Hall seat");
               }
             });
         } else {
@@ -139,6 +137,8 @@ const StudentProfile = ({
     } else {
       toast.error("Please Complete your profile First");
     }
+
+    setLoadpage(false);
   };
   const handleHallLeave = () => {
     swal({
@@ -149,9 +149,20 @@ const StudentProfile = ({
       dangerMode: true,
     }).then((willLeave) => {
       if (willLeave) {
-        swal("User Left  the Hall", {
-          icon: "success",
-        });
+        setLoadpage(true);
+        // console.log(loginuser?.hallDetails[loginuser?.hallDetails.length-1])
+        updateData(
+          `http://localhost:5500/leavehall/${id}`,
+          loginuser?.hallDetails[loginuser?.hallDetails.length - 1]
+        )
+          .then((res) => {
+            setLoadpage(false);
+          })
+          .catch((err) => {
+            setLoadpage(false);
+          });
+
+        setLoadpage(false);
       }
     });
   };
@@ -168,7 +179,7 @@ const StudentProfile = ({
                 {avater ? (
                   <img
                     className="img-fluid mx-auto"
-                    src={avater || loadedimg}
+                    src={loadedimg || avater}
                     alt={name}
                   />
                 ) : (
@@ -306,23 +317,10 @@ const StudentProfile = ({
                             )}
                           </li>
                           <li>
-                            City :{" "}
-                            {city || (
-                              <input
-                                type="text"
-                                className="form-control "
-                                aria-describedby="helpId"
-                                placeholder="Your City "
-                                {...register("city", {
-                                  required: true,
-                                })}
-                              />
-                            )}
-                          </li>
-                          <li>
                             Division :{" "}
                             {division || (
                               <input
+                                list="division-list"
                                 type="text"
                                 className="form-control "
                                 aria-describedby="helpId"
@@ -332,6 +330,32 @@ const StudentProfile = ({
                                 })}
                               />
                             )}
+                            <datalist id="division-list">
+                              {allDivision.map((opt) => (
+                                <option key={opt}>{opt}</option>
+                              ))}
+                            </datalist>
+                          </li>
+
+                          <li>
+                            City :{" "}
+                            {city || (
+                              <input
+                                list="city-list"
+                                type="text"
+                                className="form-control "
+                                aria-describedby="helpId"
+                                placeholder="Your City "
+                                {...register("city", {
+                                  required: true,
+                                })}
+                              />
+                            )}
+                            <datalist id="city-list">
+                              {allCity.map((opt) => (
+                                <option key={opt}>{opt}</option>
+                              ))}
+                            </datalist>
                           </li>
                           <li>
                             Zip Code :{" "}
@@ -361,9 +385,9 @@ const StudentProfile = ({
               <table className="table table-responsive-sm text-center table-bordered w-100">
                 <thead>
                   <tr>
-                    <th>Position</th>
+                    <th>Course</th>
                     <th>Department</th>
-                    <th>JoininDate</th>
+                    <th>Session</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -473,67 +497,65 @@ const StudentProfile = ({
         <div className="profile-card mb-5 shadow border-rounded">
           <h3 className="profile-card-header">Hall Information</h3>
           <div className="row  profile-card-child">
-            {hallDetails.length !== 0 ? (
-              <>
-                <table className="table table-responsive-sm text-center table-bordered w-100">
-                  <thead>
-                    <tr>
-                      <th>Alloted</th>
-                      <th>Room No</th>
-                      <th>Start Date</th>
-                      <th>Expiry Date</th>
-                      <th>Leave Hall</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {hallDetails.map((info, i) => {
-                      return (
-                        <tr key={i}>
-                          <td>
-                            {hallDetails.length === i + 1
-                              ? moment(info.cardExpiryDate).isAfter((new Date()))
-                                ? "Yes"
-                                : "No"
-                              : "Expired"}
-                          </td>
+            {hallDetails.length !== 0 && (
+              <table className="table table-responsive-sm text-center table-bordered w-100">
+                <thead>
+                  <tr>
+                    <th>Allotment</th>
+                    <th>Room No</th>
+                    <th>Start Date</th>
+                    <th>Expiry Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {hallDetails.map((info, i) => {
+                    return (
+                      <tr key={i}>
+                        <td>
+                          {moment(info.cardExpiryDate).isAfter(new Date()) ? (
+                            <span className="text-success">Alloted</span>
+                          ) : (
+                            <span className="text-danger">Expired</span>
+                          )}
+                        </td>
 
-                          <td>{info.roomNo || "N/A"}</td>
-                          <td>{info.allotedDate || "N/A"}</td>
-                          <td>{info.cardExpiryDate || "N/A"}</td>
-                          <td>
-                            {hallDetails.length === i + 1 ? (
-                              <button
-                                onClick={handleHallLeave}
-                                className="btn btn-outline-primary"
-                              >
-                                Leave Hall
-                              </button>
-                            ) : (
-                              "N/A"
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </>
-            ) : (
-              // <h4 className="text-center">No information</h4>
-              applied ? 
-              <span className="mx-auto px-5">Already applied! Wait for approval</span>
-              :
+                        <td>{info.roomNo || "N/A"}</td>
+                        <td>{info.allotedDate || "N/A"}</td>
+                        <td>{info.cardExpiryDate || "N/A"}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
+
+            {hallDetails.length !== 0 &&
+            moment(hallDetails[hallDetails.length - 1].cardExpiryDate).isAfter(
+              new Date()
+            ) ? (
               <button
-                onClick={handleSeat}
+                onClick={handleHallLeave}
                 className="mx-auto btn btn-outline-primary px-5"
-                disabled={applied}
               >
-                Apply for Seat
+                Leave Hall
               </button>
+            ) : (
+              <>
+                {applied ? (
+                  <span className="mx-auto px-5">Applied for seat</span>
+                ) : (
+                  <button
+                    onClick={handleSeat}
+                    className="mx-auto btn btn-outline-primary px-5"
+                    disabled={applied}
+                  >
+                    Apply for Seat
+                  </button>
+                )}
+              </>
             )}
           </div>
         </div>
-        
       </div>
     </>
   );

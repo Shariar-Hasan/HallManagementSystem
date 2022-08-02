@@ -283,9 +283,3 @@ input[data-aria="password"] {
   flex: 0 0 auto;
 
 }
-.search-form .form-control:focus .search-form {
-  box-shadow: 10px 5px 8px rgba(0, 0, 0, 0.434);
-}
-.search-form .form-control:focus .search-group {
-  box-shadow: 10px 5px 8px rgba(0, 0, 0, 0.434);
-}

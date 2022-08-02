@@ -84,7 +84,12 @@ const Login = () => {
         data.authentication = res;
         getProfile(data);
         setLoadpage(false);
+
         // console.log(data);
+      })
+      .catch((err) => {
+        // console.log(err);
+        setLoadpage(false);
       });
   };
   const userLoginError = {

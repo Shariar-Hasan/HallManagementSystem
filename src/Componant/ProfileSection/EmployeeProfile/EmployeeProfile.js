@@ -3,9 +3,10 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../App";
-import { updateData } from "../../../Functions/autoFunctions";
+import { postData, updateData } from "../../../Functions/autoFunctions";
 import LoadingCard from "../../LoadingCard/LoadingCard";
 import toast from "react-hot-toast";
+import swal from "sweetalert";
 
 const EmployeeProfile = ({
   personalInfo,
@@ -78,6 +79,19 @@ const EmployeeProfile = ({
       toast.error("Please upload your passport size photo");
     }
     // console.log(data)
+  };
+  const haandleLeaveHall = () => {
+    swal({
+      title: "Leave Hall?",
+      text: "Are you sure you want to Leave?",
+      icon: "info",
+      buttons: true,
+      dangerMode: true,
+    }).then((leave) => {
+      if (leave) {
+        toast.success("Successfully left Hall");
+      }
+    });
   };
   return (
     <>
@@ -340,6 +354,17 @@ const EmployeeProfile = ({
                   </tr>
                 </tbody>
               </table>
+              {allInfoFound && (
+                <div className="text-center col-md-4 mx-auto">
+                  <button
+                    type="button"
+                    onClick={haandleLeaveHall}
+                    className="btn btn-outline-primary w-100"
+                  >
+                    Leave Hall
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           {allInfoFound || (
