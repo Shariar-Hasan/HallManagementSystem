@@ -14,7 +14,7 @@ const AppointSeat = () => {
   const onSubmit = (data) => {
     // setPageload(true);
     console.log(data);
-    postData(`http://localhost:5500/appointSeat`, data)
+    postData(`/appointSeat`, data)
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
@@ -35,7 +35,7 @@ const AppointSeat = () => {
   let query = useQuery();
   const history = useHistory()
   useEffect(() => {
-    getData("http://localhost:5500/roomCheck")
+    getData("/roomCheck")
       .then((res) => res.json())
       .then((data) => {
         setRoomList(data);
@@ -57,7 +57,7 @@ const AppointSeat = () => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Notice Title"
+                        placeholder="Type Student ID"
                         autoComplete="off"
                         defaultValue={query.get("stdid")}
                         {...register("stdId", { required: true })}
@@ -77,8 +77,8 @@ const AppointSeat = () => {
                           Select a Room
                         </option>
                         {roomList.map((room) => (
-                          <option key={room._id} value={room.roomNo}>
-                            {room.roomNo}
+                          <option className={`cursor-pointer text-${4 <= room.allotedUsers.length ? "danger" : "success" }`} key={room._id} value={room.roomNo} disabled={4 <= room.allotedUsers.length}>
+                            {room.roomNo}{` (${4 - room.allotedUsers.length} Seats Available )`}
                           </option>
                         ))}
                       </select>
@@ -114,3 +114,5 @@ const AppointSeat = () => {
 };
 
 export default AppointSeat;
+
+

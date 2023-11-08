@@ -16,7 +16,7 @@ const AdminProfile = ({ admin }) => {
   } = admin;
   
   const setToDatabase = (adminData) => {
-    postData("http://localhost:5500/createUser", [adminData]).then((res) => {
+    postData("/createUser", [adminData]).then((res) => {
       if (res.status === 200) {
         toast.success("New Admin Successfully created!");
       } else {
@@ -44,7 +44,7 @@ const AdminProfile = ({ admin }) => {
 
   // all load data funtion here
   useEffect(()=>{
-    getData("http://localhost:5500/userCountData")
+    getData("/userCountData")
     .then(res => res.json())
     .then(data => setDatacount(data))
     .catch(err => console.log(err))
@@ -108,7 +108,7 @@ const AdminProfile = ({ admin }) => {
                   <label className="w-100">
                     <h6>Admin Email</h6>
                     <input
-                      type="text"
+                      type="email"
                       className="form-control d-inline-block w-100 mx-auto"
                       placeholder="Enter Admin Email"
                       autoComplete="off"

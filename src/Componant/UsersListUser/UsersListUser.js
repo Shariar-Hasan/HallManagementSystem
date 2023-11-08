@@ -1,19 +1,39 @@
+import moment from "moment";
 import React from "react";
+import { isStudent } from "../../Functions/autoFunctions";
 
 const UsersListUser = ({ handleDelete, handleUserClick, user }) => {
+  const isAlloted =
+    isStudent(user) &&
+    user.hallDetails.length > 0 &&
+    moment(
+      user.hallDetails[user.hallDetails.length - 1]?.cardExpiryDate
+    ).isAfter(new Date());
   return (
-    <tr>
+    <tr className="user-row">
       <td>{user?.id}</td>
-      <td style={{fontSize : "40px"}}>
+      <td style={{ fontSize: "40px" }}>
         {user?.personalInfo.avater ? (
-          <img src={user?.personalInfo?.avater} style={{height : "50px"}} alt={user?.personalInfo.name} />
+          <img
+            src={user?.personalInfo?.avater}
+            style={{ height: "50px" }}
+            alt={"HMS User"}
+          />
         ) : (
           <i className="fa fa-user-circle" aria-hidden="true"></i>
         )}
       </td>
       <td>{user?.personalInfo.name || "Incomplete Profile"}</td>
       <td>{user?.contact.city || "Incomplete Profile"}</td>
-      <td>{user?.authentication.isStudent ? "Student" : "Employee"}</td>
+      <td className="text-center">
+        {user?.authentication.isStudent ? (
+          <span title={isAlloted ? "Alloted Student" : "Non Alloted Student"}>
+            Student<sup  className="text-primary  m x-2 badge ">{isAlloted && "(A)"}</sup>
+          </span>
+        ) : (
+          "Employee"
+        )}
+      </td>
       <td>
         <div className="btn-group" role="group" aria-label="Basic example">
           <button
@@ -31,7 +51,7 @@ const UsersListUser = ({ handleDelete, handleUserClick, user }) => {
 
           <button
             type="button"
-            onClick={() => handleDelete(user?.personalInfo.name)}
+            onClick={() => handleDelete(user?.id)}
             className="btn btn-outline-secondary"
           >
             <i className="fa fa-trash" aria-hidden="true"></i>

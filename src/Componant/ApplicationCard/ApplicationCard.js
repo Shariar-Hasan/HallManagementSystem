@@ -32,7 +32,7 @@ const ApplicationCard = ({ appl }) => {
     });
   };
   const handleReject = () => {
-    deleteData("http://localhost:5500/deleteApplication/" + id)
+    deleteData("/deleteApplication/" + id)
       .then((res) => res.json())
       .then((data) => {
         swal({

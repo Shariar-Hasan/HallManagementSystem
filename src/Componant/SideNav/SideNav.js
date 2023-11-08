@@ -49,7 +49,7 @@ const SideNav = ({ user }) => {
     localStorage.setItem("user", null);
     history.push("/");
   };
-
+console.log(loginUser)
   return (
     <div className="sideNavBg ">
       <div className="sideNavBlackBg" onClick={handleClick}></div>
@@ -62,7 +62,7 @@ const SideNav = ({ user }) => {
             {loginUser?.personalInfo?.avater ? (
               <img
                 src={loginUser?.personalInfo?.avater}
-                alt={loginUser.personalInfo?.name}
+                alt={loginUser?.personalInfo?.name}
               />
             ) : (
               <span className="avater">
@@ -72,7 +72,7 @@ const SideNav = ({ user }) => {
           </div>
           <ul className="headerList">
             <li>
-              <h6>{loginUser?.personalInfo.name || loginUser.id}</h6>
+              <h6>{loginUser?.personalInfo?.name || loginUser.id}</h6>
             </li>
             <li>
               <span className="activeNow">Active Now</span>

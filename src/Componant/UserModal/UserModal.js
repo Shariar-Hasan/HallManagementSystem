@@ -2,6 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import {
+  employeePositionData,
+  departmentList,
+  employeeClassData,
+  sessionList,
+  courseList,
+} from "../../Data/adminData";
 import { updateData } from "../../Functions/autoFunctions";
 import LoadingCard from "../LoadingCard/LoadingCard";
 
@@ -52,7 +59,7 @@ const UserModal = ({ user, editingFunc }) => {
         form
       )
       .then((res) => {
-        setLoadedimg(res.data.data.medium.url);
+        setLoadedimg(res.data.data.display_url);
         setLoadpage(false);
         toast.success("Image File loaded");
       })
@@ -66,12 +73,13 @@ const UserModal = ({ user, editingFunc }) => {
     data.avater = loadedimg || user?.personalInfo.avater;
     setLoadpage(true);
     console.log(data);
-    updateData("http://localhost:5500/updateUserProfile/" + user?._id, data)
+    updateData("/updateUserProfile/" + user?._id, data)
       .then((res) => res.json())
       .then((data) => {
         setLoadpage(false);
         if (data) {
           toast.success("Profile Updated Successfully");
+          setEditInfo(false);
         } else {
           toast.error("Something went wrong");
         }
@@ -235,10 +243,9 @@ const UserModal = ({ user, editingFunc }) => {
                   {...register("course")}
                   disabled={!editInfo}
                 >
-                  <option value={"B.Sc"}>B.Sc</option>
-                  <option value={"B.Sc Engineering"}>B.Sc Engineering</option>
-                  <option value={"M.Sc"}>M.Sc</option>
-                  <option value={"M.Sc Engineering"}>M.Sc Engineering</option>
+                  {courseList.map((data, i) => (
+                    <option value={data}>{data}</option>
+                  ))}
                 </select>
               ) : (
                 <select
@@ -246,14 +253,11 @@ const UserModal = ({ user, editingFunc }) => {
                   {...register("course", {
                     required: true,
                   })}
+                  disabled={!editInfo}
                 >
-                  <option value={"Food Manager"}>Food Manager</option>
-                  <option value={"Hallroom Maintainer"}>
-                    Hallroom Maintainer
-                  </option>
-                  <option value={"Office Assistant"}>Office Assistant</option>
-                  <option value={"Hall Manager"}>Hall Manager</option>
-                  <option value={"Hall Accountant"}>Hall Accountant</option>
+                  {employeePositionData.map((data, i) => (
+                    <option value={data}>{data}</option>
+                  ))}
                 </select>
               )}
             </div>
@@ -265,20 +269,9 @@ const UserModal = ({ user, editingFunc }) => {
                   {...register("department")}
                   disabled={!editInfo}
                 >
-                  <option value={"Computer Science & Engineering"}>
-                    Computer Science & Engineering
-                  </option>
-                  <option value={"Electrical & Electronics Engineering"}>
-                    Electrical & Electronics Engineering
-                  </option>
-                  <option value={"Farmacy"}>Farmacy</option>
-                  <option value={"Genetics Engineering"}>
-                    Genetics Engineering
-                  </option>
-                  <option value={"Biochemistry"}>Biochemistry</option>
-                  <option value={"Micro Biology"}>Micro Biology</option>
-                  <option value={"Botany"}>Botany</option>
-                  <option value={"Zoology"}>Zoology</option>
+                  {departmentList.map((data, i) => (
+                    <option value={data}>{data}</option>
+                  ))}
                 </select>
               ) : (
                 <select
@@ -286,19 +279,11 @@ const UserModal = ({ user, editingFunc }) => {
                   {...register("department", {
                     required: true,
                   })}
+                  disabled={!editInfo}
                 >
-                  <option value={"1st Class Employee"}>
-                    1st Class Employee
-                  </option>
-                  <option value={"2nd Class Employee"}>
-                    2nd Class Employee
-                  </option>
-                  <option value={"3rd Class Employee"}>
-                    3rd Class Employee
-                  </option>
-                  <option value={"4th Class Employee"}>
-                    4th Class Employee
-                  </option>
+                  {employeeClassData.map((data, i) => (
+                    <option value={data}>{data}</option>
+                  ))}
                 </select>
               )}
             </div>
@@ -312,27 +297,9 @@ const UserModal = ({ user, editingFunc }) => {
                   {...register("session")}
                   disabled={!editInfo}
                 >
-                  <option value={"2020-21"}>2020-21</option>
-                  <option value={"2019-20"}>2019-20</option>
-                  <option value={"2018-19"}>2018-19</option>
-                  <option value={"2017-18"}>2017-18</option>
-                  <option value={"2016-17"}>2016-17</option>
-                  <option value={"2015-16"}>2015-16</option>
-                  <option value={"2014-15"}>2014-15</option>
-                  <option value={"2013-14"}>2013-14</option>
-                  <option value={"2012-13"}>2012-13</option>
-                  <option value={"2011-12"}>2011-12</option>
-                  <option value={"2010-11"}>2010-11</option>
-                  <option value={"2009-10"}>2009-10</option>
-                  <option value={"2008-09"}>2008-09</option>
-                  <option value={"2007-08"}>2007-08</option>
-                  <option value={"2006-07"}>2006-07</option>
-                  <option value={"2005-06"}>2005-06</option>
-                  <option value={"2004-05"}>2004-05</option>
-                  <option value={"2003-04"}>2003-04</option>
-                  <option value={"2002-03"}>2002-03</option>
-                  <option value={"2001-02"}>2001-02</option>
-                  <option value={"2000-01"}>2000-01</option>
+                  {sessionList.map((data, i) => (
+                    <option value={data}>{data}</option>
+                  ))}
                 </select>
               ) : (
                 <input

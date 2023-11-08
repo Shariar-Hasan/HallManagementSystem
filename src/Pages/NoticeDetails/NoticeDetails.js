@@ -12,7 +12,7 @@ const NoticeDetails = () => {
   const [NoticeDetails, setNoticeDetails] = useState({});
   const [loginuser] = useContext(UserContext);
   useEffect(() => {
-    getData(`http://localhost:5500/notice/${nid}`)
+    getData(`/notice/${nid}`)
       .then((res) => res.json())
       .then((data) => {
         setNoticeDetails(data);
@@ -47,14 +47,12 @@ const NoticeDetails = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        deleteData(`http://localhost:5500/deleteNotice/${nid}`).then((res) => {
+        deleteData(`/deleteNotice/${nid}`).then((res) => {
           if (res) {
             toast.success("Successfully Deleted the notice");
             handleBack();
           }
         });
-      } else {
-        toast.info("Notice Not Deleted");
       }
     });
   };
@@ -80,47 +78,42 @@ const NoticeDetails = () => {
               >
                 <i className="fa fa-window-close" aria-hidden="true"></i>
               </button>
-              {((Object.keys(loginuser || {}).length !== 0) &&  isAdmin(loginuser)) && (
-                <>
-                  <button
-                    type="button"
-                    onClick={handleEdit}
-                    className="btn-lg btn edit-btn"
-                  >
-                    <i className="fa fa-edit" aria-hidden="true"></i>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleDelete}
-                    className="btn-lg btn delete-btn"
-                  >
-                    <i className="fa fa-trash" aria-hidden="true"></i>
-                  </button>
-                </>
-              )}
+              {Object.keys(loginuser || {}).length !== 0 &&
+                isAdmin(loginuser) && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={handleEdit}
+                      className="btn-lg btn edit-btn"
+                    >
+                      <i className="fa fa-edit" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleDelete}
+                      className="btn-lg btn delete-btn"
+                    >
+                      <i className="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </>
+                )}
               <div className="floating-news-inside">
                 {!NoticeDetails?.visibleToEveryone && (
                   <div className="private">
-                    <h6
+                    <span
                       data-toggle="tooltip"
                       data-placement="right"
                       title="Only visible to logged in users"
-                      className="special-text d-inline-block pr-3 pl-1 py-2 ml-3"
-                      style={{
-                        border: "2px solid rgb(122, 182, 255, 0.4)",
-                        color: "rgb(122, 182, 255)",
-                        borderRadius: "5px",
-                        backgroundColor: "",
-                      }}
+                      className="special-text d-inline-block bg-info px-2 rounded text-white"
                     >
-                      #Private Post
-                    </h6>
+                      Private Notice
+                    </span>
                   </div>
                 )}
                 {NoticeDetails?.noticeImage && (
                   <div
                     className="col-12 text-center my-3"
-                    style={{ height: "200px" }}
+                    style={{ height: "300px" }}
                   >
                     <img
                       onClick={handleLinkClick}

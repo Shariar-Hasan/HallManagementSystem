@@ -1,0 +1,9 @@
+.noticeCard{
+    transition: all .2s ease-in-out;
+    border: 1px solid transparent;
+}
+.noticeCard:hover{
+    transform: scale(1.01) translateX(20px);
+    border: 1px solid rgb(0, 191, 255);
+    border-left: 8px solid rgb(0, 191, 255);
+}

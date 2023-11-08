@@ -7,6 +7,11 @@ import { postData, updateData } from "../../../Functions/autoFunctions";
 import LoadingCard from "../../LoadingCard/LoadingCard";
 import toast from "react-hot-toast";
 import swal from "sweetalert";
+import {
+  employeePositionData,
+  employeeClassData,
+} from "../../../Data/adminData";
+import { allCity, allDivision } from "../../../Data/fakedata";
 
 const EmployeeProfile = ({
   personalInfo,
@@ -45,7 +50,7 @@ const EmployeeProfile = ({
         form
       )
       .then((res) => {
-        setLoadedimg(res.data.data.medium.url);
+        setLoadedimg(res.data.data.display_url);
         console.log(res);
         setLoadpage(false);
         toast.success("Image File loaded");
@@ -61,7 +66,7 @@ const EmployeeProfile = ({
   const updateProfile = (data) => {
     data.id = id;
     data._id = loginuser._id;
-    updateData(`http://localhost:5500/updateprofile/${data._id}`, data)
+    updateData(`/updateprofile/${data._id}`, data)
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -230,6 +235,7 @@ const EmployeeProfile = ({
                             City :{" "}
                             {city || (
                               <input
+                                list="city-list"
                                 type="text"
                                 className="form-control "
                                 aria-describedby="helpId"
@@ -239,11 +245,17 @@ const EmployeeProfile = ({
                                 })}
                               />
                             )}
+                            <datalist id="city-list">
+                              {allCity.map((opt) => (
+                                <option key={opt}>{opt}</option>
+                              ))}
+                            </datalist>
                           </li>
                           <li>
                             Division :{" "}
                             {division || (
                               <input
+                                list="division-list"
                                 type="text"
                                 className="form-control "
                                 aria-describedby="helpId"
@@ -253,6 +265,11 @@ const EmployeeProfile = ({
                                 })}
                               />
                             )}
+                            <datalist id="division-list">
+                              {allDivision.map((opt) => (
+                                <option key={opt}>{opt}</option>
+                              ))}
+                            </datalist>
                           </li>
                           <li>
                             Zip Code :{" "}
@@ -298,17 +315,12 @@ const EmployeeProfile = ({
                               required: true,
                             })}
                           >
-                            <option value={"Food Manager"}>Food Manager</option>
-                            <option value={"Hallroom Maintainer"}>
-                              Hallroom Maintainer
+                            <option value="" disabled>
+                              Select your designation
                             </option>
-                            <option value={"Office Assistant"}>
-                              Office Assistant
-                            </option>
-                            <option value={"Hall Manager"}>Hall Manager</option>
-                            <option value={"Hall Accountant"}>
-                              Hall Accountant
-                            </option>
+                            {employeePositionData.map((data, i) => (
+                              <option value={data}>{data}</option>
+                            ))}
                           </select>
                         </div>
                       )}
@@ -322,18 +334,12 @@ const EmployeeProfile = ({
                               required: true,
                             })}
                           >
-                            <option value={"1st Class Employee"}>
-                              1st Class Employee
+                            <option value="" disabled>
+                              Select your Class
                             </option>
-                            <option value={"2nd Class Employee"}>
-                              2nd Class Employee
-                            </option>
-                            <option value={"3rd Class Employee"}>
-                              3rd Class Employee
-                            </option>
-                            <option value={"4th Class Employee"}>
-                              4th Class Employee
-                            </option>
+                            {employeeClassData.map((data, i) => (
+                              <option value={data}>{data}</option>
+                            ))}
                           </select>
                         </div>
                       )}

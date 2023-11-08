@@ -10,7 +10,7 @@ const DividerRight = () => {
   const [notices, setNotices] = useState([]);
   const [news, setNews] = useState([]);
   useEffect(() => {
-    getData("http://localhost:5500/notices")
+    getData("/notices")
       .then((res) => res.json())
       .then((data) => {
         const newNews = data.filter((n) => n.visibleToEveryone === true);

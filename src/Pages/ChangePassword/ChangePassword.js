@@ -31,7 +31,7 @@ const ChangePassword = () => {
         id: loginuser?.id,
         password: SharuEncryption(data.password),
       };
-      updateData("http://localhost:5500/changepass", newData)
+      updateData("/changepass", newData)
         .then((res) => res.json())
         .then((data) => {
           toast.success("Password successfully updated")

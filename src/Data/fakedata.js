@@ -462,11 +462,11 @@ export const adminDashboardlist = [
     link: "/applications",
     icon: "fas fa-envelope-open",
   },
-  {
-    title: "Appoint Seat",
-    link: "/appoint-seat",
-    icon: "fas fa-plus-square",
-  },
+  // {
+  //   title: "Appoint Seat",
+  //   link: "/appoint-seat",
+  //   icon: "fas fa-plus-square",
+  // },
   {
     title: "Upload Notice",
     link: "/notice",
@@ -487,9 +487,11 @@ export const adminDashboardlist = [
     link: "/issuebox",
     icon: "fas fa-info-circle",
   },
-  {
-    title: "Help Section",
-    link: "/profile",
-    icon: "fas fa-question-circle",
-  },
+  
 ];
+
+// {
+//     title: "Help Section",
+//     link: "/help-section",
+//     icon: "fas fa-question-circle",
+//   },

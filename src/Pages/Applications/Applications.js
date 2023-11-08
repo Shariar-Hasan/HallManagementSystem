@@ -6,7 +6,7 @@ import { getData } from "../../Functions/autoFunctions";
 const Applications = () => {
   const [applications, setApplications] = useState([]);
   useEffect(() => {
-    getData("http://localhost:5500/getapplications")
+    getData("/getapplications")
       .then((res) => res.json())
       .then((data) => setApplications(data));
   }, []);

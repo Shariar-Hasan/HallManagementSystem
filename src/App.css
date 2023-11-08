@@ -283,3 +283,20 @@ input[data-aria="password"] {
   flex: 0 0 auto;
 
 }
+
+.counter-icon:hover{
+  color: #17A2B8;
+  transition: all .25s;
+  cursor: pointer;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.user-row:hover{
+  transform: scaleX(1.0001);
+  transition: all .25s;
+}
+/* {
+  cursor: pointer;
+} */

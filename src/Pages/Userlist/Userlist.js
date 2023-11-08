@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { useForm } from "react-hook-form";
 import swal from "sweetalert";
+import LoadingCard from "../../Componant/LoadingCard/LoadingCard";
 import NothingAvailable from "../../Componant/NothingAvailable/NothingAvailable";
 import UserModal from "../../Componant/UserModal/UserModal";
 import UsersListUser from "../../Componant/UsersListUser/UsersListUser";
-import { getData } from "../../Functions/autoFunctions";
+import { deleteData, getData } from "../../Functions/autoFunctions";
 
 const Userlist = () => {
   // const { register, handleSubmit } = useForm();
+  const [loadpage, setLoadpage] = useState(false);
   const [allUser, setAllUser] = useState([]);
   const [searchedOption, setSearchedOption] = useState("id");
   const [searchedString, setSearchedString] = useState("");
@@ -22,36 +24,42 @@ const Userlist = () => {
     setClickedUser(user);
   };
 
-  const handleDelete = (name) => {
+  const handleDelete = (id) => {
     swal({
-      title: `Deleting User ${name}`,
+      title: `Deleting User ${id}`,
       text: "Are you sure?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        swal("User Deleted", {
-          icon: "success",
-        });
+        setLoadpage(true);
+        deleteData(`/deleteUser/${id}`)
+          .then((res) => {
+            if (res) {
+              swal("User Deleted", {
+                icon: "success",
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } else {
         swal("User not deleted");
       }
+      setLoadpage(false);
     });
   };
   // all user data call
   useEffect(() => {
-    getData("http://localhost:5500/allprofile")
+    getData("/allprofile")
       .then((res) => res.json())
       .then((data) => {
         const userlist = data.filter(
           (user) => user.authentication.isAdmin === false
         );
-        allUser.sort((a, b) =>
-          sortbyId
-            ? a.personalInfo.id - b.personalInfo.id
-            : b.personalInfo.id - a.personalInfo.id
-        );
+        
         setAllUser(userlist);
       });
   }, []);
@@ -71,6 +79,7 @@ const Userlist = () => {
 
   return (
     <div>
+      {loadpage && <LoadingCard></LoadingCard>}
       <UserModal
         user={clickedUser}
         editingFunc={[editInfo, setEditInfo]}
@@ -97,7 +106,7 @@ const Userlist = () => {
                 />
                 <span
                   onClick={() => setSearchedString("")}
-                  className=" form-control col-1 d-flex justify-content-center align-items-center click-effect"
+                  className=" form-control col-1 d-flex justify-content-center align-items-center click-effect cursor-pointer"
                 >
                   {searchedString ? (
                     <i class="fa fa-times " aria-hidden="true"></i>
@@ -123,9 +132,7 @@ const Userlist = () => {
                         <i class="fa fa-sort-up" aria-hidden="true"></i>
                       )}
                     </th>
-                    <th scope="col" >
-                      Avater
-                    </th>
+                    <th scope="col">Avater</th>
                     <th scope="col">Name</th>
                     <th scope="col">City</th>
                     <th scope="col">
@@ -176,6 +183,7 @@ const Userlist = () => {
                       .map((user, id) => (
                         <UsersListUser
                           key={id}
+                          index={id}
                           handleDelete={handleDelete}
                           user={user}
                           handleUserClick={handleUserClick}

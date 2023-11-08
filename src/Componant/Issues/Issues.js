@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../App";
+import { toast } from "react-hot-toast";
 import {
   fromNow,
   isAdmin,
@@ -25,13 +26,15 @@ const Issues = ({ issue, query }) => {
 
   const [runningStatus, setRunningStatus] = useState(status);
   useEffect(() => {
-    updateData("http://localhost:5500/updateIssueStatus", {
+    updateData("/updateIssueStatus", {
       _id,
       runningStatus,
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data) {
+          toast.success("Issue Status updated");
+        }
       });
   }, [runningStatus]);
 

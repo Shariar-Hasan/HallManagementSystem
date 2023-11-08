@@ -5,7 +5,6 @@ import StudentProfile from "./../../Componant/ProfileSection/StudentProfile/Stud
 import EmployeeProfile from "./../../Componant/ProfileSection/EmployeeProfile/EmployeeProfile";
 import AdminProfile from "./../../Componant/ProfileSection/AdminProfile/AdminProfile";
 import {
-  getData,
   isAdmin,
   isEmployee,
   isStudent,
@@ -13,13 +12,12 @@ import {
 import { useContext } from "react";
 import { UserContext } from "../../App";
 import NotAvailable from "../NotAvailable/NotAvailable";
-import { useEffect } from "react";
 import { useState } from "react";
 import StickyNews from "../../Componant/StickyNews/StickyNews";
 const Profile = () => {
-  const [loginUser, setLoginuser] = useContext(UserContext);
+  const [loginUser, ] = useContext(UserContext);
   const [showSticky, setShowSticky] = useState(false);
-  const [stickyNote, setStickyNote] = useState({});
+  const [stickyNote, ] = useState({});
   const { personalInfo, contact, institutional, hallDetails } = loginUser || {};
 
   // useEffect(() => {
@@ -36,19 +34,20 @@ const Profile = () => {
       <div className="container">
         <div className="row w-100">
           <>
-            {isStudent(loginUser) ? (
+            {isStudent(loginUser)  ? (
               <StudentProfile
                 personalInfo={personalInfo}
                 contact={contact}
                 institutional={institutional}
                 hallDetails={hallDetails}
               />
-            ) : isEmployee(loginUser) ? (
+            ) : isEmployee(loginUser)  ? (
               <EmployeeProfile
                 personalInfo={personalInfo}
                 contact={contact}
                 institutional={institutional}
               />
+              
             ) : isAdmin(loginUser) ? (
               <AdminProfile admin={loginUser} />
             ) : (

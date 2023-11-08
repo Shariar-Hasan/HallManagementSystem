@@ -3,20 +3,15 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import TextEditor from "./../../Componant/TextEditor/TextEditor";
-import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import Footer from "../../Componant/Footer/Footer";
 import Navbar from "../../Componant/Navbar/Navbar";
 import NoticeCard from "../../Componant/NoticeCard/NoticeCard";
 import { getData, isAdmin } from "../../Functions/autoFunctions";
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+
 
 const NoticeBoard = () => {
-  const [showNews, setShowNews] = useState(true);
-  const [floatingNews, setFloatingNews] = useState(null);
   const [notices, setNotices] = useState([]);
 
   // pagination section
@@ -31,7 +26,7 @@ const NoticeBoard = () => {
 
   //      fetch and load notice data
   useEffect(() => {
-    getData("http://localhost:5500/notices")
+    getData("/notices")
       .then((res) => res.json())
       .then((data) => {
         if (loginUser !== null) {
@@ -80,7 +75,7 @@ const NoticeBoard = () => {
       <div className="container">
         <div className="row ">
           <div className="col-md mt-5">
-            <h3 className="text-center text-info">News Update</h3>
+            <h3 className="text-center text-info text-underline">News Update</h3>
             <div className="all-news row p-3 mx-auto">
               {pageNotices.map((notice, index) => (
                 <NoticeCard key={index} notice={notice}></NoticeCard>

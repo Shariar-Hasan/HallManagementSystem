@@ -49,7 +49,7 @@ const CreateUser = () => {
   };
   // set to database function
   const setToDatabase = (userArray, generatedList) => {
-    postData("http://localhost:5500/createUser/", userArray)
+    postData("/createUser/", userArray)
       .then((res) => {
         if (res.status === 200) {
           toast.success("All user Successfully created!");

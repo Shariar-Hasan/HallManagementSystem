@@ -1,6 +1,5 @@
-
 import moment from "moment";
-
+import { serverUrl } from "../config";
 
 // checking admin or not
 export const isAdmin = (user) => (user ? user.authentication?.isAdmin : false);
@@ -14,7 +13,8 @@ export const isEmployee = (user) =>
   user ? user.authentication?.isEmployee : false;
 
 // checking logged in or not
-export const activeStatus = (data) => (data ? true : false);
+export const activeStatus = (data) =>
+  data ? (Object.keys(data).length === 0 ? false : true) : false;
 
 // random invoice generator
 export const generateInvoice = (randomDigit) => {
@@ -46,6 +46,7 @@ export const sleepInMiliseconds = (miliseconds) => {
 // ************************************************************
 // about posting Datas
 export const postData = (url = "", data = {}) => {
+  url = serverUrl + url;
   return new Promise((res, err) => {
     fetch(url, {
       method: "POST",
@@ -61,6 +62,7 @@ export const postData = (url = "", data = {}) => {
 
 // about getting datas
 export const getData = (url = "") => {
+  url = serverUrl + url;
   return new Promise((res, err) => {
     fetch(url)
       .then((r) => res(r))
@@ -70,6 +72,7 @@ export const getData = (url = "") => {
 
 // about deleting Data
 export const deleteData = (url = "") => {
+  url = serverUrl + url;
   return new Promise((res, err) => {
     fetch(url, {
       method: "DELETE",
@@ -81,6 +84,7 @@ export const deleteData = (url = "") => {
 
 // about updating Data
 export const updateData = (url = "", data = {}) => {
+  url = serverUrl + url;
   return new Promise((res, err) => {
     fetch(url, {
       method: "PATCH",
@@ -109,10 +113,6 @@ export const SharuDecryption = (chipherText) => {
     .join("");
 };
 
-
-export const fromNow = (dateNtime) =>{
-  return moment(
-    dateNtime,
-    "hh:mm:ss A, MM/DD/YYYY"
-  ).fromNow()
-}
+export const fromNow = (dateNtime) => {
+  return moment(dateNtime, "hh:mm:ss A, MM/DD/YYYY").fromNow();
+};

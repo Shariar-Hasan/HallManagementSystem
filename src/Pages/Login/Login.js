@@ -9,7 +9,6 @@ import { Button } from "@material-ui/core";
 import NotAvailable from "../NotAvailable/NotAvailable";
 import LoadingCard from "../../Componant/LoadingCard/LoadingCard";
 import {
-  getData,
   postData,
   SharuEncryption,
 } from "../../Functions/autoFunctions";
@@ -50,23 +49,14 @@ const Login = () => {
       });
     }
   }, []);
-  // ask for profile from database
-  const getProfile = (data) => {
-    postData(`http://localhost:5500/getprofile/${data.id}`, data)
-      .then((res) => res.json())
-      .then((data) => {
-        setLoginuser(data);
-        localStorage.setItem("user", JSON.stringify(data));
-        // console.log(data);
-        history.push(from);
-      });
-  };
+
 
   const onSubmit = (data) => {
     data.password = SharuEncryption(data.password);
     setLoadpage(true);
-    postData(`http://localhost:5500/authentication`, data)
+    postData(`/authentication`, data)
       .then((r) => {
+        console.log("res")
         if (r.status === 401) {
           toast.error("Wrong Password");
         } else if (r.status === 403) {
@@ -74,22 +64,37 @@ const Login = () => {
         } else if (r.status === 200) {
           toast.success("Welcome to Abdur Rab Hall Website");
           document.getElementById("login-form").reset();
+          return r.json();
         } else {
           toast.error("Something went wrong");
         }
         setLoadpage(false);
-        return r.json();
       })
       .then((res) => {
-        data.authentication = res;
-        getProfile(data);
-        setLoadpage(false);
-
+        console.log("original res")
+        if (res) {
+          setLoginuser(res);
+          console.log("profile", res);
+          localStorage.setItem("user", JSON.stringify(res));
+          history.push(from);
+        }
+        // toast.success("Welcome to Abdur Rab Hall Website");
+        // if (Object.keys(res).length === 3) {
+        //   data.authentication = res;
+        //   getProfile(data);
+        //   setLoadpage(false);
+        // } else {
+        //   setLoadpage(false);
+        //   toast.error("Something went wrong");
+        // }
         // console.log(data);
       })
       .catch((err) => {
         // console.log(err);
+
         setLoadpage(false);
+        console.log(err);
+        toast.error("Cant get profile for the user!!!");
       });
   };
   const userLoginError = {

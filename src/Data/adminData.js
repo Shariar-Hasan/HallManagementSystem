@@ -1,0 +1,66 @@
+export const employeePositionData = [
+  "Dining Manager",
+  "Hall Superintindent",
+  "Office Assistant",
+  "Hall Manager",
+  "Hall Accountant",
+  "Hall Electrician",
+  "Hall Plumber",
+  "Hall ISP Provider",
+  "Hall Cleaner",
+];
+export const employeeClassData = [
+  "1st Class Employee",
+  "2nd Class Employee",
+  "3rd Class Employee",
+  "4th Class Employee",
+  "Non Class Employee",
+];
+export const departmentList = [
+  "Computer Science & Engineering",
+  "Electrical & Electronics Engineering",
+  "Farmacy",
+  "Genetics Engineering",
+  "Biochemistry",
+  "Micro Biology",
+  "Botany",
+  "Zoology",
+];
+export const sessionList = [
+  "2020-21",
+  "2019-20",
+  "2018-19",
+  "2017-18",
+  "2016-17",
+  "2015-16",
+  "2014-15",
+  "2013-14",
+  "2012-13",
+  "2011-12",
+  "2010-11",
+  "2009-10",
+  "2008-09",
+  "2007-08",
+  "2006-07",
+  "2005-06",
+  "2004-05",
+  "2003-04",
+  "2002-03",
+  "2001-02",
+  "2000-01",
+];
+export const courseList = [
+  "B.Sc",
+  "B.Sc Engineering",
+  "M.Sc",
+  "M.Sc Engineering",
+];
+export const issueTopicList = [
+  "Need Electrician",
+  "Need Plumber",
+  "Need Cleaner",
+  "Dining Issue",
+  "Room Issue",
+  "Internet Issue",
+  "Other",
+];

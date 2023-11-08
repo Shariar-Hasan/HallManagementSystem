@@ -37,21 +37,25 @@ function App() {
   const [showSticky, setShowSticky] = useState(false);
   const [stickyNote, setStickyNote] = useState({});
   useEffect(() => {
-    getData(`http://localhost:5500/getprofile/${loginUser?._id}`)
+    getData(`/getprofile/${loginUser?.id}`)
       .then((res) => res.json())
       .then((data) => setLoginUser(data))
       .catch((err) => {
         console.log(err);
       });
 
-    getData(`http://localhost:5500/getStickyNote`)
+    getData(`/getStickyNote`)
       .then((res) => res.json())
       .then((data) => {
         if (data) {
           setStickyNote(data);
           const oldSticky =
             JSON.parse(sessionStorage.getItem("stickyShow")) || null;
-          if (data._id !== oldSticky?._id && !oldSticky?.show) {
+          if (
+            data._id !== oldSticky?._id &&
+            !oldSticky?.show &&
+            oldSticky?.closeFor !== loginUser?.id
+          ) {
             setShowSticky(true);
           } else {
             setShowSticky(false);
@@ -62,14 +66,6 @@ function App() {
         return true;
       });
   }, []);
-  // useEffect(() => {
-  //   const oldSticky = JSON.parse(sessionStorage.getItem("stickyShow")) || null;
-  //   if (stickyNote._id !== oldSticky?._id) {
-  //     setShowSticky(true);
-  //   } else {
-  //     setShowSticky(false);
-  //   }
-  // }, [stickyNote]);
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <DataContext.Provider value={[imageLoad, [show, setShow]]}>
@@ -91,14 +87,15 @@ function App() {
           }}
         />
 
-        {showSticky && !isAdmin(loginUser) && (
-          <StickyNews
-            stickyNote={stickyNote}
-            sticky={[showSticky, setShowSticky]}
-          />
-        )}
         <Router>
           {activeStatus(loginUser) && <SideNav></SideNav>}
+
+          {showSticky && !isAdmin(loginUser) && activeStatus(loginUser) && (
+            <StickyNews
+              stickyNote={stickyNote}
+              sticky={[showSticky, setShowSticky]}
+            />
+          )}
           <Switch>
             <Route exact path="/">
               <Home></Home>

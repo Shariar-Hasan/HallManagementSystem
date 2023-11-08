@@ -22,7 +22,8 @@ const TextEditor = ({ placeholder }) => {
         form
       )
       .then((res) => {
-        setLoadedImg(res.data.data.medium.url);
+        console.log({res})
+        setLoadedImg(res.data.data.display_url);
         setSpinner(false);
         toast.success("Image File Saved");
       })
@@ -58,7 +59,7 @@ const TextEditor = ({ placeholder }) => {
     else data.noticeImage = loadedImg;
     console.log(data);
     setLoadedImg("");
-    postData("http://localhost:5500/addNotice", data).then((res) => {
+    postData("/addNotice", data).then((res) => {
       if (res.status === 200) {
         toast.success("Notice Post Successfully Uploaded", "", 2000);
 

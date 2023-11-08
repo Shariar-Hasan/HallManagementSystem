@@ -1,8 +1,22 @@
 import React, { } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
+import { getData } from '../../Functions/autoFunctions';
 
 const Counter = () => {
     const [oneTimeRun, setOneTimeRun] = useState(true)
+    const [counterData, setCounterData] = useState({})
+    useEffect(() => {
+        getData(`/getCounterData`)
+        .then(res => res.json())
+        .then(data => {
+            setCounterData(data);
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    } , [])
+
     window.addEventListener('scroll', () => {
         const speed = 400;
         const counterParent = document.getElementById("counter");
@@ -43,18 +57,18 @@ const Counter = () => {
                 </div>
                 <div className="card-body row text-center">
                     <div className="col">
-                        <i className="fas fa-hotel fa-2x"></i>
-                        <div className="text-value-xl counterNumber h5" data-counter="210">0</div>
+                        <i className="fas counter-icon fa-hotel fa-2x"></i>
+                        <div className="text-value-xl counterNumber h5" data-counter={counterData?.numberOfRoom}>0</div>
                         <div className="text-uppercase text-muted small">Rooms</div>
                     </div>
                     <div className="col">
-                        <i className="fas fa-user-graduate fa-2x"></i>
-                        <div className="text-value-xl counterNumber h5" data-counter="560">0</div>
+                        <i className="fas counter-icon fa-user-graduate fa-2x"></i>
+                        <div className="text-value-xl counterNumber h5" data-counter={counterData?.numberOfStudents}>0</div>
                         <div className="text-uppercase text-muted small">Students</div>
                     </div>
                     <div className="col">
-                        <i className="fas fa-people-carry fa-2x"></i>
-                        <div className="text-value-xl counterNumber h5" data-counter="20">0</div>
+                        <i className="fas counter-icon fa-people-carry fa-2x"></i>
+                        <div className="text-value-xl counterNumber h5" data-counter={counterData?.numberOfEmployee}>0</div>
                         <div className="text-uppercase text-muted small">Employees</div>
                     </div>
                 </div>

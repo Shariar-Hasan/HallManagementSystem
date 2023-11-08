@@ -16,6 +16,11 @@ import LoadingCard from "../../LoadingCard/LoadingCard";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { allCity, allDivision } from "../../../Data/fakedata";
+import {
+  courseList,
+  departmentList,
+  sessionList,
+} from "../../../Data/adminData";
 
 const StudentProfile = ({
   personalInfo,
@@ -48,7 +53,7 @@ const StudentProfile = ({
   const [loadedimg, setLoadedimg] = useState("");
   const [applied, setApplied] = useState(false);
   useEffect(() => {
-    getData("http://localhost:5500/appliedornot/" + id)
+    getData("/appliedornot/" + id)
       .then((res) => res.json())
       .then((data) => {
         setApplied(data);
@@ -67,7 +72,7 @@ const StudentProfile = ({
         form
       )
       .then((res) => {
-        setLoadedimg(res.data.data.medium.url);
+        setLoadedimg(res.data.data.display_url);
         console.log(res);
         setLoadpage(false);
         toast.success("Image File loaded");
@@ -83,7 +88,7 @@ const StudentProfile = ({
   const updateProfile = (data) => {
     data.id = id;
     data._id = loginuser._id;
-    updateData(`http://localhost:5500/updateprofile/${data._id}`, data)
+    updateData(`/updateprofile/${data._id}`, data)
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -91,6 +96,10 @@ const StudentProfile = ({
         } else {
           toast.error("Something went wrong");
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Something went wrong");
       });
   };
   const onSubmit = (data) => {
@@ -123,12 +132,16 @@ const StudentProfile = ({
             course: loginuser.institutional.course,
             session: loginuser.institutional.session,
           };
-          postData(`http://localhost:5500/applyseat`, appliedUser)
+          postData(`/applyseat`, appliedUser)
             .then((res) => res.json())
             .then((data) => {
               if (data.acknowledged) {
                 toast.success("Successfully Applied for Hall seat");
               }
+            })
+            .catch((err) => {
+              console.log(err);
+              toast.error("Something went wrong");
             });
         } else {
           toast.error("Not Applied");
@@ -152,14 +165,18 @@ const StudentProfile = ({
         setLoadpage(true);
         // console.log(loginuser?.hallDetails[loginuser?.hallDetails.length-1])
         updateData(
-          `http://localhost:5500/leavehall/${id}`,
+          `/leavehall/${id}`,
           loginuser?.hallDetails[loginuser?.hallDetails.length - 1]
         )
           .then((res) => {
             setLoadpage(false);
+            console.log(res);
+            toast.success("Successfully left hall");
           })
           .catch((err) => {
             setLoadpage(false);
+            console.log(err);
+            toast.error("Something went wrong");
           });
 
         setLoadpage(false);
@@ -176,7 +193,7 @@ const StudentProfile = ({
 
             <div className="row  profile-card-child">
               <div className="col-md-4">
-                {avater ? (
+                {avater || loadedimg ? (
                   <img
                     className="img-fluid mx-auto"
                     src={loadedimg || avater}
@@ -402,14 +419,11 @@ const StudentProfile = ({
                               required: true,
                             })}
                           >
-                            <option value={"B.Sc"}>B.Sc</option>
-                            <option value={"B.Sc Engineering"}>
-                              B.Sc Engineering
-                            </option>
-                            <option value={"M.Sc"}>M.Sc</option>
-                            <option value={"M.Sc Engineering"}>
-                              M.Sc Engineering
-                            </option>
+                            {courseList.map((data, i) => (
+                              <option key={i} value={data}>
+                                {data}
+                              </option>
+                            ))}
                           </select>
                         </div>
                       )}
@@ -423,24 +437,11 @@ const StudentProfile = ({
                               required: true,
                             })}
                           >
-                            <option value={"Computer Science & Engineering"}>
-                              Computer Science & Engineering
-                            </option>
-                            <option
-                              value={"Electrical & Electronics Engineering"}
-                            >
-                              Electrical & Electronics Engineering
-                            </option>
-                            <option value={"Farmacy"}>Farmacy</option>
-                            <option value={"Genetics Engineering"}>
-                              Genetics Engineering
-                            </option>
-                            <option value={"Biochemistry"}>Biochemistry</option>
-                            <option value={"Micro Biology"}>
-                              Micro Biology
-                            </option>
-                            <option value={"Botany"}>Botany</option>
-                            <option value={"Zoology"}>Zoology</option>
+                            {departmentList.map((data, i) => (
+                              <option key={i} value={data}>
+                                {data}
+                              </option>
+                            ))}
                           </select>
                         </div>
                       )}
@@ -454,27 +455,11 @@ const StudentProfile = ({
                               required: true,
                             })}
                           >
-                            <option value={"2020-21"}>2020-21</option>
-                            <option value={"2019-20"}>2019-20</option>
-                            <option value={"2018-19"}>2018-19</option>
-                            <option value={"2017-18"}>2017-18</option>
-                            <option value={"2016-17"}>2016-17</option>
-                            <option value={"2015-16"}>2015-16</option>
-                            <option value={"2014-15"}>2014-15</option>
-                            <option value={"2013-14"}>2013-14</option>
-                            <option value={"2012-13"}>2012-13</option>
-                            <option value={"2011-12"}>2011-12</option>
-                            <option value={"2010-11"}>2010-11</option>
-                            <option value={"2009-10"}>2009-10</option>
-                            <option value={"2008-09"}>2008-09</option>
-                            <option value={"2007-08"}>2007-08</option>
-                            <option value={"2006-07"}>2006-07</option>
-                            <option value={"2005-06"}>2005-06</option>
-                            <option value={"2004-05"}>2004-05</option>
-                            <option value={"2003-04"}>2003-04</option>
-                            <option value={"2002-03"}>2002-03</option>
-                            <option value={"2001-02"}>2001-02</option>
-                            <option value={"2000-01"}>2000-01</option>
+                            {sessionList.map((data, i) => (
+                              <option key={i} value={data}>
+                                {data}
+                              </option>
+                            ))}
                           </select>
                         </div>
                       )}
@@ -550,7 +535,9 @@ const StudentProfile = ({
                     className="mx-auto btn btn-outline-primary px-5"
                     disabled={applied}
                   >
-                    Apply for Seat
+                    {hallDetails.length === 0
+                      ? "Apply for Seat"
+                      : "Renew/Apply for Seat"}
                   </button>
                 )}
               </>
