@@ -1,70 +1,47 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+# Hall Management System - Lab Project 🚀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview 📚
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Welcome to the repository for our B.Sc. Engineering Web Engineering lab project! This project is a full MERN stack application designed to revolutionize university hall residency management.
 
-### `npm test`
+## Features 🌟
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **User Authentication 🔐:**
+   - The system supports authentication for three user roles: student, employee, and admin.
+   - Dedicated dashboards for students, employees, and administrators.
 
-### `npm run build`
+2. **Hall Residency Application System 🏠:**
+   - Students can apply for hall residency through the web application.
+   - Admins can manage and review residency applications.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Seat Allotment 🪑:**
+   - Handling seat allotment based on criteria such as academic year and preferences.
+   - Manual adjustments by admins as needed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Issue Tracking System 🛠️:**
+   - Students can create issue posts for problems in hall residency.
+   - Employees can view and resolve issues, updating the status.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used 💻
 
-### `npm run eject`
+- **Frontend:**
+  - React.js for a modern and responsive user interface.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Backend:**
+  - Express.js and Node.js for a robust backend infrastructure.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Database:**
+  - MongoDB for efficient data storage.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Authentication:**
+  - Token-based authentication system for secure user access.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments 🙌
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Thanks to our Honourable Teacher `Professor Dr. Iqbal Ahmed Sir` for giving me such amazing opportunity and thanks to all my Team Members  [Farhan Tanjim](https://github.com/Farhan-Tanjim), [Shanto Islam](https://github.com/Shanto93), [Mamun Chawdhury](https://github.com/Tahsinmamun) for inspiring & supporting me.
