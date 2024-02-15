@@ -26,6 +26,19 @@ Welcome to the repository for our B.Sc. Engineering Web Engineering lab project!
    - Students can create issue posts for problems in hall residency.
    - Employees can view and resolve issues, updating the status.
 
+## Demo Id Pass
+```
+  admin: admin@gmail.com
+  pass: adminadmin
+
+  student:18701018
+  Pass: e7e83348py
+
+  employee: 01866088233
+  Pass: 1led933z01
+```
+
+
 ## Technologies Used 💻
 
 - **Frontend:**
