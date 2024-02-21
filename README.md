@@ -8,6 +8,8 @@
 
 Welcome to the repository for our B.Sc. Engineering Web Engineering lab project! This project is a full MERN stack application designed to revolutionize university hall residency management.
 
+[Server Side Code](https://github.com/Shariar-Hasan/HallManagementServer)
+
 ## Features 🌟
 
 1. **User Authentication 🔐:**
